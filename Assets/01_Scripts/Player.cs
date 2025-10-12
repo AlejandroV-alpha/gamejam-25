@@ -1,19 +1,22 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ITakeDamage
 {
     #region Variables
+    [Header("Life")]
+    [SerializeField] float life = 10f;
+
     [Header("Properties of Movement")]
-    [SerializeField] float moveSpeedMax = 2.5f;         // Velocidad maxima hacia adelante
-    [SerializeField] float moveSpeedMaxBackward = 1.5f; // Velocidad maxima hacia atras
-    [SerializeField] float moveAcceleration = 5f;       // Velocidad de aceleracion
-    [SerializeField] float moveDeceleration = 5f;       // Velocidad de desaceleracion
+    [SerializeField] float moveSpeedMax = 2.5f;
+    [SerializeField] float moveSpeedMaxBackward = 1.5f;
+    [SerializeField] float moveAcceleration = 5f;
+    [SerializeField] float moveDeceleration = 5f;
 
     [Header("Properties of Rotation")]
-    [SerializeField] float rotateSpeedMax = 130f;       // Velocidad maxima de rotacion
-    [SerializeField] float rotateAcceleration = 400f;   // Aceleracion de rotacion
-    [SerializeField] float rotateDeceleration = 400f;   // Desaceleracion de rotacion
+    [SerializeField] float rotateSpeedMax = 130f;
+    [SerializeField] float rotateAcceleration = 400f;
+    [SerializeField] float rotateDeceleration = 400f;
 
     [Header("Properties of Shoot")]
     [SerializeField] KeyCode shootKey = KeyCode.Space;
@@ -24,22 +27,19 @@ public class Player : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] float timeBtwShoot = 0.5f;
 
+    [Header("Impact Feedback")]
+    [SerializeField] float impactDecay = 8f;
 
-    // Variables internas
-    float moveSpeed = 0f;    // Velocidad actual de movimiento
-    float rotateSpeed = 0f;  // Velocidad actual de rotacion
-    float timer = 0f;        // timer que controla tiempos
+    float moveSpeed = 0f;
+    float rotateSpeed = 0f;
+    float timer = 0f;
     bool canShoot = true;
-    
+
+    Vector2 impactVelocity = Vector2.zero;
 
     Rigidbody2D rb;
     #endregion
 
-
-    /// <summary>
-    /// Inicializa referencias internas.
-    /// Configura Rigidbody2D como Kinematic para movimiento controlado manualmente.
-    /// </summary>
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,57 +59,54 @@ public class Player : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        HandleMovement(verticalInput);
+        // Movimiento + impacto suave
+        Vector2 moveDir = transform.up * GetTargetSpeed(verticalInput);
+        rb.MovePosition(rb.position + (moveDir + impactVelocity) * Time.fixedDeltaTime);
+
         HandleRotation(horizontalInput);
+
+        // Decaimiento del impacto
+        impactVelocity = Vector2.Lerp(impactVelocity, Vector2.zero, impactDecay * Time.fixedDeltaTime);
     }
 
     #region Movimiento Player
     /// <summary>
-    /// Maneja el movimiento del tanque usando Rigidbody2D.
-    /// Usa MoveTowards para acelerar/desacelerar suavemente.
-    /// Diferencia velocidad hacia adelante y hacia atras.
+    /// Calcula la velocidad de movimiento del jugador dependiendo del input vertical.
+    /// Aplica aceleración o desaceleración suave usando MoveTowards.
     /// </summary>
-    void HandleMovement(float verticalInput)
+    /// <param name="verticalInput">Valor de entrada vertical (-1 a 1)</param>
+    /// <returns>Velocidad actual a aplicar</returns>
+    float GetTargetSpeed(float verticalInput)
     {
         float targetSpeed = 0f;
+        if (verticalInput > 0) targetSpeed = moveSpeedMax;
+        else if (verticalInput < 0) targetSpeed = -moveSpeedMaxBackward;
 
-        if (verticalInput > 0)
-        {
-            targetSpeed = moveSpeedMax;
-        }
-        else if (verticalInput < 0)
-        {
-            targetSpeed = -moveSpeedMaxBackward;
-        }
-
-        float accel = (verticalInput != 0) ? moveAcceleration : moveDeceleration;
-
+        float accel = (verticalInput != 0f) ? moveAcceleration : moveDeceleration;
         moveSpeed = Mathf.MoveTowards(moveSpeed, targetSpeed, accel * Time.fixedDeltaTime);
-
-        // Calcula la nueva posicion con MovePosition para fisica correcta
-        Vector2 moveDirection = transform.up * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + moveDirection);
+        return moveSpeed;
     }
 
     /// <summary>
-    /// Maneja la rotación usando Rigidbody2D.
-    /// Aplica aceleración/desaceleración suave con MoveTowards.
-    /// Usa Mathf.Sign para mantener la dirección clara y evitar inversión brusca.
+    /// Maneja la rotación del jugador según el input horizontal.
+    /// Aplica aceleración y desaceleración suave usando MoveTowards.
     /// </summary>
+    /// <param name="horizontalInput">Valor de entrada horizontal (-1 a 1)</param>
     void HandleRotation(float horizontalInput)
     {
         float targetRotateSpeed = rotateSpeedMax * Mathf.Abs(horizontalInput);
-        float accel = (horizontalInput != 0) ? rotateAcceleration : rotateDeceleration;
-
+        float accel = (horizontalInput != 0f) ? rotateAcceleration : rotateDeceleration;
         rotateSpeed = Mathf.MoveTowards(rotateSpeed, targetRotateSpeed, accel * Time.fixedDeltaTime);
 
         float rotationAmount = -rotateSpeed * Mathf.Sign(horizontalInput) * Time.fixedDeltaTime;
-
         rb.MoveRotation(rb.rotation + rotationAmount);
     }
     #endregion
 
     #region Disparo Player
+    /// <summary>
+    /// Controla el temporizador entre disparos para limitar la frecuencia de disparo.
+    /// </summary>
     void HandleShootTimer()
     {
         if (!canShoot)
@@ -123,6 +120,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detecta la entrada de disparo y genera la bala correspondiente.
+    /// </summary>
     void HandleShootInput()
     {
         if (canShoot && Input.GetKeyDown(shootKey))
@@ -130,7 +130,6 @@ public class Player : MonoBehaviour
             GameObject prefabToUse = (currentBullet == BulletMode.Damage) ? bulletDamagePrefab : bulletEnergyPrefab;
             GameObject bulletObj = Instantiate(prefabToUse, firePoint.position, firePoint.rotation);
             Bullet bullet = bulletObj.GetComponent<Bullet>();
-
             bullet.SetDirection(firePoint.up);
 
             canShoot = false;
@@ -138,7 +137,7 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Cambia el tipo de bala al presionar la tecla definida.
+    /// Cambia el tipo de bala activa al presionar la tecla definida.
     /// </summary>
     void HandleChangeBulletInput()
     {
@@ -148,10 +147,41 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
+    #region Impacto Player
+    /// <summary>
+    /// Aplica daño y un knockback al jugador.
+    /// Knockback es suave y temporal para dar sensación de impacto.
+    /// </summary>
+    /// <param name="damage">Cantidad de vida a restar</param>
+    /// <param name="hitDirection">Dirección desde la que recibió el impacto</param>
+    /// <param name="knockbackForce">Magnitud de la fuerza de retroceso</param>
+    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce = 0f)
+    {
+        life -= damage;
+        if (knockbackForce > 0f)
+        {
+            impactVelocity += hitDirection.normalized * knockbackForce;
+        }
+        if (life <= 0f)
+        {
+            Die();
+        }
+    }
+
+    /// <summary>
+    /// Maneja la muerte del jugador.
+    /// </summary>
+    void Die()
+    {
+        Debug.Log("Player muerto");
+        Destroy(gameObject);
+    }
+    #endregion
 }
 
-public enum BulletMode 
-{ 
-    Damage, 
-    Energy 
+public enum BulletMode
+{
+    Damage,
+    Energy
 }

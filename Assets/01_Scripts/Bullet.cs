@@ -7,8 +7,11 @@ public class Bullet : MonoBehaviour
     [Header("Bullet Type")]
     public BulletType bulletType;
 
+    [Header("Impact Properties")]
+    [SerializeField] float knockbackForce = 0f;
+
     [Header("Properties of Movement")]
-    [SerializeField] float moveSpeed = 7f;
+    [SerializeField] float moveSpeed = 15f;
     [SerializeField] float timeToDestroy = 5f;
     [SerializeField] Vector2 direction = Vector2.up;
 
@@ -33,18 +36,11 @@ public class Bullet : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
-    /// <summary>
-    /// Destruye la bala automaticamente despues de timeToDestroy segundos.
-    /// </summary>
     void Start()
     {
         Destroy(gameObject, timeToDestroy);
     }
 
-    /// <summary>
-    /// Mueve la bala en la direccion definida usando Rigidbody2D.
-    /// Se llama en FixedUpdate para respetar la fisica.
-    /// </summary>
     void FixedUpdate()
     {
         Vector2 move = direction.normalized * moveSpeed * Time.fixedDeltaTime;
@@ -72,21 +68,21 @@ public class Bullet : MonoBehaviour
                 case BulletType.EnemyDamage:
                     if (collision.gameObject.CompareTag("Player"))
                     {
-                        target.TakeDamage(damage, hitDir);
+                        target.TakeDamage(damage, hitDir, knockbackForce);
                     }
                     break;
 
                 case BulletType.PlayerEnergy:
                     if (collision.gameObject.CompareTag("Nodo"))
                     {
-                        target.TakeDamage(energy, hitDir);
+                        target.TakeDamage(energy, hitDir, knockbackForce);
                     }
                     break;
 
                 case BulletType.PlayerDamage:
                     if (collision.gameObject.CompareTag("Enemy"))
                     {
-                        target.TakeDamage(damage, hitDir);
+                        target.TakeDamage(damage, hitDir, knockbackForce);
                     }
                     break;
 
@@ -100,7 +96,7 @@ public class Bullet : MonoBehaviour
     #endregion
 
 
-    #region Metodos publicos
+    #region Metodos Publicos
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
