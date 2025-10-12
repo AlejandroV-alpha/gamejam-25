@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TurretEnemy : MonoBehaviour, ITakeDamage
 {
-    #region Variables
+    #region Variables Generales
     [Header("Life")]
     [SerializeField] float life = 5f;
 
@@ -22,8 +22,8 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
     [Header("Properties of Shoot")]
     [SerializeField] GameObject bulletPrefab;     // Prefab de bala
     [SerializeField] Transform firePoint;         // Punto de disparo
-    [SerializeField] float fireRate = 1f;         // Tiempo entre disparos
-    float fireTimer = 0f;
+    [SerializeField] float timeBtwShoot = 0.5f;         // Tiempo entre disparos
+    float timer = 0f;
 
     [Header("Impacto/Knockback")]
     [SerializeField] float impactDecay = 8f;     // Decaimiento del knockback recibido
@@ -65,9 +65,12 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
         if (hit != null)
         {
             Vector2 dirToTarget = (hit.transform.position - transform.position).normalized;
-            float angleToTarget = Vector2.SignedAngle(transform.up, dirToTarget);
 
-            if (Mathf.Abs(angleToTarget) <= halfViewAngle)
+            // Ángulo relativo al ángulo inicial de la torreta
+            float desiredAngle = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg - 90f;
+            float relativeAngle = Mathf.DeltaAngle(initialRotation.eulerAngles.z, desiredAngle);
+
+            if (Mathf.Abs(relativeAngle) <= halfViewAngle)
             {
                 target = hit.transform;
                 return;
@@ -75,6 +78,7 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
         }
 
         target = null;
+        timer = 0f; // Reinicia temporizador si no hay objetivo
     }
 
     /// <summary>
@@ -114,23 +118,28 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
     {
         if (target == null) return;
 
-        // Comprobamos otra vez que el objetivo sigue dentro del ángulo antes de disparar
+        // Dirección al jugador
         Vector2 dirToTarget = (target.position - transform.position).normalized;
-        float angleToTarget = Vector2.SignedAngle(transform.up, dirToTarget);
 
-        if (Mathf.Abs(angleToTarget) > halfViewAngle)
+        // Ángulo relativo al ángulo inicial de la torreta
+        float desiredAngle = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg - 90f;
+        float relativeAngle = Mathf.DeltaAngle(initialRotation.eulerAngles.z, desiredAngle);
+
+        if (Mathf.Abs(relativeAngle) > halfViewAngle)
         {
-            target = null; // El objetivo salió del rango visual
+            target = null; // El jugador salió del rango visual
+            timer = 0f;    // Reinicia temporizador
             return;
         }
 
-        fireTimer += Time.fixedDeltaTime;
-        if (fireTimer >= fireRate)
+        timer += Time.fixedDeltaTime;
+        if (timer >= timeBtwShoot)
         {
-            fireTimer = 0f;
+            timer = 0f;
             Shoot();
         }
     }
+
 
     /// <summary>
     /// Instancia la bala y le asigna la dirección actual del cañón.
@@ -183,9 +192,11 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
-        // Visualización del campo de visión (viewAngle)
-        Vector3 leftDir = Quaternion.Euler(0, 0, -viewAngle / 2f) * transform.up;
-        Vector3 rightDir = Quaternion.Euler(0, 0, viewAngle / 2f) * transform.up;
+        // Para ver campo de visión estático en edición
+        Quaternion baseRotation = Application.isPlaying ? initialRotation : transform.rotation;
+
+        Vector3 leftDir = baseRotation * Quaternion.Euler(0, 0, -viewAngle / 2f) * Vector3.up;
+        Vector3 rightDir = baseRotation * Quaternion.Euler(0, 0, viewAngle / 2f) * Vector3.up;
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + leftDir * detectionRange);

@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    #region Variables
+    #region Variables Generales
     [Header("Bullet Type")]
     public BulletType bulletType;
 

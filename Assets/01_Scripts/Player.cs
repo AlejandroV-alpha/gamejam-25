@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour, ITakeDamage
 {
-    #region Variables
+    #region Variables Generales
     [Header("Life")]
     [SerializeField] float life = 10f;
 
