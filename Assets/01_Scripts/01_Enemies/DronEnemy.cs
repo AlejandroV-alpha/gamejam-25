@@ -16,7 +16,9 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
 
     [Header("Properties of Movement")]
     [SerializeField] float moveSpeed = 2f;
+    [Tooltip("Right Top")]
     [SerializeField] Vector2 patrolMin;
+    [Tooltip("Left Bottom")]
     [SerializeField] Vector2 patrolMax;
     [SerializeField] float desiredDistance = 3f;
     Vector2 patrolTarget;
