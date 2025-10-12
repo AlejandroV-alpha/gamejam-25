@@ -3,28 +3,55 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    [Header("Movimiento")]
+    #region Variables
+    [Header("Properties of Movement")]
     [SerializeField] float moveSpeedMax = 2.5f;         // Velocidad maxima hacia adelante
     [SerializeField] float moveSpeedMaxBackward = 1.5f; // Velocidad maxima hacia atras
     [SerializeField] float moveAcceleration = 5f;       // Velocidad de aceleracion
     [SerializeField] float moveDeceleration = 5f;       // Velocidad de desaceleracion
 
-    [Header("Rotacion")]
+    [Header("Properties of Rotation")]
     [SerializeField] float rotateSpeedMax = 130f;       // Velocidad maxima de rotacion
     [SerializeField] float rotateAcceleration = 400f;   // Aceleracion de rotacion
     [SerializeField] float rotateDeceleration = 400f;   // Desaceleracion de rotacion
 
+    [Header("Properties of Shoot")]
+    [SerializeField] KeyCode shootKey = KeyCode.Space;
+    [SerializeField] KeyCode changeBulletKey = KeyCode.E;
+    [SerializeField] BulletMode currentBullet = BulletMode.Damage;
+    [SerializeField] GameObject bulletDamagePrefab;
+    [SerializeField] GameObject bulletEnergyPrefab;
+    [SerializeField] Transform firePoint;
+    [SerializeField] float timeBtwShoot = 0.5f;
+
+
     // Variables internas
     float moveSpeed = 0f;    // Velocidad actual de movimiento
     float rotateSpeed = 0f;  // Velocidad actual de rotacion
+    float timer = 0f;        // timer que controla tiempos
+    bool canShoot = true;
+    
 
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
+    #endregion
 
+
+    /// <summary>
+    /// Inicializa referencias internas.
+    /// Configura Rigidbody2D como Kinematic para movimiento controlado manualmente.
+    /// </summary>
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Lo hacemos Kinematic para controlar el movimiento manualmente
-        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = 0f;
+    }
+
+    void Update()
+    {
+        HandleShootTimer();
+        HandleShootInput();
+        HandleChangeBulletInput();
     }
 
     void FixedUpdate()
@@ -36,6 +63,7 @@ public class Player : MonoBehaviour
         HandleRotation(horizontalInput);
     }
 
+    #region Movimiento Player
     /// <summary>
     /// Maneja el movimiento del tanque usando Rigidbody2D.
     /// Usa MoveTowards para acelerar/desacelerar suavemente.
@@ -64,18 +92,66 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Maneja la rotacion usando Rigidbody2D.
-    /// MoveTowards para aceleracion/desaceleracion suave.
-    /// Se multiplica por -1 para que coincida la direccion con el input horizontal.
+    /// Maneja la rotación usando Rigidbody2D.
+    /// Aplica aceleración/desaceleración suave con MoveTowards.
+    /// Usa Mathf.Sign para mantener la dirección clara y evitar inversión brusca.
     /// </summary>
     void HandleRotation(float horizontalInput)
     {
-        float targetRotateSpeed = (horizontalInput != 0) ? rotateSpeedMax : 0f;
+        float targetRotateSpeed = rotateSpeedMax * Mathf.Abs(horizontalInput);
         float accel = (horizontalInput != 0) ? rotateAcceleration : rotateDeceleration;
 
         rotateSpeed = Mathf.MoveTowards(rotateSpeed, targetRotateSpeed, accel * Time.fixedDeltaTime);
 
-        float rotationAmount = -rotateSpeed * horizontalInput * Time.fixedDeltaTime;
+        float rotationAmount = -rotateSpeed * Mathf.Sign(horizontalInput) * Time.fixedDeltaTime;
+
         rb.MoveRotation(rb.rotation + rotationAmount);
     }
+    #endregion
+
+    #region Disparo Player
+    void HandleShootTimer()
+    {
+        if (!canShoot)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBtwShoot)
+            {
+                timer = 0f;
+                canShoot = true;
+            }
+        }
+    }
+
+    void HandleShootInput()
+    {
+        if (canShoot && Input.GetKeyDown(shootKey))
+        {
+            GameObject prefabToUse = (currentBullet == BulletMode.Damage) ? bulletDamagePrefab : bulletEnergyPrefab;
+            GameObject bulletObj = Instantiate(prefabToUse, firePoint.position, firePoint.rotation);
+            Bullet bullet = bulletObj.GetComponent<Bullet>();
+
+            bullet.SetDirection(firePoint.up);
+
+            canShoot = false;
+        }
+    }
+
+    /// <summary>
+    /// Cambia el tipo de bala al presionar la tecla definida.
+    /// </summary>
+    void HandleChangeBulletInput()
+    {
+        if (Input.GetKeyDown(changeBulletKey))
+        {
+            currentBullet = (currentBullet == BulletMode.Damage) ? BulletMode.Energy : BulletMode.Damage;
+        }
+    }
+    #endregion
+}
+
+public enum BulletMode 
+{ 
+    Damage, 
+    Energy 
 }
