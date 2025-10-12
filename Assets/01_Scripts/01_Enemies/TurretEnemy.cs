@@ -25,7 +25,7 @@ public class TurretEnemy : MonoBehaviour, ITakeDamage
     [SerializeField] float timeBtwShoot = 0.5f;         // Tiempo entre disparos
     float timer = 0f;
 
-    [Header("Impacto/Knockback")]
+    [Header("Knockback")]
     [SerializeField] float impactDecay = 8f;     // Decaimiento del knockback recibido
     Vector2 impactVelocity = Vector2.zero;
 

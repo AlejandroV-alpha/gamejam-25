@@ -4,38 +4,38 @@ using UnityEngine;
 public class DronEnemy : MonoBehaviour, ITakeDamage
 {
     #region Variables Generales
-    [Header("Vida")]
-    [SerializeField] private float life = 5f;
+    [Header("Life")]
+    [SerializeField] float life = 5f;
 
-    [Header("Detección del jugador")]
-    [SerializeField] private float detectionRange = 5f;
-    [SerializeField] private LayerMask targetLayer;
-    [SerializeField, Range(0f, 360f)] private float viewAngle = 180f;
-    private float halfViewAngle;
-    private Quaternion initialRotation;
+    [Header("Target detection")]
+    [SerializeField] float detectionRange = 5f;
+    [SerializeField] LayerMask targetLayer;
+    [SerializeField, Range(0f, 360f)] float viewAngle = 180f;
+    float halfViewAngle;
+    Quaternion initialRotation;
 
-    [Header("Movimiento")]
-    [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private Vector2 patrolMin;
-    [SerializeField] private Vector2 patrolMax;
-    [SerializeField] private float desiredDistance = 3f;
-    private Vector2 patrolTarget;
+    [Header("Properties of Movement")]
+    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] Vector2 patrolMin;
+    [SerializeField] Vector2 patrolMax;
+    [SerializeField] float desiredDistance = 3f;
+    Vector2 patrolTarget;
 
-    [Header("Disparo")]
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private float timeBtwShoot = 0.5f;
-    private float shootTimer = 0f;
+    [Header("Properties of Shoot")]
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform firePoint;
+    [SerializeField] float timeBtwShoot = 0.5f;
+    float shootTimer = 0f;
 
-    [Header("Impacto / Knockback")]
-    [SerializeField] private float impactDecay = 8f;
-    private Vector2 impactVelocity = Vector2.zero;
+    [Header("Knockback")]
+    [SerializeField] float impactDecay = 8f;
+    Vector2 impactVelocity = Vector2.zero;
 
-    private Rigidbody2D rb;
-    private Transform target;
+    Rigidbody2D rb;
+    Transform target;
 
-    private enum DroneState { Patrol, Chase }
-    private DroneState currentState = DroneState.Patrol;
+    enum DroneState { Patrol, Chase }
+    DroneState currentState = DroneState.Patrol;
     #endregion
 
     void Awake()
@@ -79,8 +79,11 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         }
     }
 
-    #region Patrulla y Persecución
-    private Vector2 Patrol()
+    #region Patrulla y Persecucion
+    /// <summary>
+    /// Calcula el movimiento de patrulla hacia el waypoint actual.
+    /// </summary>
+    Vector2 Patrol()
     {
         Vector2 dir = patrolTarget - rb.position;
 
@@ -93,7 +96,10 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         return dir.normalized * moveSpeed;
     }
 
-    private Vector2 Chase()
+    /// <summary>
+    /// Calcula el movimiento hacia el objetivo (jugador), manteniendo distancia deseada.
+    /// </summary>
+    Vector2 Chase()
     {
         if (target == null)
         {
@@ -104,7 +110,6 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         Vector2 dirToPlayer = (Vector2)target.position - rb.position;
         float distance = dirToPlayer.magnitude;
 
-        // Mantener distancia deseada
         Vector2 moveDir = Vector2.zero;
         if (distance > desiredDistance)
         {
@@ -118,7 +123,10 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         return moveDir * moveSpeed;
     }
 
-    private Vector2 GetRandomPatrolPoint()
+    /// <summary>
+    /// Devuelve un punto aleatorio dentro del area de patrulla.
+    /// </summary>
+    Vector2 GetRandomPatrolPoint()
     {
         return new Vector2(
             Random.Range(patrolMin.x, patrolMax.x),
@@ -127,8 +135,12 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
     }
     #endregion
 
-    #region Detección y rotación
-    private void DetectTarget()
+    #region Deteccion y rotacion
+    /// <summary>
+    /// Detecta si hay un objetivo dentro del rango y campo de vision.
+    /// Cambia el estado de la IA a Chase o Patrol.
+    /// </summary>
+    void DetectTarget()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, detectionRange, targetLayer);
 
@@ -150,19 +162,20 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         currentState = DroneState.Patrol;
     }
 
-    private void RotateDrone()
+    /// <summary>
+    /// Rota el dron hacia su objetivo actual (jugador o punto de patrulla) de manera suave.
+    /// </summary>
+    void RotateDrone()
     {
         float desiredAngle;
 
         if (currentState == DroneState.Chase && target != null)
         {
-            // Apunta hacia el jugador
             Vector2 dirToTarget = ((Vector2)target.position - rb.position).normalized;
             desiredAngle = Mathf.Atan2(dirToTarget.y, dirToTarget.x) * Mathf.Rad2Deg - 90f;
         }
         else
         {
-            // Apunta hacia su punto de patrulla
             Vector2 dirToPatrol = (patrolTarget - rb.position).normalized;
             desiredAngle = Mathf.Atan2(dirToPatrol.y, dirToPatrol.x) * Mathf.Rad2Deg - 90f;
         }
@@ -172,7 +185,10 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
     #endregion
 
     #region Disparo
-    private void HandleShooting()
+    /// <summary>
+    /// Maneja el disparo del dron hacia el objetivo si este esta dentro del campo de vision.
+    /// </summary>
+    void HandleShooting()
     {
         if (target == null || bulletPrefab == null || firePoint == null) return;
 
@@ -186,7 +202,10 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         }
     }
 
-    private void Shoot()
+    /// <summary>
+    /// Instancia la bala y la direcciona hacia el objetivo.
+    /// </summary>
+    void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
@@ -198,6 +217,9 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
     #endregion
 
     #region Impacto y vida
+    /// <summary>
+    /// Aplica daño al dron, y opcionalmente knockback.
+    /// </summary>
     public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce = 0f)
     {
         life -= damage;
@@ -213,7 +235,10 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         }
     }
 
-    private void Die()
+    /// <summary>
+    /// Destruye el dron y registra la muerte en consola.
+    /// </summary>
+    void Die()
     {
         Destroy(gameObject);
         Debug.Log("Drone destruido");
@@ -221,12 +246,14 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
     #endregion
 
     #region Gizmos
-    private void OnDrawGizmosSelected()
+    /// <summary>
+    /// Dibuja en el editor el rango de deteccion, campo de vision y zona de patrulla.
+    /// </summary>
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
-        // Campo de visión
         Vector3 leftDir = Quaternion.Euler(0, 0, -viewAngle / 2f) * transform.up;
         Vector3 rightDir = Quaternion.Euler(0, 0, viewAngle / 2f) * transform.up;
 
@@ -234,7 +261,6 @@ public class DronEnemy : MonoBehaviour, ITakeDamage
         Gizmos.DrawLine(transform.position, transform.position + leftDir * detectionRange);
         Gizmos.DrawLine(transform.position, transform.position + rightDir * detectionRange);
 
-        // Zona de patrulla
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(new Vector3(patrolMin.x, patrolMin.y), new Vector3(patrolMax.x, patrolMin.y));
         Gizmos.DrawLine(new Vector3(patrolMax.x, patrolMin.y), new Vector3(patrolMax.x, patrolMax.y));
