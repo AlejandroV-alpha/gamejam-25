@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Nodo
+  - Floor
   layers:
   - Default
   - TransparentFX
