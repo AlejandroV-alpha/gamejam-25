@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
     [Header("Health (Energy) Settings")]
     [SerializeField] float maxEnergy = 300f;
