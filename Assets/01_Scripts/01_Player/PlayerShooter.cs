@@ -10,15 +10,17 @@ public class PlayerShooter : MonoBehaviour
 
     [Header("Bullet Settings")]
     [SerializeField] float timeBtwShoot = 0.5f;
-    [SerializeField] GameObject commonBulletPrefab;
-    [SerializeField] GameObject energyBulletPrefab;
     [SerializeField] Transform firePoint;
+
+    [Header("Bullets (prefabs)")]
+    [Tooltip("Orden: 0 = COMMON, 1 = ENERGY")]
+    [SerializeField] GameObject[] bulletPrefabs;
 
     [Header("Energy Cost")]
     [SerializeField] float energyCostPerEnergyBullet = 5f;
 
 
-    BulletMode currentBullet = BulletMode.COMMON;
+    int currentBulletIndex = 0;
     float timer = 0f;
     bool canShoot = true;
 
@@ -69,16 +71,22 @@ public class PlayerShooter : MonoBehaviour
 
         if (Input.GetKeyDown(shootKey))
         {
-            if (playerAmmo.TryConsumeAmmo(currentBullet, this))
+            if (playerAmmo.TryConsumeAmmo(currentBulletIndex))
             {
+                GameObject prefab = GetCurrentBulletPrefab();
                 // Si la bala es de tipo ENERGY, se resta energía al jugador
-                if (currentBullet == BulletMode.ENERGY && playerHealth != null)
+                if (prefab != null && prefab.GetComponent<BulletEnergy>() != null && playerHealth != null)
                 {
                     playerHealth.TakeDamage(energyCostPerEnergyBullet, Vector2.zero, 0f);
                 }
 
-                ShootBullet();
+                ShootBullet(prefab);
                 canShoot = false;
+            }
+            else
+            {
+                // Si no pudo disparar (sin munición), playerAmmo habrá iniciado recarga automática.
+                // Aquí podrías reproducir un sonido "click".
             }
         }
     }
@@ -88,40 +96,69 @@ public class PlayerShooter : MonoBehaviour
     /// </summary>
     void HandleSwitchBulletInput()
     {
-        if (Input.GetKeyDown(switchBulletKey))
+        if (Input.GetKeyDown(switchBulletKey) && bulletPrefabs != null && bulletPrefabs.Length > 0)
         {
-            currentBullet = (currentBullet == BulletMode.COMMON) ? BulletMode.ENERGY : BulletMode.COMMON;
+            currentBulletIndex = (currentBulletIndex + 1) % bulletPrefabs.Length;
         }
     }
 
     /// <summary>
     /// Instancia la bala correspondiente en la posición y rotación del firePoint.
     /// </summary>
-    void ShootBullet()
+    void ShootBullet(GameObject prefab)
     {
-        GameObject prefab = GetCurrentBulletPrefab();
-        if (prefab != null)
+        if (prefab == null)
         {
-            GameObject bullet = Instantiate(prefab, firePoint.position, firePoint.rotation);
-            // bullet.GetComponent<Bullet>().SetDirection(firePoint.up);
+            return;
         }
-    }
 
-    /// <summary>
-    /// Devuelve el prefab de bala según el tipo de bala actualmente seleccionado.
-    /// </summary>
-    GameObject GetCurrentBulletPrefab()
-    {
-        return currentBullet == BulletMode.COMMON ? commonBulletPrefab : energyBulletPrefab;
+        GameObject instance = Instantiate(prefab, firePoint.position, firePoint.rotation);
+
+        //BulletBase bulletComp = instance.GetComponent<BulletBase>();
+        //if (bulletComp != null)
+        //{
+        //    // Nota: uso firePoint.up para que tu rotación actual siga funcionando como antes.
+        //    bulletComp.Initialize(firePoint.up);
+        //}
     }
     #endregion
 
     #region Utilities
-    public BulletMode GetCurrentBullet()
+    /// <summary>
+    /// Devuelve el prefab de bala actualmente seleccionado.
+    /// Si la lista esta vacia o el indice es invalido, devuelve null.
+    /// </summary>
+    public GameObject GetCurrentBulletPrefab()
     {
-        return currentBullet;
+        if (bulletPrefabs == null || bulletPrefabs.Length == 0)
+        {
+            return null;
+        }
+        if (currentBulletIndex < 0 || currentBulletIndex >= bulletPrefabs.Length)
+        {
+            return null;
+        }
+
+        return bulletPrefabs[currentBulletIndex];
+    }
+
+    /// <summary>
+    /// Devuelve la cantidad total de tipos de bala disponibles.
+    /// </summary>
+    public int GetBulletTypesCount()
+    {
+        return bulletPrefabs != null ? bulletPrefabs.Length : 0;
+    }
+
+    /// <summary>
+    /// Devuelve el indice del tipo de bala actualmente seleccionado.
+    /// </summary>
+    public int GetCurrentBulletIndex()
+    {
+        return currentBulletIndex;
     }
     #endregion
+
 }
 
 /// <summary>

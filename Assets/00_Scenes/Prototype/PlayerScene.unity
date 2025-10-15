@@ -274,9 +274,10 @@ MonoBehaviour:
   shootKey: 32
   switchBulletKey: 101
   timeBtwShoot: 0.5
-  commonBulletPrefab: {fileID: 1778973605}
-  energyBulletPrefab: {fileID: 763539723}
   firePoint: {fileID: 305376110}
+  bulletPrefabs:
+  - {fileID: 1778973605}
+  - {fileID: 763539723}
   energyCostPerEnergyBullet: 5
 --- !u!114 &10237745
 MonoBehaviour:
@@ -293,7 +294,8 @@ MonoBehaviour:
   maxEnergy: 300
   movementEnergyDrain: 0.3
   minSpeedToDrain: 0.2
-  currentEnergy: 0
+  rotationEnergyDrain: 0.2
+  minRotateSpeedToDrain: 5
 --- !u!114 &10237746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,12 +308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6137b57d62b6b4ebfb988c82ec1e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCommonAmmo: 10
-  maxEnergyAmmo: 5
+  maxAmmoPerType: 0a00000005000000
   reloadTime: 1.5
   reloadKey: 114
-  currentCommonAmmo: 0
-  currentEnergyAmmo: 0
+  currentAmmoPerType: 
 --- !u!1 &305376109
 GameObject:
   m_ObjectHideFlags: 0

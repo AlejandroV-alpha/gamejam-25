@@ -4,22 +4,23 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerShooter))]
 public class PlayerAmmo : MonoBehaviour
 {
-    [Header("Ammo Settings")]
-    [SerializeField] int maxCommonAmmo = 10;
-    [SerializeField] int maxEnergyAmmo = 5;
+    [Header("Ammo Settings (by bullet type)")]
+    [SerializeField] int[] maxAmmoPerType;
     [SerializeField] float reloadTime = 1.5f;
 
     [Header("Keys")]
     [SerializeField] KeyCode reloadKey = KeyCode.R;
 
-    [SerializeField] int currentCommonAmmo;
-    [SerializeField] int currentEnergyAmmo;
+    [SerializeField] int[] currentAmmoPerType;
     bool isReloading = false;
+
+    PlayerShooter playerShooter;
 
     void Awake()
     {
-        currentCommonAmmo = maxCommonAmmo;
-        currentEnergyAmmo = maxEnergyAmmo;
+        playerShooter = GetComponent<PlayerShooter>();
+
+        InitializeAmmoArrays();
     }
 
     void Update()
@@ -27,61 +28,64 @@ public class PlayerAmmo : MonoBehaviour
         HandleManualReloadInput();
     }
 
+    void InitializeAmmoArrays()
+    {
+        if (maxAmmoPerType != null && maxAmmoPerType.Length > 0)
+        {
+            currentAmmoPerType = new int[maxAmmoPerType.Length];
+            maxAmmoPerType.CopyTo(currentAmmoPerType, 0);
+        }
+    }
+
     #region Ammo Management
     /// <summary>
-    /// Intenta consumir una bala del tipo especificado.
-    /// Devuelve true si fue posible disparar.
-    /// Dispara recarga automática si se dispara la última bala.
+    /// Intenta consumir una unidad de municion del tipo indicado por indice.
+    /// Devuelve true si se pudo disparar.
     /// </summary>
-    public bool TryConsumeAmmo(BulletMode bulletType, MonoBehaviour owner)
+    public bool TryConsumeAmmo(int bulletTypeIndex)
     {
         if (isReloading)
         {
             return false;
         }
 
-        switch (bulletType)
+        if (currentAmmoPerType == null || bulletTypeIndex < 0 || bulletTypeIndex >= currentAmmoPerType.Length)
         {
-            case BulletMode.COMMON:
-                if (currentCommonAmmo > 0)
-                {
-                    currentCommonAmmo--;
-                    if (currentCommonAmmo == 0)
-                    {
-                        StartReloadIfNeeded(BulletMode.COMMON, owner);
-                    }
-                    return true;
-                }
-                break;
-
-            case BulletMode.ENERGY:
-                if (currentEnergyAmmo > 0)
-                {
-                    currentEnergyAmmo--;
-                    if (currentEnergyAmmo == 0)
-                    {
-                        StartReloadIfNeeded(BulletMode.ENERGY, owner);
-                    }
-                    return true;
-                }
-                break;
+            // indice invalido -> no disparar
+            return false;
         }
 
-        // Si no hay balas, intenta recargar automáticamente
-        StartReloadIfNeeded(bulletType, owner);
+        if (currentAmmoPerType[bulletTypeIndex] > 0)
+        {
+            currentAmmoPerType[bulletTypeIndex]--;
+            if (currentAmmoPerType[bulletTypeIndex] == 0)
+            {
+                StartReloadIfNeeded(bulletTypeIndex);
+            }
+            return true;
+        }
+
+        // si no hay balas, iniciar recarga automatica
+        StartReloadIfNeeded(bulletTypeIndex);
         return false;
     }
 
+
     /// <summary>
-    /// Devuelve la cantidad de munición restante para el tipo de bala indicado.
+    /// Devuelve la cantidad de municion restante para el tipo indicado por indice.
     /// </summary>
-    public int GetCurrentAmmo(BulletMode bulletType)
+    public int GetCurrentAmmo(int bulletTypeIndex)
     {
-        return bulletType == BulletMode.COMMON ? currentCommonAmmo : currentEnergyAmmo;
+        if (currentAmmoPerType == null || bulletTypeIndex < 0 || bulletTypeIndex >= currentAmmoPerType.Length)
+        {
+            return 0;
+        }
+
+        return currentAmmoPerType[bulletTypeIndex];
     }
 
     /// <summary>
-    /// Devuelve si la recarga está en curso.
+    /// Devuelve true si actualmente se esta recargando.
     /// </summary>
     public bool IsReloading()
     {
@@ -89,62 +93,58 @@ public class PlayerAmmo : MonoBehaviour
     }
 
     /// <summary>
-    /// Inicia la recarga solo si no hay otra en curso.
+    /// Inicia la recarga si no hay otra recarga en curso.
     /// </summary>
-    void StartReloadIfNeeded(BulletMode bulletType, MonoBehaviour owner)
+    void StartReloadIfNeeded(int bulletTypeIndex)
     {
         if (!isReloading)
         {
-            owner.StartCoroutine(Reload(bulletType));
+            StartCoroutine(ReloadCoroutine(bulletTypeIndex));
         }
     }
     #endregion
 
     #region Reload Logic
     /// <summary>
-    /// Recarga el cargador del tipo de bala especificado después del tiempo definido.
+    /// Corrutina que recarga el tipo de municion indicado despues de un tiempo.
     /// </summary>
-    IEnumerator Reload(BulletMode bulletType)
+    IEnumerator ReloadCoroutine(int bulletTypeIndex)
     {
         isReloading = true;
         yield return new WaitForSeconds(reloadTime);
 
-        switch (bulletType)
+        if (maxAmmoPerType != null && bulletTypeIndex >= 0 && bulletTypeIndex < maxAmmoPerType.Length)
         {
-            case BulletMode.COMMON:
-                currentCommonAmmo = maxCommonAmmo;
-                break;
-            case BulletMode.ENERGY:
-                currentEnergyAmmo = maxEnergyAmmo;
-                break;
+            currentAmmoPerType[bulletTypeIndex] = maxAmmoPerType[bulletTypeIndex];
         }
 
         isReloading = false;
     }
 
     /// <summary>
-    /// Detecta input de recarga manual y dispara la recarga si no está en curso.
+    /// Detecta la entrada del jugador para iniciar una recarga manual.
     /// </summary>
     void HandleManualReloadInput()
     {
         if (Input.GetKeyDown(reloadKey) && !isReloading)
         {
-            PlayerShooter shooter = GetComponent<PlayerShooter>();
-            if (shooter == null)
+            if (playerShooter == null)
+            {
+                playerShooter = GetComponent<PlayerShooter>();
+            }
+            if (playerShooter == null)
             {
                 return;
             }
 
-            BulletMode bulletToReload = shooter.GetCurrentBullet();
+            int currentIndex = playerShooter.GetCurrentBulletIndex();
 
-            // Solo recarga si no está lleno
-            if ((bulletToReload == BulletMode.COMMON && currentCommonAmmo >= maxCommonAmmo) ||
-                (bulletToReload == BulletMode.ENERGY && currentEnergyAmmo >= maxEnergyAmmo))
+            if (GetCurrentAmmo(currentIndex) >= maxAmmoPerType[currentIndex])
             {
                 return;
             }
 
-            StartCoroutine(Reload(bulletToReload));
+            StartCoroutine(ReloadCoroutine(currentIndex));
         }
     }
     #endregion
