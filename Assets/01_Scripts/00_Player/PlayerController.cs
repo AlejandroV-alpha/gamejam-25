@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float maxForwardSpeed = 4f;
-    [SerializeField] float maxBackwardSpeed = 2f;
+    [SerializeField] float maxForwardSpeed = 3f;
+    [SerializeField] float maxBackwardSpeed = 1.5f;
     [SerializeField] float acceleration = 5f;
     [SerializeField] float deceleration = 5f;
 
@@ -130,6 +130,11 @@ public class PlayerController : MonoBehaviour
     public float GetCurrentSpeed()
     {
         return currentMoveSpeed;
+    }
+
+    public float GetCurrentRotateSpeed()
+    {
+        return currentRotateSpeed;
     }
     #endregion
 }
