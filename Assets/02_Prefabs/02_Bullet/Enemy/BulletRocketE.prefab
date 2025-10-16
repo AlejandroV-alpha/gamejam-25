@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4267343263680286447}
   - component: {fileID: -6868055791334118493}
   m_Layer: 0
-  m_Name: BulletRocket
+  m_Name: BulletRocketE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   knockbackForce: 5
   validImpactLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   rotationSpeed: 300
   target: {fileID: 0}
 --- !u!212 &6258683262717338609
