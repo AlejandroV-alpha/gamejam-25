@@ -50,10 +50,10 @@ MonoBehaviour:
   timeToDestroy: 5
   damage: 1
   knockbackForce: 0
-  collisionMask:
+  validImpactLayers:
     serializedVersion: 2
     m_Bits: 0
-  energyAmount: 10
+  energyAmount: 5
 --- !u!212 &5435606033240852680
 SpriteRenderer:
   m_ObjectHideFlags: 0
