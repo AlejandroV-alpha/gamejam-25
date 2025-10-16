@@ -53,7 +53,7 @@ MonoBehaviour:
   validImpactLayers:
     serializedVersion: 2
     m_Bits: 0
-  energyAmount: 5
+  energyAmount: 10
 --- !u!212 &5435606033240852680
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -23,4 +23,12 @@ public class EnergyBullet : BaseBullet
         Destroy(gameObject);
     }
     #endregion
+
+    #region Utilities
+    public override float GetEnergyCost()
+    {
+        return energyAmount;
+    }
+    #endregion
+
 }

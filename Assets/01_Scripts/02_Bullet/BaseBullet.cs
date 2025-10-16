@@ -82,6 +82,11 @@ public abstract class BaseBullet : MonoBehaviour
     #endregion
 
     #region Utilities
+    public virtual float GetEnergyCost()
+    {
+        return 0f;
+    }
+
     /// <summary>
     /// Permite instanciar efectos de impacto (particulas, sonido, etc)
     /// </summary>

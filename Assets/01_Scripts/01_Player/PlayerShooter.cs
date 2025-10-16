@@ -16,10 +16,6 @@ public class PlayerShooter : MonoBehaviour
     [Tooltip("Orden: 0 = COMMON, 1 = ENERGY")]
     [SerializeField] GameObject[] bulletPrefabs;
 
-    [Header("Energy Cost")]
-    [SerializeField] float energyCostPerEnergyBullet = 5f;
-
-
     int currentBulletIndex = 0;
     float timer = 0f;
     bool canShoot = true;
@@ -59,7 +55,7 @@ public class PlayerShooter : MonoBehaviour
     }
 
     /// <summary>
-    /// Detecta la tecla de disparo, verifica munición y recarga,
+    /// Detecta la tecla de disparo, comprueba la municion y recarga.
     /// y dispara la bala correspondiente si se cumplen las condiciones.
     /// </summary>
     void HandleShootInput()
@@ -74,18 +70,28 @@ public class PlayerShooter : MonoBehaviour
             if (playerAmmo.TryConsumeAmmo(currentBulletIndex))
             {
                 GameObject prefab = GetCurrentBulletPrefab();
-                // Si la bala es de tipo ENERGY, se resta energía al jugador
-                if (prefab != null && prefab.GetComponent<EnergyBullet>() != null && playerHealth != null)
-                {
-                    playerHealth.TakeDamage(energyCostPerEnergyBullet, Vector2.zero);
-                }
 
-                ShootBullet(prefab);
-                canShoot = false;
+                if (prefab != null)
+                {
+                    BaseBullet bulletData = prefab.GetComponent<BaseBullet>();
+
+                    // Pregunta a la bala si requiere energía para dispararse.
+                    if (bulletData != null && playerHealth != null)
+                    {
+                        float energyCost = bulletData.GetEnergyCost();
+                        if (energyCost > 0f)
+                        {
+                            playerHealth.TakeDamage(energyCost, Vector2.zero);
+                        }
+                    }
+
+                    ShootBullet(prefab);
+                    canShoot = false;
+                }
             }
             else
             {
-                // Si no pudo disparar (sin munición), playerAmmo habrá iniciado recarga automática.
+                // Si no pudo disparar (sin munición), playerAmmo habrá iniciado recarga automática. 
                 // Aquí podrías reproducir un sonido "click".
             }
         }
