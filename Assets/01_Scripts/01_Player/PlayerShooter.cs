@@ -75,9 +75,9 @@ public class PlayerShooter : MonoBehaviour
             {
                 GameObject prefab = GetCurrentBulletPrefab();
                 // Si la bala es de tipo ENERGY, se resta energía al jugador
-                if (prefab != null && prefab.GetComponent<BulletEnergy>() != null && playerHealth != null)
+                if (prefab != null && prefab.GetComponent<EnergyBullet>() != null && playerHealth != null)
                 {
-                    playerHealth.TakeDamage(energyCostPerEnergyBullet, Vector2.zero, 0f);
+                    playerHealth.TakeDamage(energyCostPerEnergyBullet, Vector2.zero);
                 }
 
                 ShootBullet(prefab);
@@ -114,12 +114,11 @@ public class PlayerShooter : MonoBehaviour
 
         GameObject instance = Instantiate(prefab, firePoint.position, firePoint.rotation);
 
-        //BulletBase bulletComp = instance.GetComponent<BulletBase>();
-        //if (bulletComp != null)
-        //{
-        //    // Nota: uso firePoint.up para que tu rotación actual siga funcionando como antes.
-        //    bulletComp.Initialize(firePoint.up);
-        //}
+        BaseBullet bulletComp = instance.GetComponent<BaseBullet>();
+        if (bulletComp != null)
+        {
+            bulletComp.Launch(firePoint.up);
+        }
     }
     #endregion
 
@@ -159,13 +158,4 @@ public class PlayerShooter : MonoBehaviour
     }
     #endregion
 
-}
-
-/// <summary>
-/// Define los tipos de bala que puede disparar el jugador.
-/// </summary>
-public enum BulletMode
-{
-    COMMON,
-    ENERGY
 }

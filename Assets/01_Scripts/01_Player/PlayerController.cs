@@ -52,8 +52,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void ApplyMovement(float speed)
     {
-        Vector2 moveDir = transform.up * speed;
-        rb.MovePosition(rb.position + (moveDir + impactVelocity) * Time.fixedDeltaTime);
+        // Movimiento en la dirección del tanque
+        Vector2 moveDir = transform.up * currentMoveSpeed;
+
+        // Aplicar knockback/impacto sumando a la velocidad
+        rb.linearVelocity = moveDir + impactVelocity;
     }
 
     /// <summary>

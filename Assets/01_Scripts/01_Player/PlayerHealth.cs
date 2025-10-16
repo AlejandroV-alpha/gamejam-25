@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class PlayerHealth : MonoBehaviour, ITakeDamage
+public class PlayerHealth : MonoBehaviour, ITakeDamage, ITakeEnergy
 {
     [Header("Health (Energy) Settings")]
     [SerializeField] float maxEnergy = 300f;
@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     #region Energy Consumption
     /// <summary>
-    /// Reduce la energía del jugador mientras se mueve o rota.
+    /// Reduce la energia del jugador mientras se mueve o rota
     /// </summary>
     void HandleEnergyDrain()
     {
@@ -40,13 +40,13 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         float currentRotateSpeed = Mathf.Abs(playerController.GetCurrentRotateSpeed());
         float totalEnergyLoss = 0f;
 
-        // Drena energía por movimiento
+        // Drena energia por movimiento
         if (currentSpeed > minSpeedToDrain)
         {
             totalEnergyLoss += movementEnergyDrain * Time.deltaTime;
         }
 
-        // Drena energía por rotación
+        // Drena energia por rotacion
         if (currentRotateSpeed > minRotateSpeedToDrain)
         {
             totalEnergyLoss += rotationEnergyDrain * Time.deltaTime;
@@ -54,25 +54,18 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
         if (totalEnergyLoss > 0f)
         {
-            currentEnergy = Mathf.Max(currentEnergy - totalEnergyLoss, 0f);
-
-            if (currentEnergy <= 0f)
-            {
-                HandleDeath();
-            }
+            ChangeEnergy(-totalEnergyLoss);
         }
     }
-    #endregion
 
-    #region Apply Damage and Die
     /// <summary>
-    /// Aplica daño al jugador y un empuje en la dirección del impacto.
+    /// Cambia la energia actual del jugador aplicando un monto positivo o negativo
+    /// Controla que la energia se mantenga entre 0 y maxEnergy y maneja la muerte si llega a 0
     /// </summary>
-    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackStrength)
+    /// <param name="amount">Cantidad a sumar (positiva) o restar (negativa)</param>
+    private void ChangeEnergy(float amount)
     {
-        currentEnergy -= damage;
-        playerController.ApplyKnockback(hitDirection, knockbackStrength);
-
+        currentEnergy = Mathf.Clamp(currentEnergy + amount, 0f, maxEnergy);
         if (currentEnergy <= 0f)
         {
             HandleDeath();
@@ -80,7 +73,30 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     }
 
     /// <summary>
-    /// Gestiona la muerte del jugador (puede expandirse para efectos, respawn, etc.).
+    /// Recibe energía y la aplica al jugador.
+    /// </summary>
+    /// <param name="amount">Cantidad de energia a recibir</param>
+    public void ReceiveEnergy(float amount)
+    {
+        if (amount > 0f)
+        {
+            ChangeEnergy(amount);
+        }
+    }
+    #endregion
+
+    #region Apply Damage and Die
+    /// <summary>
+    /// Aplica dano al jugador y un empuje en la direccion del impacto
+    /// </summary>
+    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackStrength = 0)
+    {
+        ChangeEnergy(-damage);
+        playerController.ApplyKnockback(hitDirection, knockbackStrength);
+    }
+
+    /// <summary>
+    /// Gestiona la muerte del jugador (puede expandirse para efectos, respawn, etc)
     /// </summary>
     void HandleDeath()
     {

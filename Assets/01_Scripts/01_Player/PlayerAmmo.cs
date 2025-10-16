@@ -11,7 +11,7 @@ public class PlayerAmmo : MonoBehaviour
     [Header("Keys")]
     [SerializeField] KeyCode reloadKey = KeyCode.R;
 
-    [SerializeField] int[] currentAmmoPerType;
+    int[] currentAmmoPerType;
     bool isReloading = false;
 
     PlayerShooter playerShooter;
