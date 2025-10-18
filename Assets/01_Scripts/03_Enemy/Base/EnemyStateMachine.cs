@@ -7,7 +7,9 @@ public class EnemyStateMachine
 {
     public EnemyState CurrentState { get; private set; } = EnemyState.Idle;
 
-    /// <summary>Cambia al nuevo estado si es distinto al actual.</summary>
+    /// <summary>
+    /// Cambia al nuevo estado si es distinto al actual.
+    /// </summary>
     public void ChangeState(EnemyState newState)
     {
         if (newState != CurrentState)
@@ -16,14 +18,18 @@ public class EnemyStateMachine
         }  
     }
 
-    /// <summary>Verifica si el enemigo está en cierto estado.</summary>
+    /// <summary>
+    /// Verifica si el enemigo está en cierto estado.
+    /// </summary>
     public bool IsInState(EnemyState state)
     {
         return CurrentState == state;
     }
 }
 
-/// <summary>Estados posibles de un enemigo.</summary>
+/// <summary>
+/// Estados posibles de un enemigo.
+/// </summary>
 public enum EnemyState
 {
     Idle,
