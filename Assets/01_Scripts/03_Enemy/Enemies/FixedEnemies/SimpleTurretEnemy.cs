@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Enemigo fijo que rota hacia el jugador y dispara cuando este entra en su rango de ataque.
 /// Se pone en alerta cuando el jugador entra en un rango mayor.
-/// Usa IShooter para manejar disparos.
+/// Usa IShooter para manejar disparos y respeta obstaculos.
 /// </summary>
 [RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
@@ -12,6 +12,9 @@ public class SimpleTurretEnemy : BaseEnemy
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
+
+    [Header("Obstacle Settings")]
+    [SerializeField] LayerMask obstacleLayer;
     #endregion
 
     #region Private Fields
@@ -107,7 +110,8 @@ public class SimpleTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y actualiza currentTarget y playerDistance.
+    /// Detecta al jugador dentro del rango de alerta, actualiza currentTarget y playerDistance.
+    /// Considera obstáculos que bloqueen la visión.
     /// </summary>
     void UpdateDetection()
     {
@@ -115,9 +119,25 @@ public class SimpleTurretEnemy : BaseEnemy
 
         if (hit != null)
         {
-            currentTarget = hit.transform;
-            playerDistance = Vector2.Distance(transform.position, currentTarget.position);
-            UpdateRotation();
+            Vector2 direction = (hit.transform.position - transform.position).normalized;
+            float distance = Vector2.Distance(transform.position, hit.transform.position);
+
+            // Raycast para detectar si hay obstáculos
+            RaycastHit2D rayHit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayer | playerLayer);
+            if (rayHit.collider != null && ((1 << rayHit.collider.gameObject.layer) & playerLayer) != 0)
+            {
+                // Jugador visible
+                currentTarget = hit.transform;
+                playerDistance = distance;
+                UpdateRotation();
+            }
+            else
+            {
+                // Jugador bloqueado por obstáculo
+                currentTarget = null;
+                playerDistance = 0f;
+                ClearRotation();
+            }
         }
         else
         {

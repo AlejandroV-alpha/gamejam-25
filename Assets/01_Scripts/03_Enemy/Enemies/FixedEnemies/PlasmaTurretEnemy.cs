@@ -2,9 +2,9 @@ using UnityEngine;
 
 /// <summary>
 /// Torreta de plasma fija que dispara 3 balas en abanico.
-/// Se sobrecalienta tras un número de ráfagas y se enfría después de un tiempo.
+/// Se sobrecalienta tras un numero de rafagas y se enfria despues de un tiempo.
 /// Apunta al jugador al entrar en rango de alerta y dispara al entrar en rango de ataque.
-/// Usa IShooter para manejar disparos.
+/// Usa IShooter para manejar disparos y respeta obstaculos.
 /// </summary>
 [RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
@@ -13,6 +13,9 @@ public class PlasmaTurretEnemy : BaseEnemy
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
+
+    [Header("Obstacle Settings")]
+    [SerializeField] LayerMask obstacleLayer;
     #endregion
 
     #region Private Fields
@@ -110,15 +113,30 @@ public class PlasmaTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y actualiza currentTarget y playerDistance.
+    /// Detecta al jugador dentro del rango de alerta, actualiza currentTarget y playerDistance.
+    /// Considera obstáculos que bloqueen la visión.
     /// </summary>
     void UpdateDetection()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, playerLayer);
         if (hit != null)
         {
-            currentTarget = hit.transform;
-            playerDistance = Vector2.Distance(transform.position, currentTarget.position);
+            Vector2 direction = (hit.transform.position - transform.position).normalized;
+            float distance = Vector2.Distance(transform.position, hit.transform.position);
+
+            // Raycast para detectar obstáculos
+            RaycastHit2D rayHit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayer | playerLayer);
+            if (rayHit.collider != null && ((1 << rayHit.collider.gameObject.layer) & playerLayer) != 0)
+            {
+                currentTarget = hit.transform;
+                playerDistance = distance;
+            }
+            else
+            {
+                currentTarget = null;
+                playerDistance = 0f;
+                ClearRotation();
+            }
         }
         else
         {
