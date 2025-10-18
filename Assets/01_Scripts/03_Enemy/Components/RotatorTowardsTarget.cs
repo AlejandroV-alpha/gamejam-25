@@ -4,7 +4,7 @@ using UnityEngine;
 /// Componente que rota suavemente un objeto hacia un objetivo.
 /// Si no hay objetivo, vuelve a su rotacion inicial.
 /// </summary>
-public class RotatorTowardsTarget : MonoBehaviour, IRotatable
+public class RotatorTowardsTarget : MonoBehaviour
 {
     #region Inspector Variables
     [SerializeField] float rotateSpeed = 180f;
