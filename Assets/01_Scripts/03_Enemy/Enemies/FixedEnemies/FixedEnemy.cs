@@ -101,18 +101,4 @@ public abstract class FixedEnemy : BaseEnemy
         rotatorTowardsTarget.ClearTarget();
     }
     #endregion
-
-    #region Debug Gizmos
-    /// <summary>
-    /// Dibuja los rangos de alerta y ataque en el editor.
-    /// </summary>
-    protected void DrawRanges()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, alertRange);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
-    #endregion
 }

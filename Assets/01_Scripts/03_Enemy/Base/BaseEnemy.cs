@@ -136,5 +136,20 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy, ITakeDamage
         Destroy(gameObject);
     }
     #endregion
+
+    #region Debug Gizmos
+    /// <summary>
+    /// Draws alert and attack ranges in the editor.
+    /// </summary>
+    protected void DrawRanges()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, alertRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+    #endregion
+
 }
 
