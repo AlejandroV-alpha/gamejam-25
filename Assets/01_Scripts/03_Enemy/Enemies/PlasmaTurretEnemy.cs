@@ -1,13 +1,13 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemigo fijo que rota hacia el jugador y dispara cuando este entra en su rango de ataque.
-/// Se pone en alerta cuando el jugador entra en un rango mayor.
-/// Usa los componentes RangedAttack y RotatorTowardsTarget.
+/// Torreta de plasma fija que dispara 3 balas en forma de abanico.
+/// Se sobrecalienta tras un numero de rafagas y se enfria despues de un tiempo.
+/// Apunta al jugador al entrar en rango de alerta y dispara al entrar en rango de ataque.
 /// </summary>
-[RequireComponent(typeof(RangedAttack))]
+[RequireComponent(typeof(RangedAttackTriple))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
-public class SimpleTurretEnemy : BaseEnemy
+public class PlasmaTurretEnemy : BaseEnemy
 {
     #region Inspector Variables
     [Header("Detection Settings")]
@@ -15,7 +15,7 @@ public class SimpleTurretEnemy : BaseEnemy
     #endregion
 
     #region Fields
-    RangedAttack rangedAttack;
+    RangedAttackTriple rangedAttack;
     RotatorTowardsTarget rotatorTowardsTarget;
     Transform currentTarget;
     float playerDistance;
@@ -25,14 +25,8 @@ public class SimpleTurretEnemy : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        rangedAttack = GetComponent<RangedAttack>();
+        rangedAttack = GetComponent<RangedAttackTriple>();
         rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
-    }
-
-    protected override void Update()
-    {
-        UpdateDetection();
-        base.Update();
     }
     #endregion
 
@@ -42,6 +36,8 @@ public class SimpleTurretEnemy : BaseEnemy
     /// </summary>
     protected override void IdleBehaviour()
     {
+        UpdateDetection();
+
         if (currentTarget != null)
         {
             stateMachine.ChangeState(EnemyState.Alert);
@@ -53,6 +49,8 @@ public class SimpleTurretEnemy : BaseEnemy
     /// </summary>
     protected override void AlertBehaviour()
     {
+        UpdateDetection();
+
         if (currentTarget != null)
         {
             UpdateRotation();
@@ -71,9 +69,12 @@ public class SimpleTurretEnemy : BaseEnemy
 
     /// <summary>
     /// Comportamiento en estado Attack: dispara al jugador si esta en rango.
+    /// Considera sobrecalentamiento.
     /// </summary>
     protected override void AttackBehaviour()
     {
+        UpdateDetection();
+
         if (currentTarget != null)
         {
             UpdateRotation();
@@ -108,8 +109,7 @@ public class SimpleTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y calcula la distancia.
-    /// Actualiza currentTarget y playerDistance.
+    /// Detecta al jugador dentro del rango de alerta usando un solo OverlapCircle y calcula distancia.
     /// </summary>
     void UpdateDetection()
     {
@@ -119,7 +119,6 @@ public class SimpleTurretEnemy : BaseEnemy
         {
             currentTarget = hit.transform;
             playerDistance = Vector2.Distance(transform.position, currentTarget.position);
-            UpdateRotation();
         }
         else
         {

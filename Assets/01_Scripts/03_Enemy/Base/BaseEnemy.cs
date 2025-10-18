@@ -11,8 +11,8 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy
     #region Inspector Variables
     [Header("Base Stats")]
     [SerializeField] protected float maxHealth = 100f;
-    [SerializeField] protected float alertRange = 8f; // rango para alerta
-    [SerializeField] protected float attackRange = 6f; // rango para disparo
+    [SerializeField] protected float alertRange = 6f; // rango para alerta
+    [SerializeField] protected float attackRange = 4f; // rango para disparo
     #endregion
 
     #region Protected Fields
@@ -74,7 +74,9 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy
     protected virtual void UpdateTargetState()
     {
         if (Target == null)
+        {
             return;
+        }
 
         float distance = Vector2.Distance(transform.position, Target.position);
 
@@ -135,3 +137,4 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy
     }
     #endregion
 }
+

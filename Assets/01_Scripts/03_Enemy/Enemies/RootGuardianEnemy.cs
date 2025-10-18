@@ -1,21 +1,24 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemigo fijo que rota hacia el jugador y dispara cuando este entra en su rango de ataque.
-/// Se pone en alerta cuando el jugador entra en un rango mayor.
-/// Usa los componentes RangedAttack y RotatorTowardsTarget.
+/// Enemigo fijo tipo Guardian Raiz.
+/// Se oculta visualmente en Idle, emerge en Alert y dispara rafagas circulares en Attack.
+/// Apunta al jugador mientras esta emergido.
 /// </summary>
-[RequireComponent(typeof(RangedAttack))]
+[RequireComponent(typeof(RangedAttackCircular))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
-public class SimpleTurretEnemy : BaseEnemy
+public class RootGuardianEnemy : BaseEnemy
 {
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
+
+    [Header("Visual Settings")]
+    [SerializeField] Transform visualChild; // Asignar el sprite square o prefab visual
     #endregion
 
     #region Fields
-    RangedAttack rangedAttack;
+    RangedAttackCircular rangedAttack;
     RotatorTowardsTarget rotatorTowardsTarget;
     Transform currentTarget;
     float playerDistance;
@@ -25,25 +28,24 @@ public class SimpleTurretEnemy : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        rangedAttack = GetComponent<RangedAttack>();
+        rangedAttack = GetComponent<RangedAttackCircular>();
         rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
-    }
-
-    protected override void Update()
-    {
-        UpdateDetection();
-        base.Update();
+        HideVisuals(); // Inicialmente oculto visual
     }
     #endregion
 
     #region Behaviour Overrides
     /// <summary>
-    /// Comportamiento en estado Idle: detecta jugador y cambia a alerta si es necesario.
+    /// Comportamiento en estado Idle: oculta el enemigo y detecta jugador.
     /// </summary>
     protected override void IdleBehaviour()
     {
+        HideVisuals();
+        UpdateDetection();
+
         if (currentTarget != null)
         {
+            ShowVisuals(); // Emerger
             stateMachine.ChangeState(EnemyState.Alert);
         }
     }
@@ -53,6 +55,8 @@ public class SimpleTurretEnemy : BaseEnemy
     /// </summary>
     protected override void AlertBehaviour()
     {
+        UpdateDetection();
+
         if (currentTarget != null)
         {
             UpdateRotation();
@@ -64,16 +68,18 @@ public class SimpleTurretEnemy : BaseEnemy
         }
         else
         {
-            ClearRotation();
+            HideVisuals(); // Ocultarse
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Attack: dispara al jugador si esta en rango.
+    /// Comportamiento en estado Attack: dispara rafaga circular si jugador esta en rango.
     /// </summary>
     protected override void AttackBehaviour()
     {
+        UpdateDetection();
+
         if (currentTarget != null)
         {
             UpdateRotation();
@@ -92,7 +98,7 @@ public class SimpleTurretEnemy : BaseEnemy
         }
         else
         {
-            ClearRotation();
+            HideVisuals();
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
@@ -108,8 +114,7 @@ public class SimpleTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y calcula la distancia.
-    /// Actualiza currentTarget y playerDistance.
+    /// Detecta al jugador dentro del rango de alerta y calcula distancia.
     /// </summary>
     void UpdateDetection()
     {
@@ -119,7 +124,6 @@ public class SimpleTurretEnemy : BaseEnemy
         {
             currentTarget = hit.transform;
             playerDistance = Vector2.Distance(transform.position, currentTarget.position);
-            UpdateRotation();
         }
         else
         {
@@ -139,13 +143,40 @@ public class SimpleTurretEnemy : BaseEnemy
             rotatorTowardsTarget.SetTarget(currentTarget);
         }
     }
-
     /// <summary>
     /// Limpia la rotacion si no hay jugador.
     /// </summary>
     void ClearRotation()
     {
         rotatorTowardsTarget.ClearTarget();
+    }
+    #endregion
+
+    #region Visual Control
+    /// <summary>
+    /// Activa la visibilidad del enemigo.
+    /// Aqui se puede agregar trigger de Animator para animacion de "emergir"
+    /// </summary>
+    void ShowVisuals()
+    {
+        if (visualChild != null)
+        {
+            visualChild.gameObject.SetActive(true);
+        }
+            
+    }
+
+    /// <summary>
+    /// Oculta el enemigo.
+    /// Aqui se puede agregar trigger de Animator para animacion de "ocultarse"
+    /// </summary>
+    void HideVisuals()
+    {
+        if (visualChild != null)
+        {
+            visualChild.gameObject.SetActive(false);
+        }
+            
     }
     #endregion
 
