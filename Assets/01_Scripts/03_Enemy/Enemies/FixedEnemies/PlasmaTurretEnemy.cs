@@ -1,21 +1,22 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemigo fijo que rota hacia el jugador y dispara cuando este entra en su rango de ataque.
-/// Se pone en alerta cuando el jugador entra en un rango mayor.
-/// Usa los componentes RangedAttack y RotatorTowardsTarget.
+/// Torreta de plasma fija que dispara 3 balas en abanico.
+/// Se sobrecalienta tras un número de ráfagas y se enfría después de un tiempo.
+/// Apunta al jugador al entrar en rango de alerta y dispara al entrar en rango de ataque.
+/// Usa IShooter para manejar disparos.
 /// </summary>
-[RequireComponent(typeof(RangedAttack))]
+[RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
-public class SimpleTurretEnemy : BaseEnemy
+public class PlasmaTurretEnemy : BaseEnemy
 {
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
     #endregion
 
-    #region Fields
-    RangedAttack rangedAttack;
+    #region Private Fields
+    IShooter shooter;
     RotatorTowardsTarget rotatorTowardsTarget;
     Transform currentTarget;
     float playerDistance;
@@ -25,7 +26,7 @@ public class SimpleTurretEnemy : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        rangedAttack = GetComponent<RangedAttack>();
+        shooter = GetComponent<IShooter>();
         rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
     }
 
@@ -42,6 +43,7 @@ public class SimpleTurretEnemy : BaseEnemy
     /// </summary>
     protected override void IdleBehaviour()
     {
+        UpdateDetection();
         if (currentTarget != null)
         {
             stateMachine.ChangeState(EnemyState.Alert);
@@ -49,14 +51,14 @@ public class SimpleTurretEnemy : BaseEnemy
     }
 
     /// <summary>
-    /// Comportamiento en estado Alert: apunta al jugador y cambia a ataque si esta en rango.
+    /// Comportamiento en estado Alert: apunta al jugador y cambia a ataque si está en rango.
     /// </summary>
     protected override void AlertBehaviour()
     {
+        UpdateDetection();
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
                 stateMachine.ChangeState(EnemyState.Attack);
@@ -70,19 +72,19 @@ public class SimpleTurretEnemy : BaseEnemy
     }
 
     /// <summary>
-    /// Comportamiento en estado Attack: dispara al jugador si esta en rango.
+    /// Comportamiento en estado Attack: dispara al jugador si está en rango considerando sobrecalentamiento.
     /// </summary>
     protected override void AttackBehaviour()
     {
+        UpdateDetection();
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
-                if (rangedAttack.CanShoot())
+                if (shooter != null && shooter.CanShoot())
                 {
-                    rangedAttack.Shoot();
+                    shooter.Shoot();
                 }
             }
             else
@@ -108,18 +110,15 @@ public class SimpleTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y calcula la distancia.
-    /// Actualiza currentTarget y playerDistance.
+    /// Detecta al jugador dentro del rango de alerta y actualiza currentTarget y playerDistance.
     /// </summary>
     void UpdateDetection()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, playerLayer);
-
         if (hit != null)
         {
             currentTarget = hit.transform;
             playerDistance = Vector2.Distance(transform.position, currentTarget.position);
-            UpdateRotation();
         }
         else
         {
@@ -130,7 +129,7 @@ public class SimpleTurretEnemy : BaseEnemy
     }
 
     /// <summary>
-    /// Actualiza la rotacion hacia el jugador.
+    /// Actualiza la rotación hacia el jugador.
     /// </summary>
     void UpdateRotation()
     {
@@ -141,7 +140,7 @@ public class SimpleTurretEnemy : BaseEnemy
     }
 
     /// <summary>
-    /// Limpia la rotacion si no hay jugador.
+    /// Limpia la rotación si no hay jugador.
     /// </summary>
     void ClearRotation()
     {

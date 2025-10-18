@@ -1,21 +1,25 @@
 using UnityEngine;
 
 /// <summary>
-/// Torreta de plasma fija que dispara 3 balas en forma de abanico.
-/// Se sobrecalienta tras un numero de rafagas y se enfria despues de un tiempo.
-/// Apunta al jugador al entrar en rango de alerta y dispara al entrar en rango de ataque.
+/// Enemigo fijo tipo Guardian Raiz.
+/// Se oculta visualmente en Idle, emerge en Alert y dispara rafagas circulares en Attack.
+/// Apunta al jugador mientras esta emergido.
+/// Usa IShooter para manejar disparos.
 /// </summary>
-[RequireComponent(typeof(RangedAttackTriple))]
+[RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
-public class PlasmaTurretEnemy : BaseEnemy
+public class RootGuardianEnemy : BaseEnemy
 {
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
+
+    [Header("Visual Settings")]
+    [SerializeField] Transform visualChild;
     #endregion
 
-    #region Fields
-    RangedAttackTriple rangedAttack;
+    #region Private Fields
+    IShooter shooter;
     RotatorTowardsTarget rotatorTowardsTarget;
     Transform currentTarget;
     float playerDistance;
@@ -25,21 +29,29 @@ public class PlasmaTurretEnemy : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        rangedAttack = GetComponent<RangedAttackTriple>();
+        shooter = GetComponent<IShooter>();
         rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
+        HideVisuals();
+    }
+
+    protected override void Update()
+    {
+        UpdateDetection();
+        base.Update();
     }
     #endregion
 
     #region Behaviour Overrides
     /// <summary>
-    /// Comportamiento en estado Idle: detecta jugador y cambia a alerta si es necesario.
+    /// Comportamiento en estado Idle: oculta el enemigo y detecta jugador.
     /// </summary>
     protected override void IdleBehaviour()
     {
+        HideVisuals();
         UpdateDetection();
-
         if (currentTarget != null)
         {
+            ShowVisuals();
             stateMachine.ChangeState(EnemyState.Alert);
         }
     }
@@ -50,11 +62,9 @@ public class PlasmaTurretEnemy : BaseEnemy
     protected override void AlertBehaviour()
     {
         UpdateDetection();
-
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
                 stateMachine.ChangeState(EnemyState.Attack);
@@ -62,28 +72,25 @@ public class PlasmaTurretEnemy : BaseEnemy
         }
         else
         {
-            ClearRotation();
+            HideVisuals();
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Attack: dispara al jugador si esta en rango.
-    /// Considera sobrecalentamiento.
+    /// Comportamiento en estado Attack: dispara rafaga circular si jugador esta en rango.
     /// </summary>
     protected override void AttackBehaviour()
     {
         UpdateDetection();
-
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
-                if (rangedAttack.CanShoot())
+                if (shooter != null && shooter.CanShoot())
                 {
-                    rangedAttack.Shoot();
+                    shooter.Shoot();
                 }
             }
             else
@@ -93,7 +100,7 @@ public class PlasmaTurretEnemy : BaseEnemy
         }
         else
         {
-            ClearRotation();
+            HideVisuals();
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
@@ -109,12 +116,11 @@ public class PlasmaTurretEnemy : BaseEnemy
 
     #region Detection y Rotation
     /// <summary>
-    /// Detecta al jugador dentro del rango de alerta usando un solo OverlapCircle y calcula distancia.
+    /// Detecta al jugador dentro del rango de alerta y actualiza currentTarget y playerDistance.
     /// </summary>
     void UpdateDetection()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, playerLayer);
-
         if (hit != null)
         {
             currentTarget = hit.transform;
@@ -145,6 +151,30 @@ public class PlasmaTurretEnemy : BaseEnemy
     void ClearRotation()
     {
         rotatorTowardsTarget.ClearTarget();
+    }
+    #endregion
+
+    #region Visual Control
+    /// <summary>
+    /// Activa la visibilidad del enemigo.
+    /// </summary>
+    void ShowVisuals()
+    {
+        if (visualChild != null)
+        {
+            visualChild.gameObject.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Oculta el enemigo.
+    /// </summary>
+    void HideVisuals()
+    {
+        if (visualChild != null)
+        {
+            visualChild.gameObject.SetActive(false);
+        }
     }
     #endregion
 

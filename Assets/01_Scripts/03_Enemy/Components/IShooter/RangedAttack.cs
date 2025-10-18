@@ -7,36 +7,39 @@ using UnityEngine;
 public class RangedAttack : MonoBehaviour, IShooter
 {
     #region Inspector Variables
+    [Header("Bullet Settings")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
-    [SerializeField] float timeBtwShoot = 1f;
+
+    [Header("Attack Settings")]
+    [SerializeField] float cooldownBetweenShots = 1f;
     #endregion
 
     #region Private Fields
-    float shotTimer = 0f;
     bool canShoot = true;
+    float shotTimer = 0f;
     #endregion
 
     #region Unity Methods
     void Update()
     {
-        UpdateShootTimer();
+        UpdateCooldown();
     }
     #endregion
 
     #region Timer Logic
     /// <summary>
-    /// Controla el tiempo de espera entre disparos.
+    /// Maneja el cooldown entre disparos.
     /// </summary>
-    void UpdateShootTimer()
+    void UpdateCooldown()
     {
         if (!canShoot)
         {
             shotTimer += Time.deltaTime;
-            if (shotTimer >= timeBtwShoot)
+            if (shotTimer >= cooldownBetweenShots)
             {
-                shotTimer = 0f;
                 canShoot = true;
+                shotTimer = 0f;
             }
         }
     }
@@ -44,7 +47,7 @@ public class RangedAttack : MonoBehaviour, IShooter
 
     #region Shooting Logic
     /// <summary>
-    /// Dispara el proyectil asignado hacia la dirección del firePoint.
+    /// Dispara la bala hacia la direccion del firePoint.
     /// </summary>
     public void Shoot()
     {
@@ -54,18 +57,23 @@ public class RangedAttack : MonoBehaviour, IShooter
         }
 
         GameObject instance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
         BaseBullet bulletComp = instance.GetComponent<BaseBullet>();
         if (bulletComp != null)
         {
             bulletComp.Launch(firePoint.up);
         }
+
         canShoot = false;
     }
     #endregion
 
+    #region Public Methods
+    /// <summary>
+    /// Retorna si puede disparar.
+    /// </summary>
     public bool CanShoot()
     {
         return canShoot;
     }
+    #endregion
 }

@@ -1,42 +1,45 @@
 using UnityEngine;
 
 /// <summary>
-/// Controla el disparo circular de un enemigo, disparando varias balas en 360 grados.
-/// Implementa cooldown entre cada ráfaga.
+/// Componente que dispara balas en 360 grados.
+/// Implementa cooldown entre rafagas.
 /// </summary>
-public class RangedAttackCircular : MonoBehaviour
+public class RangedAttackCircular : MonoBehaviour, IShooter
 {
     #region Inspector Variables
+    [Header("Bullet Settings")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
-    [SerializeField] int numProjectiles = 8;
-    [SerializeField] float timeBtwShots = 5f;
+
+    [Header("Burst Settings")]
+    [SerializeField] int bulletsPerBurst = 8;
+    [SerializeField] float cooldownBetweenBursts = 5f;
     #endregion
 
     #region Private Fields
-    float shotTimer = 0f;
     bool canShoot = true;
+    float burstCooldownTimer = 0f;
     #endregion
 
     #region Unity Methods
     void Update()
     {
-        UpdateShootTimer();
+        UpdateBurstCooldown();
     }
     #endregion
 
     #region Timer Logic
     /// <summary>
-    /// Controla el tiempo de espera entre cada ráfaga de disparo.
+    /// Maneja el cooldown entre rafagas.
     /// </summary>
-    void UpdateShootTimer()
+    void UpdateBurstCooldown()
     {
         if (!canShoot)
         {
-            shotTimer += Time.deltaTime;
-            if (shotTimer >= timeBtwShots)
+            burstCooldownTimer += Time.deltaTime;
+            if (burstCooldownTimer >= cooldownBetweenBursts)
             {
-                shotTimer = 0f;
+                burstCooldownTimer = 0f;
                 canShoot = true;
             }
         }
@@ -45,7 +48,7 @@ public class RangedAttackCircular : MonoBehaviour
 
     #region Shooting Logic
     /// <summary>
-    /// Dispara las balas distribuidas uniformemente en círculo desde firePoint.
+    /// Dispara las balas en 360 grados uniformemente.
     /// </summary>
     public void Shoot()
     {
@@ -54,17 +57,17 @@ public class RangedAttackCircular : MonoBehaviour
             return;
         }
 
-        float angleStep = 360f / numProjectiles;
+        float angleStep = 360f / bulletsPerBurst;
         float angle = 0f;
 
-        for (int i = 0; i < numProjectiles; i++)
+        for (int i = 0; i < bulletsPerBurst; i++)
         {
-            Vector2 dir = new Vector2(
+            Vector2 direction = new Vector2(
                 Mathf.Cos(Mathf.Deg2Rad * angle),
                 Mathf.Sin(Mathf.Deg2Rad * angle)
             );
 
-            LaunchBullet(dir);
+            FireBullet(direction);
             angle += angleStep;
         }
 
@@ -72,20 +75,23 @@ public class RangedAttackCircular : MonoBehaviour
     }
 
     /// <summary>
-    /// Instancia la bala y llama a Launch con la direccion adecuada.
+    /// Instancia la bala y la lanza en la direccion indicada.
     /// </summary>
-    void LaunchBullet(Vector2 dir)
+    void FireBullet(Vector2 direction)
     {
         GameObject instance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         BaseBullet bulletComp = instance.GetComponent<BaseBullet>();
         if (bulletComp != null)
         {
-            bulletComp.Launch(dir);
+            bulletComp.Launch(direction);
         }
     }
     #endregion
 
     #region Public Methods
+    /// <summary>
+    /// Retorna si puede disparar una nueva rafaga.
+    /// </summary>
     public bool CanShoot()
     {
         return canShoot;

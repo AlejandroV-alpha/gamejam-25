@@ -1,9 +1,10 @@
 using UnityEngine;
 
 /// <summary>
-/// Controla el disparo triple de una torreta, con sobrecalentamiento.
+/// Componente que dispara tres balas en abanico y maneja sobrecalentamiento.
+/// Implementa la interfaz IShooter.
 /// </summary>
-public class RangedAttackTriple : MonoBehaviour
+public class RangedAttackTriple : MonoBehaviour, IShooter
 {
     #region Inspector Variables
     [Header("Bullet Settings")]
@@ -12,21 +13,21 @@ public class RangedAttackTriple : MonoBehaviour
     [SerializeField] float spreadAngle = 45f;
 
     [Header("Attack Settings")]
-    [SerializeField] float timeBtwShoots = 1f;
-    [SerializeField] int maxRafagas = 4;
+    [SerializeField] float cooldownBetweenShots = 1f;
+    [SerializeField] int maxBursts = 4;
     [SerializeField] float overheatCooldown = 3f;
     #endregion
 
-    #region Fields
-    float lastShootTime;
-    int currentRafagas;
+    #region Private Fields
+    float lastShotTime;
+    int burstsFired;
     bool isOverheated;
     float overheatTimer;
     #endregion
 
     #region Public Methods
     /// <summary>
-    /// Verifica si puede disparar considerando sobrecalentamiento y tiempo entre disparos.
+    /// Retorna si puede disparar considerando cooldown y sobrecalentamiento.
     /// </summary>
     public bool CanShoot()
     {
@@ -36,7 +37,7 @@ public class RangedAttackTriple : MonoBehaviour
             if (overheatTimer >= overheatCooldown)
             {
                 isOverheated = false;
-                currentRafagas = 0;
+                burstsFired = 0;
                 overheatTimer = 0f;
             }
             else
@@ -45,7 +46,7 @@ public class RangedAttackTriple : MonoBehaviour
             }
         }
 
-        if (Time.time - lastShootTime >= timeBtwShoots)
+        if (Time.time - lastShotTime >= cooldownBetweenShots)
         {
             return true;
         }
@@ -54,7 +55,7 @@ public class RangedAttackTriple : MonoBehaviour
     }
 
     /// <summary>
-    /// Dispara 3 balas en forma de abanico y maneja sobrecalentamiento.
+    /// Dispara tres balas en abanico y maneja sobrecalentamiento.
     /// </summary>
     public void Shoot()
     {
@@ -63,35 +64,33 @@ public class RangedAttackTriple : MonoBehaviour
             return;
         }
 
-        lastShootTime = Time.time;
-        currentRafagas++;
+        lastShotTime = Time.time;
+        burstsFired++;
 
-        // Direcciones
         Vector2 forward = firePoint.up;
         Vector2 left = Quaternion.Euler(0, 0, spreadAngle) * forward;
         Vector2 right = Quaternion.Euler(0, 0, -spreadAngle) * forward;
 
-        // Instanciamos y lanzamos cada bala
-        LaunchBullet(forward);
-        LaunchBullet(left);
-        LaunchBullet(right);
+        FireBullet(forward);
+        FireBullet(left);
+        FireBullet(right);
 
-        if (currentRafagas >= maxRafagas)
+        if (burstsFired >= maxBursts)
         {
             isOverheated = true;
         }
     }
 
     /// <summary>
-    /// Instancia la bala y llama a Launch con la direccion adecuada.
+    /// Instancia la bala y la lanza en la direccion indicada.
     /// </summary>
-    void LaunchBullet(Vector2 dir)
+    void FireBullet(Vector2 direction)
     {
         GameObject instance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         BaseBullet bulletComp = instance.GetComponent<BaseBullet>();
         if (bulletComp != null)
         {
-            bulletComp.Launch(dir);
+            bulletComp.Launch(direction);
         }
     }
     #endregion

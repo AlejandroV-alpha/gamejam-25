@@ -9,4 +9,10 @@ public interface IShooter
     /// Dispara un proyectil o realiza ataque a distancia.
     /// </summary>
     void Shoot();
+
+    /// <summary>
+    /// Revisar si se puede disparar
+    /// </summary>
+    /// <returns>Se puede disparar?</returns>
+    bool CanShoot();
 }

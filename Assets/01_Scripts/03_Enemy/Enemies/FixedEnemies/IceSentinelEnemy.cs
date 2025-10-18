@@ -1,24 +1,20 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemigo fijo tipo Guardian Raiz.
-/// Se oculta visualmente en Idle, emerge en Alert y dispara rafagas circulares en Attack.
-/// Apunta al jugador mientras esta emergido.
+/// Enemigo fijo que rota hacia el jugador y dispara rafagas de balas.
+/// Usa IShooter para disparos y RotatorTowardsTarget para apuntar.
 /// </summary>
-[RequireComponent(typeof(RangedAttackCircular))]
+[RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
-public class RootGuardianEnemy : BaseEnemy
+public class IceSentinelEnemy : BaseEnemy
 {
     #region Inspector Variables
     [Header("Detection Settings")]
     [SerializeField] LayerMask playerLayer;
-
-    [Header("Visual Settings")]
-    [SerializeField] Transform visualChild; // Asignar el sprite square o prefab visual
     #endregion
 
-    #region Fields
-    RangedAttackCircular rangedAttack;
+    #region Private Fields
+    IShooter shooter;
     RotatorTowardsTarget rotatorTowardsTarget;
     Transform currentTarget;
     float playerDistance;
@@ -28,39 +24,37 @@ public class RootGuardianEnemy : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        rangedAttack = GetComponent<RangedAttackCircular>();
+        shooter = GetComponent<IShooter>();
         rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
-        HideVisuals(); // Inicialmente oculto visual
+    }
+
+    protected override void Update()
+    {
+        UpdateDetection();
+        base.Update();
     }
     #endregion
 
     #region Behaviour Overrides
     /// <summary>
-    /// Comportamiento en estado Idle: oculta el enemigo y detecta jugador.
+    /// Comportamiento en estado Idle: sin jugador detectado, mantiene rotacion inicial.
     /// </summary>
     protected override void IdleBehaviour()
     {
-        HideVisuals();
-        UpdateDetection();
-
         if (currentTarget != null)
         {
-            ShowVisuals(); // Emerger
             stateMachine.ChangeState(EnemyState.Alert);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Alert: apunta al jugador y cambia a ataque si esta en rango.
+    /// Comportamiento en estado Alert: rota hacia el jugador y cambia a ataque si está en rango.
     /// </summary>
     protected override void AlertBehaviour()
     {
-        UpdateDetection();
-
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
                 stateMachine.ChangeState(EnemyState.Attack);
@@ -68,27 +62,24 @@ public class RootGuardianEnemy : BaseEnemy
         }
         else
         {
-            HideVisuals(); // Ocultarse
+            ClearRotation();
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Attack: dispara rafaga circular si jugador esta en rango.
+    /// Comportamiento en estado Attack: dispara rafagas si el jugador esta en rango.
     /// </summary>
     protected override void AttackBehaviour()
     {
-        UpdateDetection();
-
         if (currentTarget != null)
         {
             UpdateRotation();
-
             if (playerDistance <= attackRange)
             {
-                if (rangedAttack.CanShoot())
+                if (shooter != null && shooter.CanShoot())
                 {
-                    rangedAttack.Shoot();
+                    shooter.Shoot();
                 }
             }
             else
@@ -98,7 +89,7 @@ public class RootGuardianEnemy : BaseEnemy
         }
         else
         {
-            HideVisuals();
+            ClearRotation();
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
@@ -119,11 +110,11 @@ public class RootGuardianEnemy : BaseEnemy
     void UpdateDetection()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, playerLayer);
-
         if (hit != null)
         {
             currentTarget = hit.transform;
             playerDistance = Vector2.Distance(transform.position, currentTarget.position);
+            UpdateRotation();
         }
         else
         {
@@ -134,7 +125,7 @@ public class RootGuardianEnemy : BaseEnemy
     }
 
     /// <summary>
-    /// Actualiza la rotacion hacia el jugador.
+    /// Actualiza la rotación hacia el jugador.
     /// </summary>
     void UpdateRotation()
     {
@@ -143,40 +134,13 @@ public class RootGuardianEnemy : BaseEnemy
             rotatorTowardsTarget.SetTarget(currentTarget);
         }
     }
+
     /// <summary>
-    /// Limpia la rotacion si no hay jugador.
+    /// Limpia la rotación si no hay jugador detectado.
     /// </summary>
     void ClearRotation()
     {
         rotatorTowardsTarget.ClearTarget();
-    }
-    #endregion
-
-    #region Visual Control
-    /// <summary>
-    /// Activa la visibilidad del enemigo.
-    /// Aqui se puede agregar trigger de Animator para animacion de "emergir"
-    /// </summary>
-    void ShowVisuals()
-    {
-        if (visualChild != null)
-        {
-            visualChild.gameObject.SetActive(true);
-        }
-            
-    }
-
-    /// <summary>
-    /// Oculta el enemigo.
-    /// Aqui se puede agregar trigger de Animator para animacion de "ocultarse"
-    /// </summary>
-    void HideVisuals()
-    {
-        if (visualChild != null)
-        {
-            visualChild.gameObject.SetActive(false);
-        }
-            
     }
     #endregion
 

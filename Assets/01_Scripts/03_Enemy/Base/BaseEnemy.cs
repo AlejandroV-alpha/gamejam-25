@@ -6,7 +6,7 @@ using UnityEngine;
 /// Implementa ciclo de vida, detección y daño.
 /// </summary>
 [RequireComponent(typeof(Collider2D))]
-public abstract class BaseEnemy : MonoBehaviour, IEnemy
+public abstract class BaseEnemy : MonoBehaviour, IEnemy, ITakeDamage
 {
     #region Inspector Variables
     [Header("Base Stats")]
