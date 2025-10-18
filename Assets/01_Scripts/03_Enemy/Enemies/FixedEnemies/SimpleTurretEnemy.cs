@@ -5,37 +5,22 @@ using UnityEngine;
 /// Se pone en alerta cuando el jugador entra en un rango mayor.
 /// Usa IShooter para manejar disparos y respeta obstaculos.
 /// </summary>
-[RequireComponent(typeof(IShooter))]
-[RequireComponent(typeof(RotatorTowardsTarget))]
-public class SimpleTurretEnemy : BaseEnemy
+public class SimpleTurretEnemy : FixedEnemy
 {
-    #region Inspector Variables
-    [Header("Detection Settings")]
-    [SerializeField] LayerMask playerLayer;
-
-    [Header("Obstacle Settings")]
-    [SerializeField] LayerMask obstacleLayer;
-    #endregion
-
-    #region Private Fields
-    IShooter shooter;
-    RotatorTowardsTarget rotatorTowardsTarget;
-    Transform currentTarget;
-    float playerDistance;
-    #endregion
-
     #region Unity Methods
     protected override void Awake()
     {
         base.Awake();
-        shooter = GetComponent<IShooter>();
-        rotatorTowardsTarget = GetComponent<RotatorTowardsTarget>();
     }
 
     protected override void Update()
     {
-        UpdateDetection();
         base.Update();
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        DrawRanges();
     }
     #endregion
 
@@ -79,13 +64,9 @@ public class SimpleTurretEnemy : BaseEnemy
         if (currentTarget != null)
         {
             UpdateRotation();
-
-            if (playerDistance <= attackRange)
+            if (playerDistance <= attackRange && shooter != null && shooter.CanShoot())
             {
-                if (shooter != null && shooter.CanShoot())
-                {
-                    shooter.Shoot();
-                }
+                shooter.Shoot();
             }
             else
             {
@@ -105,79 +86,6 @@ public class SimpleTurretEnemy : BaseEnemy
     protected override void DeathBehaviour()
     {
         Destroy(gameObject);
-    }
-    #endregion
-
-    #region Detection y Rotation
-    /// <summary>
-    /// Detecta al jugador dentro del rango de alerta, actualiza currentTarget y playerDistance.
-    /// Considera obstáculos que bloqueen la visión.
-    /// </summary>
-    void UpdateDetection()
-    {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, playerLayer);
-
-        if (hit != null)
-        {
-            Vector2 direction = (hit.transform.position - transform.position).normalized;
-            float distance = Vector2.Distance(transform.position, hit.transform.position);
-
-            // Raycast para detectar si hay obstáculos
-            RaycastHit2D rayHit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayer | playerLayer);
-            if (rayHit.collider != null && ((1 << rayHit.collider.gameObject.layer) & playerLayer) != 0)
-            {
-                // Jugador visible
-                currentTarget = hit.transform;
-                playerDistance = distance;
-                UpdateRotation();
-            }
-            else
-            {
-                // Jugador bloqueado por obstáculo
-                currentTarget = null;
-                playerDistance = 0f;
-                ClearRotation();
-            }
-        }
-        else
-        {
-            currentTarget = null;
-            playerDistance = 0f;
-            ClearRotation();
-        }
-    }
-
-    /// <summary>
-    /// Actualiza la rotacion hacia el jugador.
-    /// </summary>
-    void UpdateRotation()
-    {
-        if (currentTarget != null)
-        {
-            rotatorTowardsTarget.SetTarget(currentTarget);
-        }
-    }
-
-    /// <summary>
-    /// Limpia la rotacion si no hay jugador.
-    /// </summary>
-    void ClearRotation()
-    {
-        rotatorTowardsTarget.ClearTarget();
-    }
-    #endregion
-
-    #region Debug Gizmos
-    /// <summary>
-    /// Dibuja los rangos de alerta y ataque en el editor.
-    /// </summary>
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, alertRange);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
     #endregion
 }
