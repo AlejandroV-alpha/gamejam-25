@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af544de9ee590314c9d245a4cb57a0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 8393600757515604817, guid: a708c0bd59d7d264485eb8d45813398a, type: 3}
   firePoint: {fileID: 1841943839}
   timeBetweenShotsInBurst: 0.2
   cooldownBetweenBursts: 2
@@ -412,6 +412,14 @@ PrefabInstance:
     - target: {fileID: 2822368803301863840, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 8030640190238516485, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_LocalPosition.x

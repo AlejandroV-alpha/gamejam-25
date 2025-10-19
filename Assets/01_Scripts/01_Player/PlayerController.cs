@@ -22,11 +22,19 @@ public class PlayerController : MonoBehaviour
     float currentRotateSpeed;
     Vector2 impactVelocity = Vector2.zero;
 
+    float baseMaxForwardSpeed;
+    float baseMaxBackwardSpeed;
+    float baseMaxRotateSpeed;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        baseMaxForwardSpeed = maxForwardSpeed;
+        baseMaxBackwardSpeed = maxBackwardSpeed;
+        baseMaxRotateSpeed = maxRotateSpeed;
     }
 
     void FixedUpdate()
@@ -138,6 +146,18 @@ public class PlayerController : MonoBehaviour
     public float GetCurrentRotateSpeed()
     {
         return currentRotateSpeed;
+    }
+    #endregion
+
+    #region PlayerStatus
+    /// <summary>
+    /// Multiplica las velocidades máximas por el factor indicado
+    /// </summary>
+    public void ModifySpeed(float multiplier)
+    {
+        maxForwardSpeed = baseMaxForwardSpeed * multiplier;
+        maxBackwardSpeed = baseMaxBackwardSpeed * multiplier;
+        maxRotateSpeed = baseMaxRotateSpeed * multiplier;
     }
     #endregion
 }

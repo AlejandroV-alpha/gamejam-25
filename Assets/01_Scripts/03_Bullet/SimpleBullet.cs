@@ -13,6 +13,10 @@ public class SimpleBullet : BaseBullet
             damageable.TakeDamage(damageAmount, direction, knockbackForce);
         }
 
+        // Efecto visual genérico
+        SpawnImpactEffect();
+
+        // Destruye la bala
         Destroy(gameObject);
     }
 }

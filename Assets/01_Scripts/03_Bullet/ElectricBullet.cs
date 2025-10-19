@@ -11,7 +11,6 @@ public class ElectricBullet : BaseBullet
 
     protected override void HandleImpact(Collider2D collision)
     {
-        // Aplica daño
         if (collision.TryGetComponent(out ITakeDamage damageable))
         {
             damageable.TakeDamage(damageAmount, direction, knockbackForce);
@@ -23,7 +22,10 @@ public class ElectricBullet : BaseBullet
             stunnable.Stun(stunDuration);
         }
 
+        // Efecto visual genérico
         SpawnImpactEffect();
+
+        // Destruye la bala
         Destroy(gameObject);
     }
 }

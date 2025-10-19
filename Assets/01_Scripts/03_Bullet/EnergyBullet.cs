@@ -9,6 +9,10 @@ public class EnergyBullet : BaseBullet
             energyTarget.TakeEnergy(energyCost);
         }
 
+        // Efecto visual genérico
+        SpawnImpactEffect();
+
+        // Destruye la bala
         Destroy(gameObject);
     }
 }
