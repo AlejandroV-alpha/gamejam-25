@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2984215055019896391}
   - component: {fileID: 5435606033240852680}
   - component: {fileID: -7555374012620856357}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletEnergyP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
