@@ -324,6 +324,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36
+      objectReference: {fileID: 0}
     - target: {fileID: 8030640190238516485, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1625853
@@ -552,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f795423f7d1e694dae6cc913ea436bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 9200452021700222985, guid: 54cb603f1bb198c4b8dae2de23d568bd, type: 3}
   firePoint: {fileID: 288064976}
   spreadAngle: 45
   cooldownBetweenShots: 1

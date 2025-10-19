@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1686223999148676910}
-  - component: {fileID: 2576554906812053378}
   - component: {fileID: 9099724395586865248}
+  - component: {fileID: 2576554906812053378}
   - component: {fileID: -8869351077937249732}
   - component: {fileID: 3827243845548775097}
   m_Layer: 10
@@ -29,30 +29,12 @@ Transform:
   m_GameObject: {fileID: 6583429371737777199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.799944, y: -0.4508648, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2576554906812053378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6583429371737777199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd61daf8b15f84488e705e521effe91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  timeToDestroy: 5
-  validImpactLayers:
-    serializedVersion: 2
-    m_Bits: 13248
-  energyCost: 5
 --- !u!212 &9099724395586865248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.45767736, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.45882353, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,6 +90,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2576554906812053378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583429371737777199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd61daf8b15f84488e705e521effe91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  timeToDestroy: 5
+  validImpactLayers:
+    serializedVersion: 2
+    m_Bits: 13248
+  energyCost: 5
 --- !u!58 &-8869351077937249732
 CircleCollider2D:
   m_ObjectHideFlags: 0
