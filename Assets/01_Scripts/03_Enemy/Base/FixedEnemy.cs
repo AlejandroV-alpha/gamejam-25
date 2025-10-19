@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/// <summary>
+/// Clase base abstracta para enemigos fijos que heredan de BaseEnemy.
+/// Implementa deteccion de jugadores con bloqueo por obstaculos y rotacion automatica hacia el objetivo.
+/// Esta disenada para torretas u otros enemigos estacionarios que no se desplazan, pero pueden atacar a distancia.
+/// </summary>
 [RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
 public abstract class FixedEnemy : BaseEnemy
