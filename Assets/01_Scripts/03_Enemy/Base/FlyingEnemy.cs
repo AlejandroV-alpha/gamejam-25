@@ -1,5 +1,11 @@
 using UnityEngine;
 
+/// <summary>
+/// Clase base para enemigos voladores que heredan de BaseEnemy.  
+/// Implementa lógica común de movimiento, patrullaje, rotación y detección abstracta.  
+/// Permite definir comportamientos específicos de detección (jugadores o aliados) en las subclases.  
+/// Soporta la asignación de capas ignoradas para evitar colisiones no deseadas.
+/// </summary>
 [RequireComponent(typeof(RotatorTowardsTarget))]
 [RequireComponent(typeof(IShooter))]
 public abstract class FlyingEnemy : BaseEnemy

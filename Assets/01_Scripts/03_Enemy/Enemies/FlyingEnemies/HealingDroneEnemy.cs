@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Dron sanador que patrulla y dispara balas de curacion al aliado mas cercano.
-/// Usa IShooter para disparar y RotatorTowardsTarget para rotacion.
-/// Hereda de FlyingEnemy.
+/// Dron aereo de soporte que patrulla el area en busca de aliados danados.
+/// Cuando detecta un aliado dentro de su rango de alerta, lo sigue y dispara proyectiles de curacion.
+/// Mantiene una distancia prudente y prioriza al aliado mas cercano. Se destruye al morir.
 /// </summary>
 [RequireComponent(typeof(RotatorTowardsTarget))]
 [RequireComponent(typeof(IShooter))]
@@ -32,6 +32,9 @@ public class HealingDroneEnemy : FlyingEnemy
         base.Update();
     }
 
+    /// <summary>
+    /// Actualiza el estado del dron segun la distancia del aliado detectado.
+    /// </summary>
     protected override void UpdateTargetState()
     {
         if (closestAllyTarget == null)
@@ -56,6 +59,9 @@ public class HealingDroneEnemy : FlyingEnemy
     #endregion
 
     #region Detection
+    /// <summary>
+    /// Detecta aliados dentro del rango de alerta y selecciona el mas cercano.
+    /// </summary>
     protected override void UpdateDetection()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, alertRange, allyLayer);
@@ -88,17 +94,22 @@ public class HealingDroneEnemy : FlyingEnemy
     #endregion
 
     #region Behaviour Overrides
+    /// <summary>
+    /// Comportamiento de patrulla cuando no hay aliados detectados.
+    /// </summary>
     protected override void IdleBehaviour()
     {
         MoveToTarget(patrolTarget, patrolSpeed);
 
-        if (Vector2.Distance(transform.position, patrolTarget) < 0.1f ||
-            Vector2.Distance(transform.position, patrolOrigin) > maxDistanceFromOrigin)
+        if (Vector2.Distance(transform.position, patrolTarget) < 0.1f || Vector2.Distance(transform.position, patrolOrigin) > maxDistanceFromOrigin)
         {
             SetRandomPatrolTarget();
         }
     }
 
+    /// <summary>
+    /// Comportamiento de seguimiento cuando hay un aliado dentro del rango de alerta.
+    /// </summary>
     protected override void AlertBehaviour()
     {
         if (closestAllyTarget != null)
@@ -122,6 +133,9 @@ public class HealingDroneEnemy : FlyingEnemy
         }
     }
 
+    /// <summary>
+    /// Comportamiento de ataque, dispara balas de curacion al aliado mas cercano.
+    /// </summary>
     protected override void AttackBehaviour()
     {
         if (closestAllyTarget != null)
@@ -141,6 +155,9 @@ public class HealingDroneEnemy : FlyingEnemy
         }
     }
 
+    /// <summary>
+    /// Comportamiento al morir, destruye el dron.
+    /// </summary>
     protected override void DeathBehaviour()
     {
         Destroy(gameObject);
@@ -148,6 +165,9 @@ public class HealingDroneEnemy : FlyingEnemy
     #endregion
 
     #region Debug Gizmos
+    /// <summary>
+    /// Dibuja los rangos visuales del dron sanador en la escena.
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         DrawFlyingRanges();
