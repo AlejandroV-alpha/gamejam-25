@@ -3,17 +3,25 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class BaseBullet : MonoBehaviour
 {
-    [Header("General Settings")]
+    #region Inspector Variables
+    [Header("Movement and Lifetime")]
     [SerializeField] protected float moveSpeed = 10f;
     [SerializeField] protected float timeToDestroy = 5f;
-    [SerializeField] protected float damage = 1f;
-    [SerializeField] protected float knockbackForce = 0f;
-    [Tooltip("Objects that can be damaged")]
+
+    [Header("Collision Settings")]
+    [Tooltip("Layers that this bullet can interact with")]
     [SerializeField] protected LayerMask validImpactLayers;
 
+    [Header("Energy Settings")]
+    [SerializeField] protected float energyCost = 0f;
+    #endregion
+
+    #region Protected Fields
     protected Rigidbody2D rb;
     protected Vector2 direction;
+    #endregion
 
+    #region Unity Methods
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,11 +33,23 @@ public abstract class BaseBullet : MonoBehaviour
         Destroy(gameObject, timeToDestroy);
     }
 
-    #region Launch Logic
-    /// <summary>
-    /// Lanza la bala en la direccion indicada.
-    /// </summary>
-    /// <param name="dir">Direccion normalizada del disparo</param>
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Filtra capas no válidas
+        if (((1 << collision.gameObject.layer) & validImpactLayers) == 0)
+        {
+            return;
+        }
+
+        // Efecto visual genérico
+        SpawnImpactEffect();
+
+        // Lógica específica de la subclase
+        HandleImpact(collision);
+    }
+    #endregion
+
+    #region Launch
     public virtual void Launch(Vector2 dir)
     {
         direction = dir.normalized;
@@ -37,62 +57,22 @@ public abstract class BaseBullet : MonoBehaviour
     }
     #endregion
 
-    #region Collision Logic
+    #region Abstract and Virtual Methods
     /// <summary>
-    /// Gestiona la colision de la bala con otros objetos.
-    /// Aplica daño comun y luego llama al comportamiento especial de cada bala.
+    /// Lógica particular de la bala al impactar (daño, energía, etc.)
     /// </summary>
-    /// <param name="collision">Collider con el que impacta la bala</param>
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Ignorar capas no permitidas
-        if (((1 << collision.gameObject.layer) & validImpactLayers) == 0)
-        {
-            return;
-        }
-
-        // Aplicar daño comun si implementa ITakeDamage
-        if (collision.TryGetComponent(out ITakeDamage damageable))
-        {
-            damageable.TakeDamage(damage, direction, knockbackForce);
-        }
-
-        // Llamar a la logica especial definida por cada bala
-        OnHit(collision);
-    }
-
-    /// <summary>
-    /// Evento principal al impactar. Llama a efectos comunes y a la logica personalizada.
-    /// </summary>
-    /// <param name="collision">Collider con el que impacto la bala</param>
-    protected virtual void OnHit(Collider2D collision)
-    {
-        // Efectos comunes: particulas, sonido, cam shake, etc
-        SpawnImpactEffect();
-
-        // Lógica específica de cada tipo de bala
-        HandleImpact(collision);
-    }
-
-    /// <summary>
-    /// Logica personalizada al impactar, debe implementarse en cada bala concreta.
-    /// </summary>
-    /// <param name="collision">Collider con el que impacto la bala</param>
     protected abstract void HandleImpact(Collider2D collision);
-    #endregion
 
-    #region Utilities
-    public virtual float GetEnergyCost()
-    {
-        return 0f;
-    }
-
-    /// <summary>
-    /// Permite instanciar efectos de impacto (particulas, sonido, etc)
-    /// </summary>
     protected virtual void SpawnImpactEffect()
     {
-        // Por defecto no hace nada. Las balas hijas pueden sobreescribir.
+        
+    }
+    #endregion
+
+    #region utilities
+    public virtual float GetEnergyCost()
+    {
+        return energyCost;
     }
     #endregion
 }

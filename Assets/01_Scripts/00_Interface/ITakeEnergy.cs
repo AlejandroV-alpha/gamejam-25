@@ -9,6 +9,6 @@ public interface ITakeEnergy
     /// <summary>
     /// Recibe una cantidad de energía y la aplica al objeto según su lógica interna.
     /// </summary>
-    /// <param name="amount">Cantidad de energía a recibir.</param>
-    void ReceiveEnergy(float amount);
+    /// <param name="energy">Cantidad de energía a recibir.</param>
+    void TakeEnergy(float energy);
 }

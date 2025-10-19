@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - Bullet
+  - BulletPlayer
+  - BulletEnemy
+  - FixedEnemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +23,7 @@ TagManager:
   - BulletPlayer
   - BulletEnemy
   - Obstacle
-  - 
+  - Nodo
   - 
   - 
   - 
