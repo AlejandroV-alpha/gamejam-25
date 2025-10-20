@@ -726,7 +726,7 @@ MonoBehaviour:
   ignoreCollisionLayers:
     serializedVersion: 2
     m_Bits: 264
-  healthPhaseTrigger: 1
+  healthPhaseTrigger: 0.5
   followSpeedPhase2: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

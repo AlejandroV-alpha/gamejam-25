@@ -1,7 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Bala de energia que restaura o transfiere energia al objetivo impactado.
+/// </summary>
 public class EnergyBullet : BaseBullet
 {
+    #region Override Methods
+    /// <summary>
+    /// Maneja el impacto de la bala de energia contra un objeto del entorno.
+    /// </summary>
+    /// <param name="collision">Colision detectada por el sistema de fisicas.</param>
     protected override void HandleImpact(Collider2D collision)
     {
         if (collision.TryGetComponent(out ITakeEnergy energyTarget))
@@ -9,10 +17,11 @@ public class EnergyBullet : BaseBullet
             energyTarget.TakeEnergy(energyCost);
         }
 
-        // Efecto visual genérico
+        // Generic visual effect
         SpawnImpactEffect();
 
-        // Destruye la bala
+        // Destroy the bullet
         Destroy(gameObject);
     }
+    #endregion
 }

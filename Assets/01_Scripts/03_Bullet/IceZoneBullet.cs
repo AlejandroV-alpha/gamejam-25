@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
-/// Bala de hielo que, al alcanzar su distancia máxima, crea una zona congelante.
+/// Bala de hielo que, al alcanzar su distancia maxima, crea una zona congelante.
 /// Los objetivos dentro del radio son ralentizados mientras dure el efecto.
 /// </summary>
 public class IceZoneBullet : BaseBullet
@@ -18,7 +18,7 @@ public class IceZoneBullet : BaseBullet
 
     [Header("Slow Settings")]
     [SerializeField] float slowDuration = 2f;
-    [SerializeField, Tooltip("Multiplicador de velocidad (0.6 = 40% más lento)")]
+    [SerializeField, Tooltip("Multiplicador de velocidad (0.6 = 40% mas lento)")]
     float speedMultiplier = 0.6f;
     #endregion
 
@@ -36,7 +36,7 @@ public class IceZoneBullet : BaseBullet
 
     void FixedUpdate()
     {
-        // Activa la zona cuando alcanza la distancia máxima
+        // Activa la zona cuando alcanza la distancia maxima
         if (!zoneActive && Vector2.Distance(transform.position, startPosition) >= maxDistance)
         {
             zoneActive = true;
@@ -49,7 +49,7 @@ public class IceZoneBullet : BaseBullet
             }
         }
 
-        // Mientras la zona esté activa, aplica el efecto de congelación
+        // Mientras la zona este activa, aplica el efecto de congelacion
         if (zoneActive)
         {
             ApplyFreezeZone();
@@ -61,13 +61,14 @@ public class IceZoneBullet : BaseBullet
     /// <summary>
     /// Aplica el efecto directo si impacta antes de llegar a maxDistance.
     /// </summary>
+    /// <param name="collision">Colision detectada por el sistema de fisicas.</param>
     protected override void HandleImpact(Collider2D collision)
     {
         ApplyFreezeEffect(collision);
     }
 
     /// <summary>
-    /// Detecta objetivos dentro del radio y les aplica la ralentización.
+    /// Detecta objetivos dentro del radio y les aplica la ralentizacion.
     /// </summary>
     void ApplyFreezeZone()
     {
@@ -77,15 +78,20 @@ public class IceZoneBullet : BaseBullet
 
         foreach (var t in targets)
         {
-            if (alreadyHit.Contains(t)) continue;
+            if (alreadyHit.Contains(t))
+            {
+                continue;
+            }
+
             ApplyFreezeEffect(t);
             alreadyHit.Add(t);
         }
     }
 
     /// <summary>
-    /// Aplica el efecto de ralentización al objetivo afectado.
+    /// Aplica el efecto de ralentizacion al objetivo afectado.
     /// </summary>
+    /// <param name="target">Colision detectada por el sistema de fisicas.</param>
     void ApplyFreezeEffect(Collider2D target)
     {
         if (target.TryGetComponent(out ITakeDamage damageable))
@@ -98,7 +104,7 @@ public class IceZoneBullet : BaseBullet
             slowable.Slow(slowDuration, speedMultiplier);
         }
 
-        // Efecto visual genérico
+        // Generic visual effect
         SpawnImpactEffect();
 
         // No se destruye al aplicar efecto (la zona persiste hasta que se destruya por tiempo)
