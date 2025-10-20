@@ -400,7 +400,7 @@ MonoBehaviour:
     m_Bits: 8
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!1001 &1184399820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,9 +478,9 @@ GameObject:
   - component: {fileID: 1322749748}
   - component: {fileID: 1322749747}
   - component: {fileID: 1322749746}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
