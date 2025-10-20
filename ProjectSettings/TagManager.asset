@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Enemy
-  - Bullet
+  - BulletPlayer
+  - BulletEnemy
+  - FixedEnemy
+  - FlyingEnemy
+  - GroundEnemy
+  - Obstacle
+  - HealingDroneEnemy
   layers:
   - Default
   - TransparentFX
@@ -13,14 +18,14 @@ TagManager:
   - Player
   - Water
   - UI
-  - Enemy
-  - Nodo
+  - FixedEnemy
+  - FlyingEnemy
+  - GroundEnemy
+  - HealingDroneEnemy
+  - BulletPlayer
+  - BulletEnemy
   - Obstacle
-  - Bullet
-  - HealingEnemy
-  - 
-  - 
-  - 
+  - Nodo
   - 
   - 
   - 

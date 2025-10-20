@@ -89,11 +89,6 @@ public class PlayerShooter : MonoBehaviour
                     canShoot = false;
                 }
             }
-            else
-            {
-                // Si no pudo disparar (sin munición), playerAmmo habrá iniciado recarga automática. 
-                // Aquí podrías reproducir un sonido "click".
-            }
         }
     }
 
