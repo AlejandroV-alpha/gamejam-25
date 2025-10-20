@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 992478235}
   m_Layer: 6
   m_Name: IceSentinelEnemy
-  m_TagString: Enemy
+  m_TagString: FixedEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

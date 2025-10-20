@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5005612216034482923}
   - component: {fileID: 5463878955926061543}
   - component: {fileID: 6788100060407854117}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletIceSentinelE
-  m_TagString: Untagged
+  m_TagString: BulletEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   timeToDestroy: 5
   validImpactLayers:
     serializedVersion: 2
-    m_Bits: 4104
+    m_Bits: 12296
   energyCost: 0
   damageAmount: 0
   knockbackForce: 0

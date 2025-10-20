@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834644097}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +298,18 @@ PrefabInstance:
     - target: {fileID: 2822368803301863840, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992805698329924683, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8030640190238516485, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,9 +368,9 @@ GameObject:
   - component: {fileID: 1418017963}
   - component: {fileID: 1418017962}
   - component: {fileID: 1418017961}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,7 +491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -521,9 +533,9 @@ GameObject:
   - component: {fileID: 1553626421}
   - component: {fileID: 1553626423}
   - component: {fileID: 1553626422}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: IceDroneEnemy
-  m_TagString: Enemy
+  m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f795423f7d1e694dae6cc913ea436bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 8585663215206584451, guid: a5828975b217d6b4fb1f7ed46aa83fc7, type: 3}
   firePoint: {fileID: 834644097}
   spreadAngle: 45
   cooldownBetweenShots: 1
@@ -688,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 649047011922588113, guid: 3886d9706a3f65c40932a9ce1af97e7e, type: 3}
   firePoint: {fileID: 834644097}
   cooldownBetweenShots: 1
 --- !u!114 &1553626424
@@ -714,6 +726,7 @@ MonoBehaviour:
   ignoreCollisionLayers:
     serializedVersion: 2
     m_Bits: 264
+  healthPhaseTrigger: 1
   followSpeedPhase2: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

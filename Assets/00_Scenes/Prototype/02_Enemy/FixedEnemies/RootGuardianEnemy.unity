@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4678c742184714c44942c4366d08b598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 8395234262095147108, guid: a57a71c33dd7029489e623dc7ef34fbc, type: 3}
   firePoint: {fileID: 1891365650}
   bulletsPerBurst: 8
   cooldownBetweenBursts: 5

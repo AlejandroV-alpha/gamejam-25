@@ -225,9 +225,9 @@ GameObject:
   - component: {fileID: 789245382}
   - component: {fileID: 789245378}
   - component: {fileID: 789245377}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealingDroneEnemy
-  m_TagString: Enemy
+  m_TagString: HealingDroneEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 8624211946151831332, guid: 07963a71a9921064fad53392d0c16299, type: 3}
   firePoint: {fileID: 1305754477}
   cooldownBetweenShots: 1
 --- !u!114 &789245380
@@ -370,10 +370,10 @@ MonoBehaviour:
   followSpeed: 2
   ignoreCollisionLayers:
     serializedVersion: 2
-    m_Bits: 264
+    m_Bits: 4424
   allyLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 448
 --- !u!4 &789245381
 Transform:
   m_ObjectHideFlags: 0
@@ -414,6 +414,14 @@ PrefabInstance:
     - target: {fileID: 2822368803301863840, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 8030640190238516485, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -469,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1305754477}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,9 +510,9 @@ GameObject:
   - component: {fileID: 1477856267}
   - component: {fileID: 1477856266}
   - component: {fileID: 1477856265}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Square
-  m_TagString: Enemy
+  m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -268,9 +268,9 @@ GameObject:
   - component: {fileID: 1374417138}
   - component: {fileID: 1374417137}
   - component: {fileID: 1374417136}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,6 +430,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840727701796402836, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.96
+      objectReference: {fileID: 0}
     - target: {fileID: 8030640190238516485, guid: 26efc7a87b9bb1f46a8c619e88f43c3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.7260613
@@ -489,9 +497,9 @@ GameObject:
   - component: {fileID: 1624245624}
   - component: {fileID: 1624245623}
   - component: {fileID: 1624245626}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: SentryDroneEnemy
-  m_TagString: Enemy
+  m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5486648726276351413, guid: 1c7196f91ed914a4e9efe24418c7c955, type: 3}
+  bulletPrefab: {fileID: 7797253381078738111, guid: 7b50bb1587f2d5445bc79dd7fadbcbcd, type: 3}
   firePoint: {fileID: 1997646419}
   cooldownBetweenShots: 1
 --- !u!114 &1624245629
@@ -663,7 +671,7 @@ MonoBehaviour:
   followSpeed: 3
   ignoreCollisionLayers:
     serializedVersion: 2
-    m_Bits: 264
+    m_Bits: 4424
 --- !u!1 &1997646418
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997646419}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

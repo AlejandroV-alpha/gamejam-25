@@ -42,6 +42,7 @@ public class PlayerStatus : MonoBehaviour, IStunnable, ISlowable
     /// <param name="speedMultiplier">Multiplicador de velocidad (0.6 = 40% más lento)</param>
     public void Slow(float duration, float speedMultiplier)
     {
+        Debug.Log("Hielo");
         // Si ya hay un efecto activo, lo reiniciamos con la nueva duración y factor
         if (slowCoroutine != null)
         {
