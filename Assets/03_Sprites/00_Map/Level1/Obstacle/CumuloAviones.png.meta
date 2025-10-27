@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 5ec3a5fdde775184e8d37d3b79b2c265
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5957051383930121021
+    second: CumuloAviones_0
+  - first:
+      213: -5534241658676713322
+    second: CumuloAviones_1
+  - first:
+      213: -6687905319736611937
+    second: CumuloAviones_2
+  - first:
+      213: -3641744714181771214
+    second: CumuloAviones_3
+  - first:
+      213: -2322640901609902836
+    second: CumuloAviones_4
+  - first:
+      213: -5658774787381749283
+    second: CumuloAviones_5
+  - first:
+      213: -915271630455022899
+    second: CumuloAviones_6
+  - first:
+      213: 5611914554482075008
+    second: CumuloAviones_7
+  - first:
+      213: 5698639795584881811
+    second: CumuloAviones_8
+  - first:
+      213: 563580950136195425
+    second: CumuloAviones_9
+  - first:
+      213: -183225240604731036
+    second: CumuloAviones_10
+  - first:
+      213: 7965613023943436219
+    second: CumuloAviones_11
+  - first:
+      213: 7884819454687776652
+    second: CumuloAviones_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CumuloAviones_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 1024
+        height: 1470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b67effba2bba250800000000000000
+      internalID: 5957051383930121021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_1
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 846
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698e769788c6233b0800000000000000
+      internalID: -5534241658676713322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_2
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 491
+        width: 219
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b67a5bb89cf23a0800000000000000
+      internalID: -6687905319736611937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_3
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 480
+        width: 73
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2300a8c2a7ce57dc0800000000000000
+      internalID: -3641744714181771214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_4
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 411
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0dafb6e76254cfd0800000000000000
+      internalID: -2322640901609902836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 343
+        width: 134
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd99c26ff4ef771b0800000000000000
+      internalID: -5658774787381749283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_6
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 406
+        width: 68
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca5cb92d4d4c43f0800000000000000
+      internalID: -915271630455022899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_7
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 384
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085afb9dd8681ed40800000000000000
+      internalID: 5611914554482075008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_8
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 407
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394ddbe83b2a51f40800000000000000
+      internalID: 5698639795584881811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_9
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 411
+        width: 65
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1698b0f53ed32d700800000000000000
+      internalID: 563580950136195425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_10
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 415
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4699edb4d9d057df0800000000000000
+      internalID: -183225240604731036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_11
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 343
+        width: 86
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7af5677da8b8e60800000000000000
+      internalID: 7965613023943436219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloAviones_12
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 343
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f01cab4818c6d60800000000000000
+      internalID: 7884819454687776652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CumuloAviones_0: 5957051383930121021
+      CumuloAviones_1: -5534241658676713322
+      CumuloAviones_10: -183225240604731036
+      CumuloAviones_11: 7965613023943436219
+      CumuloAviones_12: 7884819454687776652
+      CumuloAviones_2: -6687905319736611937
+      CumuloAviones_3: -3641744714181771214
+      CumuloAviones_4: -2322640901609902836
+      CumuloAviones_5: -5658774787381749283
+      CumuloAviones_6: -915271630455022899
+      CumuloAviones_7: 5611914554482075008
+      CumuloAviones_8: 5698639795584881811
+      CumuloAviones_9: 563580950136195425
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
