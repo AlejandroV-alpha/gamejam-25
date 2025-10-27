@@ -3,6 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [Header("Tracks (Animation)")]
+    [SerializeField] Animator leftTrack;    
+    [SerializeField] Animator rightTrack;    
+    [SerializeField] float maxLinearSpeed = 6f;  
+    [SerializeField] float turnInfluence = 0.003f; 
+    [SerializeField] bool invertOnReverse = true;  
+
+    static readonly int MovingHash = Animator.StringToHash("Moving");
+    static readonly int SpeedMultHash = Animator.StringToHash("SpeedMult");
+  
     [Header("Movement")]
     [SerializeField] float maxForwardSpeed = 3f;
     [SerializeField] float maxBackwardSpeed = 1.5f;
@@ -35,6 +45,18 @@ public class PlayerController : MonoBehaviour
         baseMaxForwardSpeed = maxForwardSpeed;
         baseMaxBackwardSpeed = maxBackwardSpeed;
         baseMaxRotateSpeed = maxRotateSpeed;
+
+        if (!leftTrack)
+        {
+            var t = transform.Find("Graphics/TankLeft");
+            if (t) leftTrack = t.GetComponent<Animator>();
+        }
+        if (!rightTrack)
+        {
+            var t = transform.Find("Graphics/TankRight");
+            if (t) rightTrack = t.GetComponent<Animator>();
+        }
+        if (maxLinearSpeed <= 0f) maxLinearSpeed = 1f;
     }
 
     void FixedUpdate()
@@ -42,11 +64,12 @@ public class PlayerController : MonoBehaviour
         ProcessMovementInput();
         ProcessRotationInput();
         UpdateKnockback();
+        UpdateTrackAnim();
     }
 
     #region Movement Methods
     /// <summary>
-    /// Calcula la velocidad objetivo según input vertical.
+    /// Calcula la velocidad objetivo segï¿½n input vertical.
     /// </summary>
     float CalculateTargetSpeed(float verticalInput)
     {
@@ -60,7 +83,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void ApplyMovement(float speed)
     {
-        // Movimiento en la dirección del tanque
+        // Movimiento en la direcciï¿½n del tanque
         Vector2 moveDir = transform.up * currentMoveSpeed;
 
         // Aplicar knockback/impacto sumando a la velocidad
@@ -68,7 +91,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Procesa el input vertical y aplica aceleración/desaceleración.
+    /// Procesa el input vertical y aplica aceleraciï¿½n/desaceleraciï¿½n.
     /// </summary>
     void ProcessMovementInput()
     {
@@ -85,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
     #region Rotation Methods
     /// <summary>
-    /// Calcula la velocidad de rotación objetivo según input horizontal.
+    /// Calcula la velocidad de rotaciï¿½n objetivo segï¿½n input horizontal.
     /// </summary>
     float CalculateTargetRotationSpeed(float horizontalInput)
     {
@@ -93,7 +116,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Aplica rotación al Rigidbody2D del jugador.
+    /// Aplica rotaciï¿½n al Rigidbody2D del jugador.
     /// </summary>
     void ApplyRotation(float rotationSpeed, float horizontalInput)
     {
@@ -101,7 +124,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Procesa el input horizontal y aplica aceleración/desaceleración de rotación.
+    /// Procesa el input horizontal y aplica aceleraciï¿½n/desaceleraciï¿½n de rotaciï¿½n.
     /// </summary>
     void ProcessRotationInput()
     {
@@ -126,7 +149,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Aplica knockback externo al jugador (daño, explosión, etc.)
+    /// Aplica knockback externo al jugador (daï¿½o, explosiï¿½n, etc.)
     /// </summary>
     public void ApplyKnockback(Vector2 direction, float force)
     {
@@ -151,13 +174,46 @@ public class PlayerController : MonoBehaviour
 
     #region PlayerStatus
     /// <summary>
-    /// Multiplica las velocidades máximas por el factor indicado
+    /// Multiplica las velocidades mï¿½ximas por el factor indicado
     /// </summary>
     public void ModifySpeed(float multiplier)
     {
         maxForwardSpeed = baseMaxForwardSpeed * multiplier;
         maxBackwardSpeed = baseMaxBackwardSpeed * multiplier;
         maxRotateSpeed = baseMaxRotateSpeed * multiplier;
+    }
+    #endregion
+
+    #region Animation
+    void UpdateTrackAnim()
+    {
+        // velocidad real del RB (usa velocity, no linearVelocity)
+        Vector2 v = rb.linearVelocity;
+
+        // componente de la velocidad en el ï¿½frenteï¿½ del tanque
+        float forward = Vector2.Dot(v, (Vector2)transform.up);
+
+        float movingAmount = Mathf.Abs(forward);
+        bool isMoving = movingAmount > 0.05f || Mathf.Abs(rb.angularVelocity) > 5f;
+
+        // 0..1 segï¿½n rapidez
+        float linMult = Mathf.Clamp01(movingAmount / maxLinearSpeed);
+
+        // direcciï¿½n (signo) para reversa
+        float dir = invertOnReverse ? Mathf.Sign(forward) : 1f;
+
+        // diferencial por giro (una rueda avanza mï¿½s que la otra)
+        float diff = rb.angularVelocity * turnInfluence;
+
+        SetTrack(leftTrack, isMoving, dir * linMult + diff);
+        SetTrack(rightTrack, isMoving, dir * linMult - diff);
+    }
+
+    void SetTrack(Animator a, bool moving, float mult)
+    {
+        if (!a) return;
+        a.SetBool(MovingHash, moving);
+        a.SetFloat(SpeedMultHash, mult);
     }
     #endregion
 }

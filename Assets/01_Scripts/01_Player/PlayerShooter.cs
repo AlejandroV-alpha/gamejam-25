@@ -5,32 +5,57 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour
 {
     [Header("Keys")]
-    [SerializeField] KeyCode shootKey = KeyCode.Space;
-    [SerializeField] KeyCode switchBulletKey = KeyCode.E;
+    [SerializeField] private KeyCode shootKey = KeyCode.Space;
+    [SerializeField] private KeyCode switchBulletKey = KeyCode.E;
 
     [Header("Bullet Settings")]
-    [SerializeField] float timeBtwShoot = 0.5f;
-    [SerializeField] Transform firePoint;
+    [SerializeField] private float timeBtwShoot = 0.5f;
+    [SerializeField] private Transform firePoint;
 
     [Header("Bullets (prefabs)")]
     [Tooltip("Orden: 0 = COMMON, 1 = ENERGY")]
-    [SerializeField] GameObject[] bulletPrefabs;
+    [SerializeField] private GameObject[] bulletPrefabs;
 
-    int currentBulletIndex = 0;
-    float timer = 0f;
-    bool canShoot = true;
+    private int currentBulletIndex = 0;
+    private float timer = 0f;
+    private bool canShoot = true;
 
-    PlayerAmmo playerAmmo;
-    PlayerHealth playerHealth;
+    private PlayerAmmo playerAmmo;
+    private PlayerHealth playerHealth;
+
+    // ===== RECOIL integrado =====
+    [Header("Recoil")]
+    [SerializeField] private Transform recoilTarget;          // normalmente Graphics/Turret
+    [SerializeField] private Axis recoilAxis = Axis.Up;       // ¿tu cañón “mira” con Up o Right?
+    [SerializeField] private bool recoilInvert = true;        // true = hacia atrás
+    [SerializeField] private float recoilDistance = 0.08f;    // cuánto retrocede
+    [SerializeField] private float recoilOutTime = 0.06f;     // ida
+    [SerializeField] private float recoilInTime = 0.10f;     // vuelta
+    [SerializeField] private AnimationCurve recoilOutCurve = null;
+    [SerializeField] private AnimationCurve recoilInCurve = null;
+
+    private enum Axis { Up, Right }
+    private Coroutine recoilCo;
+    private Vector3 recoilBaseLocalPos;
 
     private void Awake()
     {
         playerAmmo = GetComponent<PlayerAmmo>();
         playerHealth = GetComponent<PlayerHealth>();
+
+        // Autovincular recoilTarget si está vacío
+        if (!recoilTarget)
+        {
+            var t = transform.Find("Graphics/Turret");
+            if (t) recoilTarget = t;
+        }
+
+        if (recoilOutCurve == null) recoilOutCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        if (recoilInCurve == null) recoilInCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        if (recoilTarget) recoilBaseLocalPos = recoilTarget.localPosition;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         UpdateShootTimer();
         HandleShootInput();
@@ -38,10 +63,7 @@ public class PlayerShooter : MonoBehaviour
     }
 
     #region Shooting Logic Methods
-    /// <summary>
-    /// Controla el tiempo de espera entre disparos.
-    /// </summary>
-    void UpdateShootTimer()
+    private void UpdateShootTimer()
     {
         if (!canShoot)
         {
@@ -54,35 +76,28 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Detecta la tecla de disparo, comprueba la municion y recarga.
-    /// y dispara la bala correspondiente si se cumplen las condiciones.
-    /// </summary>
-    void HandleShootInput()
+    private void HandleShootInput()
     {
         if (!canShoot || firePoint == null || playerAmmo.IsReloading())
-        {
             return;
-        }
 
         if (Input.GetKeyDown(shootKey))
         {
             if (playerAmmo.TryConsumeAmmo(currentBulletIndex))
             {
                 GameObject prefab = GetCurrentBulletPrefab();
-
                 if (prefab != null)
                 {
                     BaseBullet bulletData = prefab.GetComponent<BaseBullet>();
 
-                    // Pregunta a la bala si requiere energía para dispararse.
+                    // Coste/beneficio de energía por disparo:
+                    //  energyCost > 0 => gasta (resta)
+                    //  energyCost < 0 => cura (suma)
                     if (bulletData != null && playerHealth != null)
                     {
                         float energyCost = bulletData.GetEnergyCost();
-                        if (energyCost > 0f)
-                        {
-                            playerHealth.TakeDamage(energyCost, Vector2.zero);
-                        }
+                        if (energyCost != 0f)
+                            playerHealth.ChangeEnergy(-energyCost);
                     }
 
                     ShootBullet(prefab);
@@ -92,10 +107,7 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Alterna entre los tipos de bala disponibles.
-    /// </summary>
-    void HandleSwitchBulletInput()
+    private void HandleSwitchBulletInput()
     {
         if (Input.GetKeyDown(switchBulletKey) && bulletPrefabs != null && bulletPrefabs.Length > 0)
         {
@@ -103,60 +115,94 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Instancia la bala correspondiente en la posición y rotación del firePoint.
-    /// </summary>
-    void ShootBullet(GameObject prefab)
+    private void ShootBullet(GameObject prefab)
     {
-        if (prefab == null)
-        {
-            return;
-        }
+        if (prefab == null) return;
 
         GameObject instance = Instantiate(prefab, firePoint.position, firePoint.rotation);
 
         BaseBullet bulletComp = instance.GetComponent<BaseBullet>();
         if (bulletComp != null)
         {
-            bulletComp.Launch(firePoint.up);
+            // Usa el MISMO eje que configuras en recoilAxis
+            Vector2 dir = (recoilAxis == Axis.Up) ? (Vector2)firePoint.up : (Vector2)firePoint.right;
+            bulletComp.Launch(dir);
         }
+
+        // Retroceso del turret integrado
+        PlayRecoil();
     }
     #endregion
 
     #region Utilities
-    /// <summary>
-    /// Devuelve el prefab de bala actualmente seleccionado.
-    /// Si la lista esta vacia o el indice es invalido, devuelve null.
-    /// </summary>
     public GameObject GetCurrentBulletPrefab()
     {
-        if (bulletPrefabs == null || bulletPrefabs.Length == 0)
-        {
-            return null;
-        }
-        if (currentBulletIndex < 0 || currentBulletIndex >= bulletPrefabs.Length)
-        {
-            return null;
-        }
-
+        if (bulletPrefabs == null || bulletPrefabs.Length == 0) return null;
+        if (currentBulletIndex < 0 || currentBulletIndex >= bulletPrefabs.Length) return null;
         return bulletPrefabs[currentBulletIndex];
     }
 
-    /// <summary>
-    /// Devuelve la cantidad total de tipos de bala disponibles.
-    /// </summary>
     public int GetBulletTypesCount()
     {
         return bulletPrefabs != null ? bulletPrefabs.Length : 0;
     }
 
-    /// <summary>
-    /// Devuelve el indice del tipo de bala actualmente seleccionado.
-    /// </summary>
     public int GetCurrentBulletIndex()
     {
         return currentBulletIndex;
     }
     #endregion
 
+    #region Recoil Animation
+    private void OnDisable()
+    {
+        if (recoilTarget) recoilTarget.localPosition = recoilBaseLocalPos;
+        recoilCo = null;
+    }
+
+    private void PlayRecoil()
+    {
+        if (!recoilTarget || !gameObject.activeInHierarchy) return;
+        if (recoilCo != null) StopCoroutine(recoilCo);
+        recoilCo = StartCoroutine(CoRecoil());
+    }
+
+    private System.Collections.IEnumerator CoRecoil()
+    {
+        // Dirección mundial según orientación del cañón
+        Vector3 worldDir = (recoilAxis == Axis.Up) ? recoilTarget.up : recoilTarget.right;
+        if (recoilInvert) worldDir = -worldDir;
+
+        // Convertir a espacio local del recoilTarget
+        Vector3 localDir = recoilTarget.InverseTransformDirection(worldDir);
+
+        Vector3 start = recoilBaseLocalPos;
+        Vector3 back = start + localDir * recoilDistance;
+
+        // Ida
+        float t = 0f;
+        float outT = Mathf.Max(0.01f, recoilOutTime);
+        while (t < outT)
+        {
+            float k = recoilOutCurve.Evaluate(t / outT);
+            recoilTarget.localPosition = Vector3.LerpUnclamped(start, back, k);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        recoilTarget.localPosition = back;
+
+        // Vuelta
+        t = 0f;
+        float inT = Mathf.Max(0.01f, recoilInTime);
+        while (t < inT)
+        {
+            float k = recoilInCurve.Evaluate(t / inT);
+            recoilTarget.localPosition = Vector3.LerpUnclamped(back, start, k);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        recoilTarget.localPosition = start;
+        recoilCo = null;
+    }
+    #endregion
 }
