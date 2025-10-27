@@ -93,12 +93,14 @@ public class PlayerShooter : MonoBehaviour
                     // Coste/beneficio de energía por disparo:
                     //  energyCost > 0 => gasta (resta)
                     //  energyCost < 0 => cura (suma)
+                    // Antes llamabas TakeDamage(energyCost)
                     if (bulletData != null && playerHealth != null)
                     {
                         float energyCost = bulletData.GetEnergyCost();
                         if (energyCost != 0f)
-                            playerHealth.ChangeEnergy(-energyCost);
+                            playerHealth.ChangeEnergy(-energyCost); // +gasta, -cura
                     }
+
 
                     ShootBullet(prefab);
                     canShoot = false;

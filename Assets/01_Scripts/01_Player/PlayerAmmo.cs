@@ -49,9 +49,11 @@ public class PlayerAmmo : MonoBehaviour
             return false;
         }
 
+        if (IsInfinite(bulletTypeIndex))
+            return true;
+
         if (currentAmmoPerType == null || bulletTypeIndex < 0 || bulletTypeIndex >= currentAmmoPerType.Length)
         {
-            // indice invalido -> no disparar
             return false;
         }
 
@@ -147,5 +149,22 @@ public class PlayerAmmo : MonoBehaviour
             StartCoroutine(ReloadCoroutine(currentIndex));
         }
     }
+    #endregion
+
+    #region Animation
+    public bool IsInfinite(int bulletTypeIndex)
+    {
+        return (maxAmmoPerType != null &&
+                bulletTypeIndex >= 0 &&
+                bulletTypeIndex < maxAmmoPerType.Length &&
+                maxAmmoPerType[bulletTypeIndex] <= 0);
+    }
+
+    public int GetMaxAmmo(int index)
+    {
+        if (maxAmmoPerType == null || index < 0 || index >= maxAmmoPerType.Length) return 0;
+        return maxAmmoPerType[index];
+    }
+
     #endregion
 }

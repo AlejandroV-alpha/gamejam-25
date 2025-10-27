@@ -3,6 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerHealth : MonoBehaviour, ITakeDamage, ITakeEnergy
 {
+    #region Animation
+    public float GetMaxEnergy() => maxEnergy;    
+    #endregion
+
     #region Inspector Variables
     [Header("Health (Energy) Settings")]
     [SerializeField] float maxEnergy = 500f;
