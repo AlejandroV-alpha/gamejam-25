@@ -216,8 +216,9 @@ GameObject:
   m_Component:
   - component: {fileID: 237377399}
   - component: {fileID: 237377400}
+  - component: {fileID: 237377401}
   m_Layer: 0
-  m_Name: TrackRight
+  m_Name: TankRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,6 +294,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &237377401
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237377398}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: adbb5ada1bdcc944f9cc9bd9c06233c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1030119996
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,8 +540,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1664778764}
   - component: {fileID: 1664778765}
+  - component: {fileID: 1664778766}
   m_Layer: 0
-  m_Name: TrackLeft
+  m_Name: TankLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,6 +618,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1664778766
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664778763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9982b8001fd9714d8b42613cc256495, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &714700935649431608
 Rigidbody2D:
   serializedVersion: 5
@@ -882,6 +928,7 @@ GameObject:
   - component: {fileID: 6617737436182029482}
   - component: {fileID: 3278115443975176499}
   - component: {fileID: 929307161583159965}
+  - component: {fileID: 8534486331932571717}
   - component: {fileID: 5088945268520310982}
   - component: {fileID: 714700935649431608}
   m_Layer: 3
@@ -891,6 +938,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8534486331932571717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534486331932571716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8307f8bdecf7d244a4283d23bc476a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftTrack: {fileID: 1664778766}
+  rightTrack: {fileID: 237377401}
+  maxLinearSpeed: 6
+  turnInfluence: 0.003
+  invertOnReverse: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
