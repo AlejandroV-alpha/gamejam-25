@@ -22,11 +22,13 @@ public class PlayerShooter : MonoBehaviour
 
     PlayerAmmo playerAmmo;
     PlayerHealth playerHealth;
+    PlayerAnimator playerAnimator;
 
     private void Awake()
     {
         playerAmmo = GetComponent<PlayerAmmo>();
         playerHealth = GetComponent<PlayerHealth>();
+        playerAnimator = GetComponent<PlayerAnimator>();
     }
 
     // Update is called once per frame
@@ -84,7 +86,10 @@ public class PlayerShooter : MonoBehaviour
                             playerHealth.TakeDamage(energyCost, Vector2.zero);
                         }
                     }
-
+                    if (playerAnimator != null)
+                    {
+                        playerAnimator.TriggerTurretRecoil();
+                    }
                     ShootBullet(prefab);
                     canShoot = false;
                 }

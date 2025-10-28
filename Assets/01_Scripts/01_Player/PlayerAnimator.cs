@@ -8,6 +8,9 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] Animator leftTrack;
     [SerializeField] Animator rightTrack;
 
+    [Header("Turret (Animation)")]
+    [SerializeField] Animator turret;
+
     [Header("Movement Settings")]
     [SerializeField] float maxLinearSpeed = 6f;
     [SerializeField] float turnInfluence = 0.015f;
@@ -105,4 +108,12 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetFloat(SpeedMultHash, speedMult);
     }
     #endregion
+
+    public void TriggerTurretRecoil()
+    {
+        if (turret != null)
+        {
+            turret.SetTrigger("Shoot");
+        }
+    }
 }

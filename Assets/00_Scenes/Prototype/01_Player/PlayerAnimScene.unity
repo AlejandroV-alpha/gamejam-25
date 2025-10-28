@@ -453,6 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301274522}
   - component: {fileID: 1301274523}
+  - component: {fileID: 1301274524}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -530,6 +531,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1301274524
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301274521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 919bfb9cf0cdb734ba32dfd559f527e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1664778763
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +783,7 @@ Transform:
   m_GameObject: {fileID: 6040346252278163456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -807,8 +830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb69306f1f8acc40842d522f39a3eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 3
-  maxBackwardSpeed: 1.5
+  maxForwardSpeed: 1.5
+  maxBackwardSpeed: 0.5
   acceleration: 5
   deceleration: 5
   maxRotateSpeed: 150
@@ -952,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftTrack: {fileID: 1664778766}
   rightTrack: {fileID: 237377401}
+  turret: {fileID: 1301274524}
   maxLinearSpeed: 6
   turnInfluence: 0.003
   invertOnReverse: 1
