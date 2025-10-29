@@ -563,6 +563,8 @@ MonoBehaviour:
   bulletPrefabs:
   - {fileID: 4522896815410241247, guid: f7bb2d61dadede74490162b57614e578, type: 3}
   - {fileID: 6583429371737777199, guid: ecb6ca260774afb42b93a52c22cd029e, type: 3}
+  shootSimpleBulletSFX: {fileID: 8300000, guid: a6390c2c87a19ef4f852ecaa1d4b2a75, type: 3}
+  shootEnergyBulletSFX: {fileID: 8300000, guid: 275f675a62b62cd4fa5908b0ad8b968a, type: 3}
 --- !u!114 &2563421472819682175
 MonoBehaviour:
   m_ObjectHideFlags: 0
