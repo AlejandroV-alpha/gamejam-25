@@ -11,6 +11,9 @@ public class PlayerAmmo : MonoBehaviour
     [Header("Keys")]
     [SerializeField] KeyCode reloadKey = KeyCode.R;
 
+    [Header("UI")]
+    [SerializeField] PlayerAmmoUIController playerAmmoController;
+
     int[] currentAmmoPerType;
     bool isReloading = false;
 
@@ -58,6 +61,11 @@ public class PlayerAmmo : MonoBehaviour
         if (currentAmmoPerType[bulletTypeIndex] > 0)
         {
             currentAmmoPerType[bulletTypeIndex]--;
+            //Actualiza UI según tipo de bala
+            if (playerAmmoController != null)
+            {
+                playerAmmoController.UseBullet(bulletTypeIndex);
+            }
             if (currentAmmoPerType[bulletTypeIndex] == 0)
             {
                 StartReloadIfNeeded(bulletTypeIndex);
@@ -116,6 +124,12 @@ public class PlayerAmmo : MonoBehaviour
         if (maxAmmoPerType != null && bulletTypeIndex >= 0 && bulletTypeIndex < maxAmmoPerType.Length)
         {
             currentAmmoPerType[bulletTypeIndex] = maxAmmoPerType[bulletTypeIndex];
+
+            //Actualiza UI solo del tipo recargado
+            if (playerAmmoController != null)
+            {
+                playerAmmoController.Reload(bulletTypeIndex);
+            }
         }
 
         isReloading = false;
