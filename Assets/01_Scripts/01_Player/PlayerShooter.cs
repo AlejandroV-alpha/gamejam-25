@@ -16,17 +16,23 @@ public class PlayerShooter : MonoBehaviour
     [Tooltip("Orden: 0 = COMMON, 1 = ENERGY")]
     [SerializeField] GameObject[] bulletPrefabs;
 
+    [Header("Audio SFX")]
+    [SerializeField] AudioClip shootSimpleBulletSFX;
+    [SerializeField] AudioClip shootEnergyBulletSFX;
+
     int currentBulletIndex = 0;
     float timer = 0f;
     bool canShoot = true;
 
     PlayerAmmo playerAmmo;
     PlayerHealth playerHealth;
+    PlayerAnimator playerAnimator;
 
     private void Awake()
     {
         playerAmmo = GetComponent<PlayerAmmo>();
         playerHealth = GetComponent<PlayerHealth>();
+        playerAnimator = GetComponent<PlayerAnimator>();
     }
 
     // Update is called once per frame
@@ -84,7 +90,14 @@ public class PlayerShooter : MonoBehaviour
                             playerHealth.TakeDamage(energyCost, Vector2.zero);
                         }
                     }
+                    if (playerAnimator != null)
+                    {
+                        playerAnimator.TriggerTurretRecoil();
+                    }
 
+                    // Reproducir sonido del disparo
+                    PlayAudioClip();
+                    
                     ShootBullet(prefab);
                     canShoot = false;
                 }
@@ -159,4 +172,25 @@ public class PlayerShooter : MonoBehaviour
     }
     #endregion
 
+    #region AudioManager
+    void PlayAudioClip()
+    {
+        if (AudioManager.instance == null)
+        {
+            return;
+        }
+
+        switch (currentBulletIndex)
+        {
+            case 0:
+                AudioManager.instance.PlayRandomPitchSFX(shootSimpleBulletSFX);
+                break;
+            case 1:
+                AudioManager.instance.PlayRandomPitchSFX(shootEnergyBulletSFX);
+                break;
+            default:
+                break;
+        }
+    }
+    #endregion
 }

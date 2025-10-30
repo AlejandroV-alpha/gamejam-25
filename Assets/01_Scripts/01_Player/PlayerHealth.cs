@@ -80,5 +80,13 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ITakeEnergy
     {
         return currentEnergy;
     }
+
+    /// <summary>
+    /// Retorna la maxima energia del jugador.
+    /// </summary>
+    public float GetMaxEnergy()
+    {
+        return maxEnergy;
+    }
     #endregion
 }

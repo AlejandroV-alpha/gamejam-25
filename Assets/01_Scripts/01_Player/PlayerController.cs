@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     float baseMaxBackwardSpeed;
     float baseMaxRotateSpeed;
 
+    float lastHorizontalInput = 0f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -107,6 +109,11 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
+        if (horizontal != 0f)
+        {
+            lastHorizontalInput = horizontal;
+        }
+
         float targetRotateSpeed = CalculateTargetRotationSpeed(horizontal);
         float accel = (horizontal != 0f) ? rotateAcceleration : rotateDeceleration;
 
@@ -145,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     public float GetCurrentRotateSpeed()
     {
-        return currentRotateSpeed;
+        return currentRotateSpeed * Mathf.Sign(lastHorizontalInput);
     }
     #endregion
 
