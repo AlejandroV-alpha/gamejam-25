@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8f83e291226414c4c9d666fc382b374a
+guid: 6141af89e031ecf43b473f1f43bc1193
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -620585082295491505
-    second: health_bar_transparent_0
+      213: 3253572165138905035
+    second: EnemyBody_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1024
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthBar_0
+      name: EnemyBody_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 395
-        width: 1446
-        height: 240
+        x: 0
+        y: 0
+        width: 1015
+        height: 1023
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3537fb70433ab374e99ac9ad20e21738
-      internalID: 1061765863
+      spriteID: bc7f33265a2072d20800000000000000
+      internalID: 3253572165138905035
       vertices: []
       indices: 
       edges: []
@@ -152,7 +152,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthBar_0: 1061765863
+      EnemyBody_0: 3253572165138905035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
