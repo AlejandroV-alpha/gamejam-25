@@ -11,38 +11,38 @@ using UnityEngine.AI;
 public class TankEnemy : BaseEnemy
 {
     #region Inspector Variables
-    [Header("Patrulla")]
-    [SerializeField] private float patrolRadius = 5f;
-    [SerializeField] private float patrolSpeed = 2f;
-    [SerializeField] private float patrolPointTolerance = 0.5f;
-    [SerializeField] private float minPatrolDistance = 1f;
-    [SerializeField] private float timeBetweenPatrolPoints = 2f;
+    [Header("Patrol")]
+    [SerializeField] float patrolRadius = 3f;
+    [SerializeField] float patrolSpeed = 1.5f;
+    [SerializeField] float patrolPointTolerance = 0.7f;
+    [SerializeField] float minPatrolDistance = 0.5f;
+    [SerializeField] float timeBetweenPatrolPoints = 3f;
 
-    [Header("Obstaculos")]
-    [SerializeField] private LayerMask obstacleLayer;
+    [Header("Obstacles")]
+    [SerializeField] LayerMask obstacleLayer;
 
-    [Header("Persecucion")]
-    [SerializeField] private float chaseSpeed = 3.5f;
-    [SerializeField] private float pathUpdateInterval = 0.5f;
-    [SerializeField] private float stuckTimeThreshold = 3f;
-    [SerializeField] private float stuckDistanceThreshold = 0.1f;
+    [Header("Chase")]
+    [SerializeField] float chaseSpeed = 2.5f;
+    [SerializeField] float pathUpdateInterval = 1f;
+    [SerializeField] float stuckTimeThreshold = 5f;
+    [SerializeField] float stuckDistanceThreshold = 0.2f;
 
-    [Header("Ataque")]
-    [SerializeField] private float predictiveAiming = 0.5f;
-    [SerializeField] private float aimTolerance = 5f;
+    [Header("Attack")]
+    [SerializeField] float predictiveAiming = 0.3f;
+    [SerializeField] float aimTolerance = 10f;
     #endregion
 
     #region Private Fields
-    private Vector2 originPosition;
-    private Vector2 patrolTarget;
-    private NavMeshAgent agent;
-    private IShooter ishooter;
-    private float lastPatrolTime;
-    private float lastPathUpdateTime;
-    private float stuckTimer;
-    private Vector2 lastPosition;
-    private bool hasValidPatrolTarget;
-    private bool isStuck;
+    Vector2 originPosition;
+    Vector2 patrolTarget;
+    NavMeshAgent agent;
+    IShooter ishooter;
+    float lastPatrolTime;
+    float lastPathUpdateTime;
+    float stuckTimer;
+    Vector2 lastPosition;
+    bool hasValidPatrolTarget;
+    bool isStuck;
     #endregion
 
     #region Unity Methods
@@ -78,6 +78,7 @@ public class TankEnemy : BaseEnemy
             agent.isStopped = false;
             CheckIfStuck();
         }
+
         base.Update();
     }
     #endregion
@@ -106,9 +107,12 @@ public class TankEnemy : BaseEnemy
             lastPatrolTime = Time.time;
         }
 
-        if (Target != null && Vector2.Distance(transform.position, Target.position) <= alertRange && HasLineOfSightToTarget())
+        if (Target != null)
         {
-            stateMachine.ChangeState(EnemyState.Alert);
+            if (Vector2.Distance(transform.position, Target.position) <= alertRange && HasLineOfSightToTarget())
+            {
+                stateMachine.ChangeState(EnemyState.Alert);
+            }
         }
     }
 
@@ -170,11 +174,14 @@ public class TankEnemy : BaseEnemy
         agent.isStopped = true;
         OrientWithPrediction();
 
-        if (ishooter != null && ishooter.CanShoot())
+        if (ishooter != null)
         {
-            if (IsAimedAtTarget())
+            if (ishooter.CanShoot())
             {
-                ishooter.Shoot();
+                if (IsAimedAtTarget())
+                {
+                    ishooter.Shoot();
+                }
             }
         }
     }
@@ -196,27 +203,33 @@ public class TankEnemy : BaseEnemy
     /// Elige un nuevo punto de patrulla valido dentro del radio definido.
     /// Evita obstaculos y asegura que el punto sea alcanzable.
     /// </summary>
-    private void ChooseNewPatrolPoint()
+    void ChooseNewPatrolPoint()
     {
         for (int i = 0; i < 20; i++)
         {
             Vector2 randomDir = Random.insideUnitCircle.normalized * patrolRadius;
             Vector2 randomPoint = originPosition + new Vector2(randomDir.x, randomDir.y);
 
-            if (Vector2.Distance(randomPoint, transform.position) < minPatrolDistance) continue;
+            if (Vector2.Distance(randomPoint, transform.position) < minPatrolDistance)
+            {
+                continue;
+            }
 
             if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, patrolRadius, NavMesh.AllAreas))
             {
                 NavMeshPath path = new NavMeshPath();
-                if (agent.CalculatePath(hit.position, path) && path.status == NavMeshPathStatus.PathComplete)
+                if (agent.CalculatePath(hit.position, path))
                 {
-                    if (!HasObstaclesBetween(transform.position, hit.position))
+                    if (path.status == NavMeshPathStatus.PathComplete)
                     {
-                        patrolTarget = hit.position;
-                        agent.SetDestination(patrolTarget);
-                        hasValidPatrolTarget = true;
-                        stuckTimer = 0f;
-                        return;
+                        if (!HasObstaclesBetween(transform.position, hit.position))
+                        {
+                            patrolTarget = hit.position;
+                            agent.SetDestination(patrolTarget);
+                            hasValidPatrolTarget = true;
+                            stuckTimer = 0f;
+                            return;
+                        }
                     }
                 }
             }
@@ -230,9 +243,13 @@ public class TankEnemy : BaseEnemy
     /// <summary>
     /// Comprueba si el enemigo alcanzo el punto de patrulla.
     /// </summary>
-    private bool ReachedPatrolPoint()
+    bool ReachedPatrolPoint()
     {
-        if (!hasValidPatrolTarget) return true;
+        if (!hasValidPatrolTarget)
+        {
+            return true;
+        }
+
         return !agent.pathPending &&
                agent.remainingDistance <= agent.stoppingDistance + patrolPointTolerance &&
                (!agent.hasPath || agent.velocity.sqrMagnitude == 0f);
@@ -243,7 +260,7 @@ public class TankEnemy : BaseEnemy
     /// <summary>
     /// Comprueba si el enemigo esta atascado mientras se mueve.
     /// </summary>
-    private void CheckIfStuck()
+    void CheckIfStuck()
     {
         float distanceMoved = Vector2.Distance(transform.position, lastPosition);
 
@@ -268,20 +285,28 @@ public class TankEnemy : BaseEnemy
     /// <summary>
     /// Comprueba si hay obstaculos entre dos puntos.
     /// </summary>
-    private bool HasObstaclesBetween(Vector2 from, Vector2 to)
+    bool HasObstaclesBetween(Vector2 from, Vector2 to)
     {
         Vector2 direction = (to - from).normalized;
         float distance = Vector2.Distance(from, to);
         RaycastHit2D hit = Physics2D.Raycast(from, direction, distance, obstacleLayer);
-        return hit.collider != null;
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
     /// Orienta al enemigo hacia la posicion predicha del objetivo.
     /// </summary>
-    private void OrientWithPrediction()
+    void OrientWithPrediction()
     {
-        if (Target == null) return;
+        if (Target == null)
+        {
+            return;
+        }
 
         Rigidbody2D targetRb = Target.GetComponent<Rigidbody2D>();
         Vector2 predictedPosition = (Vector2)Target.position;
@@ -300,23 +325,42 @@ public class TankEnemy : BaseEnemy
     /// <summary>
     /// Comprueba si el enemigo esta correctamente apuntando al objetivo.
     /// </summary>
-    private bool IsAimedAtTarget()
+    bool IsAimedAtTarget()
     {
-        if (Target == null) return false;
+        if (Target == null)
+        {
+            return false;
+        }
+
         float angleDifference = Vector2.Angle(transform.up, (Target.position - transform.position).normalized);
-        return angleDifference <= aimTolerance;
+        if (angleDifference <= aimTolerance)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
     /// Comprueba si hay linea de vision directa al objetivo.
     /// </summary>
-    private bool HasLineOfSightToTarget()
+    bool HasLineOfSightToTarget()
     {
-        if (Target == null) return false;
+        if (Target == null)
+        {
+            return false;
+        }
+
         Vector2 direction = (Target.position - transform.position).normalized;
         float distance = Vector2.Distance(transform.position, Target.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayer);
-        return hit.collider == null;
+
+        if (hit.collider == null)
+        {
+            return true;
+        }
+
+        return false;
     }
     #endregion
 
@@ -327,6 +371,7 @@ public class TankEnemy : BaseEnemy
     public override void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
     {
         base.TakeDamage(damage, hitDirection, knockbackForce);
+
         if (!stateMachine.IsInState(EnemyState.Death) && Target != null)
         {
             stateMachine.ChangeState(EnemyState.Alert);
@@ -347,7 +392,10 @@ public class TankEnemy : BaseEnemy
     /// </summary>
     protected override void UpdateTargetState()
     {
-        if (Target == null || stateMachine.IsInState(EnemyState.Death)) return;
+        if (Target == null || stateMachine.IsInState(EnemyState.Death))
+        {
+            return;
+        }
 
         float distance = Vector2.Distance(transform.position, Target.position);
         bool hasLOS = HasLineOfSightToTarget();
@@ -355,11 +403,17 @@ public class TankEnemy : BaseEnemy
         if (!stateMachine.IsInState(EnemyState.Attack))
         {
             if (distance <= attackRange && hasLOS)
+            {
                 stateMachine.ChangeState(EnemyState.Attack);
+            }
             else if (distance <= alertRange && hasLOS)
+            {
                 stateMachine.ChangeState(EnemyState.Alert);
+            }
             else
+            {
                 stateMachine.ChangeState(EnemyState.Idle);
+            }
         }
     }
     #endregion
@@ -368,7 +422,7 @@ public class TankEnemy : BaseEnemy
     /// <summary>
     /// Dibuja los rangos y puntos de patrulla para debugging.
     /// </summary>
-    private void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected()
     {
         DrawRanges();
 

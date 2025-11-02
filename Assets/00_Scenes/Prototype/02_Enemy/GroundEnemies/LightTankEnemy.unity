@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1544050411627150531, guid: d8b403d54c93ebf45ac614e81c777efd, type: 3}
+  bulletPrefab: {fileID: 8871286895338364672, guid: f2197b0215bbbf04f9d48b16c2fba420, type: 3}
   firePoint: {fileID: 156917720}
   cooldownBetweenShots: 1
 --- !u!61 &1002721072
@@ -3021,20 +3021,20 @@ MonoBehaviour:
   alertRange: 6
   attackRange: 4
   currentHealth: 0
-  patrolRadius: 5
-  patrolSpeed: 2
-  patrolPointTolerance: 0.5
-  minPatrolDistance: 1
-  timeBetweenPatrolPoints: 2
+  patrolRadius: 3
+  patrolSpeed: 1.5
+  patrolPointTolerance: 0.7
+  minPatrolDistance: 0.5
+  timeBetweenPatrolPoints: 3
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 4096
-  chaseSpeed: 3.5
-  pathUpdateInterval: 0.5
-  stuckTimeThreshold: 3
-  stuckDistanceThreshold: 0.1
-  predictiveAiming: 0.5
-  aimTolerance: 5
+  chaseSpeed: 2.5
+  pathUpdateInterval: 1
+  stuckTimeThreshold: 5
+  stuckDistanceThreshold: 0.2
+  predictiveAiming: 0.3
+  aimTolerance: 10
 --- !u!114 &1002721074
 MonoBehaviour:
   m_ObjectHideFlags: 0
