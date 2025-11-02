@@ -368,7 +368,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 83a948efc3d1bb24dae3e77e5624aa88, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!4 &125646678
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,7 +2867,7 @@ GameObject:
   - component: {fileID: 1002721075}
   - component: {fileID: 1002721074}
   m_Layer: 8
-  m_Name: HeavyTankEnemy
+  m_Name: ArcticTankEnemy
   m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8177043836007833682, guid: 365e302cf8d78c748a7f6ff4d02607c1, type: 3}
+  bulletPrefab: {fileID: 4095938933624104847, guid: d43cc3969e90776469e09ef708897f5f, type: 3}
   firePoint: {fileID: 156917720}
   cooldownBetweenShots: 1
 --- !u!61 &1002721072
@@ -3018,8 +3018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  alertRange: 8
-  attackRange: 6
+  alertRange: 6
+  attackRange: 4
   currentHealth: 0
   patrolRadius: 3
   patrolSpeed: 1.5
