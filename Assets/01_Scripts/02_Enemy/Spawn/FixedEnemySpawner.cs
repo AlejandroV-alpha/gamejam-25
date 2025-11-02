@@ -2,41 +2,29 @@ using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
-/// Spawnea enemigos fijos en múltiples puntos dados.
+/// Spawnea enemigos fijos en multiples puntos dados.
 /// Cada punto tiene su propio temporizador y respawnea al morir su enemigo.
 /// </summary>
 public class FixedEnemySpawner : MonoBehaviour
 {
-    [Header("Configuración del Spawn")]
-    [Tooltip("Prefab del enemigo a spawnear.")]
-    [SerializeField] private GameObject enemyPrefab;
+    #region Spawn Settings
+    [Header("Spawn Settings")]
+    [Tooltip("Enemy prefab to spawn.")]
+    [SerializeField] GameObject enemyPrefab;
 
-    [Tooltip("Puntos donde se generarán los enemigos.")]
-    [SerializeField] private Transform[] spawnPoints;
+    [Tooltip("Points where enemies will be spawned.")]
+    [SerializeField] Transform[] spawnPoints;
 
-    [Tooltip("Tiempo de espera entre respawns después de que el enemigo muere.")]
-    [SerializeField] private float timeBetweenSpawn = 3f;
+    [Tooltip("Time to wait before respawning after the enemy dies.")]
+    [SerializeField] float timeBetweenSpawn = 3f;
+    #endregion
 
-    // Clase interna para manejar cada punto de spawn
-    private class SpawnSlot
-    {
-        public Transform spawnPoint;
-        public GameObject currentEnemy;
-        public float timer;
-        public bool waitingRespawn;
+    #region Private Fields
+    List<SpawnSlot> spawnSlots = new List<SpawnSlot>();
+    #endregion
 
-        public SpawnSlot(Transform point)
-        {
-            spawnPoint = point;
-            currentEnemy = null;
-            timer = 0f;
-            waitingRespawn = false;
-        }
-    }
-
-    private List<SpawnSlot> spawnSlots = new List<SpawnSlot>();
-
-    private void Start()
+    #region Unity Methods
+    void Start()
     {
         // Inicializa todos los spawn points
         foreach (var point in spawnPoints)
@@ -51,11 +39,11 @@ public class FixedEnemySpawner : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         foreach (var slot in spawnSlots)
         {
-            // Si murió el enemigo y no estamos esperando
+            // Si murio el enemigo y no estamos esperando
             if (slot.currentEnemy == null && !slot.waitingRespawn)
             {
                 slot.waitingRespawn = true;
@@ -75,7 +63,26 @@ public class FixedEnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy(SpawnSlot slot)
+    void OnDrawGizmosSelected()
+    {
+        if (spawnPoints == null) return;
+
+        Gizmos.color = Color.red;
+        foreach (var point in spawnPoints)
+        {
+            if (point != null)
+            {
+                Gizmos.DrawWireSphere(point.position, 0.3f);
+            }
+        }
+    }
+    #endregion
+
+    #region Spawn Logic
+    /// <summary>
+    /// Instancia el enemigo en el spawn point del slot.
+    /// </summary>
+    void SpawnEnemy(SpawnSlot slot)
     {
         if (enemyPrefab == null || slot.spawnPoint == null)
         {
@@ -85,16 +92,5 @@ public class FixedEnemySpawner : MonoBehaviour
 
         slot.currentEnemy = Instantiate(enemyPrefab, slot.spawnPoint.position, slot.spawnPoint.rotation);
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (spawnPoints == null) return;
-
-        Gizmos.color = Color.red;
-        foreach (var point in spawnPoints)
-        {
-            if (point != null)
-                Gizmos.DrawWireSphere(point.position, 0.3f);
-        }
-    }
+    #endregion
 }

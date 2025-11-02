@@ -3,47 +3,58 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Spawnea enemigos dentro de una zona definida.
-/// Evita generar enemigos en zonas donde haya obstáculos o jugadores (usando LayerMasks).
-/// Mantiene un número máximo de enemigos activos.
+/// Evita generar enemigos en zonas donde haya obstaculos o jugadores (usando LayerMasks).
+/// Mantiene un numero maximo de enemigos activos.
 /// El temporizador solo se reinicia cuando hay espacio para spawnear.
 /// </summary>
 public class MobileEnemySpawner : MonoBehaviour
 {
-    [Header("Zona de Spawn")]
-    [Tooltip("Área rectangular donde se generarán los enemigos.")]
-    [SerializeField] private Collider2D spawnArea;
+    #region Spawn Area
+    [Header("Spawn Area")]
+    [Tooltip("Rectangular area where enemies will be spawned.")]
+    [SerializeField] Collider2D spawnArea;
+    #endregion
 
-    [Header("Configuración de Enemigos")]
-    [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] private int maxActiveEnemies = 10;
-    [SerializeField] private float timeBetweenSpawn = 3f;
+    #region Enemy Settings
+    [Header("Enemy Settings")]
+    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] int maxActiveEnemies = 10;
+    [SerializeField] float timeBetweenSpawn = 3f;
+    #endregion
 
-    [Header("Detección de Obstáculos y Enemigos")]
-    [Tooltip("Capas que representan obstáculos o enemigos donde no se debe spawnear.")]
-    [SerializeField] private LayerMask obstacleLayer;
-    [SerializeField] private float checkRadius = 0.5f; // Radio para evitar obstáculos/enemigos
+    #region Obstacle Detection
+    [Header("Obstacle and Enemy Detection")]
+    [Tooltip("Layers representing obstacles or enemies where enemies should not spawn.")]
+    [SerializeField] LayerMask obstacleLayer;
+    [SerializeField] float checkRadius = 0.5f; // Radius to avoid obstacles/enemies
+    #endregion
 
-    [Header("Evitar al Jugador")]
-    [Tooltip("Capa que representa al jugador.")]
-    [SerializeField] private LayerMask playerLayer;
-    [Tooltip("Radio de seguridad para evitar spawnear cerca del jugador.")]
-    [SerializeField] private float playerAvoidRadius = 3f;
+    #region Player Avoidance
+    [Header("Player Avoidance")]
+    [Tooltip("Layer representing the player.")]
+    [SerializeField] LayerMask playerLayer;
+    [Tooltip("Safety radius to avoid spawning near the player.")]
+    [SerializeField] float playerAvoidRadius = 3f;
+    #endregion
 
-    private float spawnTimer;
-    private List<GameObject> activeEnemies = new List<GameObject>();
-    private bool canSpawnTimerRun = true;
+    #region Private Fields
+    float spawnTimer;
+    List<GameObject> activeEnemies = new List<GameObject>();
+    bool canSpawnTimerRun = true;
+    #endregion
 
-    private void Start()
+    #region Unity Methods
+    void Start()
     {
         spawnTimer = timeBetweenSpawn;
     }
 
-    private void Update()
+    void Update()
     {
         int previousCount = activeEnemies.Count;
         activeEnemies.RemoveAll(e => e == null);
 
-        // Detectar si murió un enemigo
+        // Detectar si murio un enemigo
         if (activeEnemies.Count < previousCount && activeEnemies.Count < maxActiveEnemies)
         {
             if (!canSpawnTimerRun)
@@ -65,18 +76,26 @@ public class MobileEnemySpawner : MonoBehaviour
             }
         }
 
-        // Si llegamos al máximo, detenemos el temporizador
+        // Si llegamos al maximo, detenemos el temporizador
         if (activeEnemies.Count >= maxActiveEnemies)
         {
             canSpawnTimerRun = false;
             spawnTimer = 0f;
         }
     }
+    #endregion
 
-    private void TrySpawnEnemy()
+    #region Enemy Spawn Logic
+    /// <summary>
+    /// Intenta spawnear un enemigo si hay espacio disponible
+    /// y se cumplen las condiciones de obstaculos y jugador.
+    /// </summary>
+    void TrySpawnEnemy()
     {
         if (activeEnemies.Count >= maxActiveEnemies)
+        {
             return;
+        }
 
         if (enemyPrefab == null || spawnArea == null)
         {
@@ -87,7 +106,7 @@ public class MobileEnemySpawner : MonoBehaviour
         Vector2 spawnPoint;
         bool foundValidPoint = false;
 
-        // Hasta 10 intentos de encontrar un punto válido
+        // Hasta 10 intentos de encontrar un punto valido
         for (int i = 0; i < 10; i++)
         {
             spawnPoint = GetRandomPointInArea();
@@ -104,21 +123,29 @@ public class MobileEnemySpawner : MonoBehaviour
         }
 
         if (!foundValidPoint)
-            Debug.Log("No se encontró un punto libre para spawnear enemigo (zona saturada o muy cerca del jugador).");
+        {
+            Debug.Log("No se encontro un punto libre para spawnear enemigo (zona saturada o muy cerca del jugador).");
+        }
     }
 
-    private void SpawnEnemy(Vector2 position)
+    /// <summary>
+    /// Instancia el enemigo en la posicion indicada.
+    /// </summary>
+    void SpawnEnemy(Vector2 position)
     {
         GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
         activeEnemies.Add(newEnemy);
     }
 
-    private Vector2 GetRandomPointInArea()
+    /// <summary>
+    /// Genera un punto aleatorio dentro de la zona de spawn.
+    /// </summary>
+    Vector2 GetRandomPointInArea()
     {
         Bounds bounds = spawnArea.bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float y = Random.Range(bounds.min.y, bounds.max.y);
         return new Vector2(x, y);
     }
-
+    #endregion
 }
