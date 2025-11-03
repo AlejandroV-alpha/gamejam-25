@@ -10242,6 +10242,7 @@ GameObject:
   - component: {fileID: 1424860304}
   - component: {fileID: 1424860306}
   - component: {fileID: 1424860305}
+  - component: {fileID: 1424860307}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -12728,6 +12729,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1424860307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424860303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &1442302478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8708054269387244062, guid: 65de953017319534485255fdd636cfb4, type: 3}
@@ -13826,7 +13843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1633482528}
   - component: {fileID: 1633482527}
-  - component: {fileID: 1633482529}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -13862,22 +13878,6 @@ Transform:
   - {fileID: 1424860304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1633482529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633482526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1001 &1635553067
 PrefabInstance:
   m_ObjectHideFlags: 0
