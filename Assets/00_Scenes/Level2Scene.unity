@@ -330,6 +330,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6971205811115936475, guid: 08a7a65bcfdf8f944ae83b54349c2ad0, type: 3}
   m_PrefabInstance: {fileID: 28968682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &45996919
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 126.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -28.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &46461233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,6 +567,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6013549390443671084, guid: f6b8932e155fe8b4e8be6c6a00260459, type: 3}
   m_PrefabInstance: {fileID: 50929327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &61970682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1543080911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &80714027
 PrefabInstance:
@@ -1286,6 +1348,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6013549390443671084, guid: f6b8932e155fe8b4e8be6c6a00260459, type: 3}
   m_PrefabInstance: {fileID: 288448787}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &310107132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1056152858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &317111031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1671,6 +1738,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 29870116413756956, guid: cf71a48c246e94c41ba4c24b839a96c2, type: 3}
   m_PrefabInstance: {fileID: 350703885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &361602844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 183.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1 &396937980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +2006,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6971205811115936475, guid: 08a7a65bcfdf8f944ae83b54349c2ad0, type: 3}
   m_PrefabInstance: {fileID: 432228471}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &440870520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 537168160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &450196841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1548329559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486596265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2031,6 +2165,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &537168160
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 107.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &549886743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2337,6 +2528,10 @@ PrefabInstance:
     - target: {fileID: 5490198510250302724, guid: a932a946d95850d4d997d6784050a3a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346186046730390989, guid: a932a946d95850d4d997d6784050a3a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8545623440667745185, guid: a932a946d95850d4d997d6784050a3a0, type: 3}
       propertyPath: m_Name
@@ -3162,6 +3357,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 29870116413756956, guid: cf71a48c246e94c41ba4c24b839a96c2, type: 3}
   m_PrefabInstance: {fileID: 772987009}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &783925674 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1955018995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &809745610
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.9870987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.941029
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+--- !u!4 &809919840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 809745610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819145683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,6 +4053,16 @@ Transform:
   - {fileID: 1267662089}
   - {fileID: 3762119}
   - {fileID: 124678090}
+  - {fileID: 809919840}
+  - {fileID: 450196841}
+  - {fileID: 956467362}
+  - {fileID: 1498857132}
+  - {fileID: 1445958344}
+  - {fileID: 440870520}
+  - {fileID: 783925674}
+  - {fileID: 61970682}
+  - {fileID: 310107132}
+  - {fileID: 1229955234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &952168020
@@ -3854,6 +4126,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2016937214940868039, guid: d3a5a2e5c788be743866e609afbe9dbb, type: 3}
   m_PrefabInstance: {fileID: 952168020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &956467362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1476427262}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &974919048
 PrefabInstance:
@@ -4562,6 +4839,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2016937214940868039, guid: d3a5a2e5c788be743866e609afbe9dbb, type: 3}
   m_PrefabInstance: {fileID: 1048075839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1056152858
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 55.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &1073432479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5046,6 +5380,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7599886803470985454, guid: e71146a8b1083314cba0abf08c8fc744, type: 3}
   m_PrefabInstance: {fileID: 1161719951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1163010235
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 171.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -39.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &1165219554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5557,6 +5956,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1229955234 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 1163010235}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1240097686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6376,6 +6780,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 29870116413756956, guid: cf71a48c246e94c41ba4c24b839a96c2, type: 3}
   m_PrefabInstance: {fileID: 1429737997}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1445958344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 45996919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1476427262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 157.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+--- !u!4 &1498857132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+  m_PrefabInstance: {fileID: 361602844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1507215187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6738,6 +7209,120 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2190639264106901897, guid: f53bd34d68addb7438760036334e50b5, type: 3}
   m_PrefabInstance: {fileID: 1525144494}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1543080911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 77.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 33.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+--- !u!1001 &1548329559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &1551645359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11810,6 +12395,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1955018995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952078367}
+    m_Modifications:
+    - target: {fileID: 59434050725401007, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_Name
+      value: EscombrosCiudad (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 108.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945439824679427280, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f672570cb74fd4aabb2586a4b3d555, type: 3}
 --- !u!1001 &1972125052
 PrefabInstance:
   m_ObjectHideFlags: 0
