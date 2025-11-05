@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9bf65cfad03e4a740b27d08447f0e092
+guid: be7a88ccd0497154984a8638139c897d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3974386655091468721
-    second: 3Mapa1 (2)_0
+      213: -3595079953677880126
+    second: "tile de c\xE9sped selv\xE1_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3Mapa1 (2)_0
+      name: "tile de c\xE9sped selv\xE1_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f465837f46428d8c0800000000000000
-      internalID: -3974386655091468721
+      spriteID: 2c4f6e564d5bb1ec0800000000000000
+      internalID: -3595079953677880126
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3Mapa1 (2)_0: -3974386655091468721
+      "tile de c\xE9sped selv\xE1_0": -3595079953677880126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
