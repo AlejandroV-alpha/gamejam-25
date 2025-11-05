@@ -7,6 +7,9 @@ public class RootGuardianEnemy : FixedEnemy
     #region Inspector Variables
     [Header("Visual Settings")]
     [SerializeField] Transform visualChild;
+
+    [Header("Procedural Anim (sin pulso ni flash de daño)")]
+    [SerializeField] ProceduralEnemyAnimator procAnim; // Asignar el componente del visualChild
     #endregion
 
     #region Unity Methods
@@ -14,6 +17,9 @@ public class RootGuardianEnemy : FixedEnemy
     {
         base.Awake();
         HideVisuals();
+
+        if (!procAnim && visualChild)
+            procAnim = visualChild.GetComponent<ProceduralEnemyAnimator>();
     }
 
     protected override void Update()
@@ -29,7 +35,7 @@ public class RootGuardianEnemy : FixedEnemy
 
     #region Behaviour Overrides
     /// <summary>
-    /// Comportamiento en estado Idle: oculta al enemigo y cambia a alerta si hay jugador.
+    /// Idle: oculto. Si hay jugador, emerge y pasa a Alert.
     /// </summary>
     protected override void IdleBehaviour()
     {
@@ -38,20 +44,20 @@ public class RootGuardianEnemy : FixedEnemy
         if (currentTarget != null)
         {
             ShowVisuals();
+            procAnim?.PlayEmerge();
             stateMachine.ChangeState(EnemyState.Alert);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Alert: rota hacia el jugador y cambia a ataque si esta en rango.
-    /// Si el jugador deja de ser visible, el enemigo se oculta y vuelve a Idle.
+    /// Alert: rota hacia el jugador, si entra en rango Attack. Si pierde jugador  ocultarse.
     /// </summary>
     protected override void AlertBehaviour()
     {
         if (currentTarget != null)
         {
             ShowVisuals();
-            UpdateRotation();
+            UpdateRotation(); // tu rotación hacia el objetivo
 
             if (playerDistance <= attackRange)
             {
@@ -60,14 +66,14 @@ public class RootGuardianEnemy : FixedEnemy
         }
         else
         {
-            HideVisuals();
+            // Oculta con animación y desactiva al terminar
+            procAnim?.PlayHide(() => { HideVisuals(); });
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Attack: dispara si el jugador esta en rango.
-    /// Si el jugador deja de ser visible o no hay linea de vision, el enemigo se oculta.
+    /// Attack: rota y dispara. Si sale de rango/visión  Alert.
     /// </summary>
     protected override void AttackBehaviour()
     {
@@ -79,6 +85,10 @@ public class RootGuardianEnemy : FixedEnemy
             if (playerDistance <= attackRange && shooter.CanShoot())
             {
                 shooter.Shoot();
+
+                // Recoil en local hacia atrás. Asumiendo que “arriba” (up) del sprite es hacia delante.
+                Vector3 localBack = Vector3.up * -1f;
+                procAnim?.PlayShootRecoil(localBack);
             }
             else
             {
@@ -87,17 +97,24 @@ public class RootGuardianEnemy : FixedEnemy
         }
         else
         {
-            HideVisuals();
+            procAnim?.PlayHide(() => { HideVisuals(); });
             stateMachine.ChangeState(EnemyState.Idle);
         }
     }
 
     /// <summary>
-    /// Comportamiento en estado Death: destruye el enemigo.
+    /// Muerte: colapso y destroy.
     /// </summary>
     protected override void DeathBehaviour()
     {
-        Destroy(gameObject);
+        if (procAnim != null)
+        {
+            procAnim.PlayDeath(() => Destroy(gameObject));
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     #endregion
 
@@ -108,9 +125,7 @@ public class RootGuardianEnemy : FixedEnemy
     void ShowVisuals()
     {
         if (visualChild != null && !visualChild.gameObject.activeSelf)
-        {
             visualChild.gameObject.SetActive(true);
-        }
     }
 
     /// <summary>
@@ -119,9 +134,11 @@ public class RootGuardianEnemy : FixedEnemy
     void HideVisuals()
     {
         if (visualChild != null && visualChild.gameObject.activeSelf)
-        {
             visualChild.gameObject.SetActive(false);
-        }
     }
     #endregion
+
+    // (Opcional) Forzar “nudge” manual si te sirve:
+    public void NudgeAimLeft() => procAnim?.PlayAimNudge(-1f);
+    public void NudgeAimRight() => procAnim?.PlayAimNudge(+1f);
 }
