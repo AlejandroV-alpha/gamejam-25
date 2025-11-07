@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 8f83e291226414c4c9d666fc382b374a
+guid: c83ed0273ec67ec4ebdefc5ddca2ac6c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -620585082295491505
-    second: health_bar_transparent_0
+      213: 182345481041723088
+    second: Copilot_20251106_004708_0
+  - first:
+      213: 8062743133097926018
+    second: Copilot_20251106_004708_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1024
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthBar_0
+      name: Bullet_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 395
-        width: 1446
-        height: 240
+        x: 154
+        y: 121
+        width: 231
+        height: 781
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3537fb70433ab374e99ac9ad20e21738
-      internalID: 1061765863
+      spriteID: b126d2ca80990854ba27973a70de9c83
+      internalID: -217841721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet_1
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 120
+        width: 224
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f0b852127f18546a0edba408d4288f
+      internalID: 904541690
       vertices: []
       indices: 
       edges: []
@@ -151,8 +176,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: ea8b970e187690345a2cbf33bfa5937f
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthBar_0: 1061765863
+      Bullet_0: -217841721
+      Bullet_1: 904541690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

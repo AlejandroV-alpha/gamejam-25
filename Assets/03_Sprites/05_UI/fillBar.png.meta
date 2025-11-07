@@ -1,0 +1,2171 @@
+fileFormatVersion: 2
+guid: b0ce96f7e39dbec44aacfddbff6d04e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7123232346545066491
+    second: Copilot_20251106_185900_0
+  - first:
+      213: 8707416848197069633
+    second: Copilot_20251106_185900_1
+  - first:
+      213: 4433042326849883945
+    second: Copilot_20251106_185900_2
+  - first:
+      213: -2917945477163911740
+    second: Copilot_20251106_185900_3
+  - first:
+      213: -2523761304056422934
+    second: Copilot_20251106_185900_4
+  - first:
+      213: 5399852506909651694
+    second: Copilot_20251106_185900_5
+  - first:
+      213: -208050604316094138
+    second: Copilot_20251106_185900_6
+  - first:
+      213: 4463868108435648195
+    second: Copilot_20251106_185900_7
+  - first:
+      213: 353592360946152076
+    second: Copilot_20251106_185900_8
+  - first:
+      213: 6035190711133964877
+    second: Copilot_20251106_185900_9
+  - first:
+      213: 8328767768801317393
+    second: Copilot_20251106_185900_10
+  - first:
+      213: -4171779247764110415
+    second: Copilot_20251106_185900_11
+  - first:
+      213: -747589892869390822
+    second: Copilot_20251106_185900_12
+  - first:
+      213: 7142018108174984792
+    second: Copilot_20251106_185900_13
+  - first:
+      213: 3157415902509031375
+    second: Copilot_20251106_185900_14
+  - first:
+      213: 1680937466326940268
+    second: Copilot_20251106_185900_15
+  - first:
+      213: 193678024040579289
+    second: Copilot_20251106_185900_16
+  - first:
+      213: -4225637991832570686
+    second: Copilot_20251106_185900_17
+  - first:
+      213: 6007705753137427770
+    second: Copilot_20251106_185900_18
+  - first:
+      213: -383251836497020435
+    second: Copilot_20251106_185900_19
+  - first:
+      213: 5277769688598399161
+    second: Copilot_20251106_185900_20
+  - first:
+      213: 6614112851179285786
+    second: Copilot_20251106_185900_21
+  - first:
+      213: 4435418987404108111
+    second: Copilot_20251106_185900_22
+  - first:
+      213: 4375245250473652105
+    second: Copilot_20251106_185900_23
+  - first:
+      213: -4907607512903333810
+    second: Copilot_20251106_185900_24
+  - first:
+      213: 7703484490426109901
+    second: Copilot_20251106_185900_25
+  - first:
+      213: 8163152373271566448
+    second: Copilot_20251106_185900_26
+  - first:
+      213: -4764549581344981130
+    second: Copilot_20251106_185900_27
+  - first:
+      213: 6818237483369169733
+    second: Copilot_20251106_185900_28
+  - first:
+      213: 8504000210541557626
+    second: Copilot_20251106_185900_29
+  - first:
+      213: -4295016525999858081
+    second: Copilot_20251106_185900_30
+  - first:
+      213: -2784640144958148364
+    second: Copilot_20251106_185900_31
+  - first:
+      213: -102162419460104573
+    second: Copilot_20251106_185900_32
+  - first:
+      213: 6701889940296277824
+    second: Copilot_20251106_185900_33
+  - first:
+      213: -8342234574636084858
+    second: Copilot_20251106_185900_34
+  - first:
+      213: -7315064305312499624
+    second: Copilot_20251106_185900_35
+  - first:
+      213: -6415717669595862981
+    second: Copilot_20251106_185900_36
+  - first:
+      213: -6969391593450976793
+    second: Copilot_20251106_185900_37
+  - first:
+      213: -2936702794131311881
+    second: Copilot_20251106_185900_38
+  - first:
+      213: -5187596306151206903
+    second: Copilot_20251106_185900_39
+  - first:
+      213: -5634217365243740091
+    second: Copilot_20251106_185900_40
+  - first:
+      213: -1304023703525828742
+    second: Copilot_20251106_185900_41
+  - first:
+      213: -8795436127032842746
+    second: Copilot_20251106_185900_42
+  - first:
+      213: -1528545235333237100
+    second: Copilot_20251106_185900_43
+  - first:
+      213: 2609358711892076221
+    second: Copilot_20251106_185900_44
+  - first:
+      213: -5486612086571246469
+    second: Copilot_20251106_185900_45
+  - first:
+      213: 1900964733778269726
+    second: Copilot_20251106_185900_46
+  - first:
+      213: -1660335832786433169
+    second: Copilot_20251106_185900_47
+  - first:
+      213: 5947778033656524461
+    second: Copilot_20251106_185900_48
+  - first:
+      213: 6856534607804917817
+    second: Copilot_20251106_185900_49
+  - first:
+      213: 1573628939889569750
+    second: Copilot_20251106_185900_50
+  - first:
+      213: 733921820412018716
+    second: Copilot_20251106_185900_51
+  - first:
+      213: 7714298342838798823
+    second: Copilot_20251106_185900_52
+  - first:
+      213: -7218258040677147470
+    second: Copilot_20251106_185900_53
+  - first:
+      213: -4881524283260165056
+    second: Copilot_20251106_185900_54
+  - first:
+      213: -6720021973788056335
+    second: Copilot_20251106_185900_55
+  - first:
+      213: -1675042066945048376
+    second: Copilot_20251106_185900_56
+  - first:
+      213: 1039449611322595748
+    second: Copilot_20251106_185900_57
+  - first:
+      213: 4285645146292836609
+    second: Copilot_20251106_185900_58
+  - first:
+      213: 6467290789814848786
+    second: Copilot_20251106_185900_59
+  - first:
+      213: -1378441000568123492
+    second: Copilot_20251106_185900_60
+  - first:
+      213: 2764824648299142597
+    second: Copilot_20251106_185900_61
+  - first:
+      213: 3672725914503735079
+    second: Copilot_20251106_185900_62
+  - first:
+      213: 7639796301719245665
+    second: Copilot_20251106_185900_63
+  - first:
+      213: 6586066617636118081
+    second: Copilot_20251106_185900_64
+  - first:
+      213: 3838475084151445988
+    second: Copilot_20251106_185900_65
+  - first:
+      213: -662461214155244591
+    second: Copilot_20251106_185900_66
+  - first:
+      213: -5364801137894760834
+    second: Copilot_20251106_185900_67
+  - first:
+      213: 8337106247355533088
+    second: Copilot_20251106_185900_68
+  - first:
+      213: 8522435306947046771
+    second: Copilot_20251106_185900_69
+  - first:
+      213: 669929159208507033
+    second: Copilot_20251106_185900_70
+  - first:
+      213: 331511245433843336
+    second: Copilot_20251106_185900_71
+  - first:
+      213: -371051060606774917
+    second: Copilot_20251106_185900_72
+  - first:
+      213: -8198236165468087213
+    second: Copilot_20251106_185900_73
+  - first:
+      213: -4073763992520595102
+    second: Copilot_20251106_185900_74
+  - first:
+      213: 4261236498928430263
+    second: Copilot_20251106_185900_75
+  - first:
+      213: -5429094011754231202
+    second: Copilot_20251106_185900_76
+  - first:
+      213: -385861991848666774
+    second: Copilot_20251106_185900_77
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fillBar_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 345
+        width: 1388
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06caec2adcaaebe48b310974d4bafd69
+      internalID: -737154960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_1
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1018
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba580e9d108a46e4bbeb8271db065a28
+      internalID: 1352794676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1005
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e241c3125ebeb4cb01e5edf04a5a13
+      internalID: 524022455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_3
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 1009
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f301eeb0871e0f4a8311892d291ff76
+      internalID: 1459076076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_4
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1004
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ccbe1bd553d26e468954f8d31566483
+      internalID: -1070091121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_5
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1008
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977d5f606ac8dc646aa1fd2a9dfb70c1
+      internalID: 408826452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1000
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8262450c72c881e4ba27dfa3e4c00404
+      internalID: -2023830042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_7
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 994
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bb11c856960c6428d805d76c8b46be
+      internalID: -1996970402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 983
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df93242581d4754892b1fbf8dfccead
+      internalID: -340889422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_9
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 992
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443b5c0c2c41a1844907562f4e71918c
+      internalID: 2038336070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_10
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 973
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6304a72b99b9ea24e8ce321c6239d88c
+      internalID: -176901929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_11
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 971
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e46efe106202f4096de67edd4a6d5e
+      internalID: 1885953685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_12
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 976
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32f59602923239428d63bb392600480
+      internalID: 1153154461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_13
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 971
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bf8c902b6c2d54f9a7c32626bbee70
+      internalID: 1987201882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_14
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 967
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab8156ef6c610649bc1cf6a75582a0e
+      internalID: 1627192374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_15
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 953
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edfe0b1df904054b932052513c769b0
+      internalID: 417703827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_16
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 955
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37660ced4b4b62a4aacb98eeb4b57dfd
+      internalID: -1446568190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_17
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 951
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9d9b49a0172f648b029e4a42ee50aa
+      internalID: -1776663395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 943
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f641ad6548d9f7c48a9f3d49f714a8a8
+      internalID: 91966408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_19
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 944
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64bc1be7e68691a49a239de7d18141c2
+      internalID: -1935355992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_20
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 948
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1043c729442abe44aaaf868719b7bb7f
+      internalID: -1117682814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_21
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 933
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1156adfeddffad142b0327d76e49c3fe
+      internalID: -785949844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_22
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 927
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b083950dd5011f4aa78cc472d7883f0
+      internalID: -1200982117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_23
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 907
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52240ff9886ec4f4a835e545c4927ff7
+      internalID: -1065031777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_24
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 899
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36b807d04966154098e1089a216048a
+      internalID: 393806326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_25
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 892
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5b2b907b9612e4fa56be6f0b66c277
+      internalID: 1579534507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_26
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 887
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0021f816956e709449e5e1f2d5e52832
+      internalID: -351623552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_27
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 877
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e98232ab20dede4b822de1a28bd1902
+      internalID: -901213245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_28
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 872
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7824885f7205742a77ecaf9139b41e
+      internalID: 1005039914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 863
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183d9aca5af33a04c99e574a8ca48a9f
+      internalID: -358243636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_30
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 866
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f814e9cfb4a7647a8e1bcb98655f03
+      internalID: 1426126611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_31
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 855
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419183d367546c8409ef965a5627b24f
+      internalID: -640212745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_32
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 851
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e675caff0ac04449aa7a3f99780f3d
+      internalID: -1763060131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_33
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 856
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77fa9b66e2dc554a89864a3e372b5cb
+      internalID: -221112266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_34
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 847
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d51e7cab6c78ee44b9a88ca34b0095d
+      internalID: -502069913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_35
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 841
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccd5a425b200cb4fa4b23cc31bb5ce2
+      internalID: 966772790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_36
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 839
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aeecd51e4e206743972ec349aec63e9
+      internalID: 1068621416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_37
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 831
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd86712949af6b4cb6c5498da5f3c26
+      internalID: 1474518103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_38
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 828
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fdd69ee3e350ce408f4e3ce0d87f0fe
+      internalID: 1355855198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_39
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 819
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999a326db6cd2544c953b65ee779d932
+      internalID: 1864107580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_40
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 826
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebc3bf8df0cb6b48b36ca7ebff7a82d
+      internalID: 1786337778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_41
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 819
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8282505a1f781c14da2b852d0d29447a
+      internalID: -1023395528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_42
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 799
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0783d500d02c94dbd0a5417ae7b9f6
+      internalID: -863296001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_43
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 801
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2f0dc982d5bf24188c9655def66322
+      internalID: -420866473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_44
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 736
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6d99a5a1933394e8101ce70ebc58e7
+      internalID: -363163947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 181
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665f1ebf63c16924bbe78ff1a65d1a06
+      internalID: 794431565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_46
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 147
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daac2f0d1cfaa854db14d8378ba82a3a
+      internalID: 1848828777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_47
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 134
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75b8f23172b021499a534b7351645a1
+      internalID: -1725884107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_48
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 127
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9380fd8082e1b3043a47d63ee17dc160
+      internalID: -480691876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_49
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 112
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5aeefd814c689143a3270fd8e7ef4ee
+      internalID: 99503895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_50
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 107
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3379bac02b976394bba1aa9931d318f5
+      internalID: 1862216321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_51
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 101
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9ac6557447e6d4d8a9903a3fc03ee3
+      internalID: -820010765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_52
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 98
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5c7f9f44cfd3c4e81a53c0e3a110d9
+      internalID: 1749428421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_53
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 104
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9a5f935153ebc40a73bd2dadfaf499
+      internalID: 1924028969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_54
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a573faa7fdad44c8e2276414fd6d3a
+      internalID: -832800943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_55
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 86
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8447e841899956a4bab359a5ef1f3198
+      internalID: 1021439841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_56
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 91
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ea66707e93b924487d7714bc6e4efb
+      internalID: 180128613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_57
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 79
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e0c57691f21c942b4b7275da7ad58d
+      internalID: -176942293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_58
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 82
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d212c7e0b45c108448686d90e9c6fca4
+      internalID: -1011911656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_59
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 74
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1fe0e4b21dde24b9da234d72651c25
+      internalID: 879311003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_60
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 75
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cb44ff86924774e8f7cf6f81a19b76
+      internalID: 1236621736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_61
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 58
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b138dca1437d5b14ba1869b07bdb3e1a
+      internalID: -1648295869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_62
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 54
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc3be63afbda344e8bb9ea4b12a2144
+      internalID: 814300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_63
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 42
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12e78221b66c3f468aecd4f06a8109f
+      internalID: -1847467895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_64
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 40
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0857483226541684996bccb0d0dda290
+      internalID: 1513470730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_65
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 46
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a164b64ef10c0843a88e3b1185476cc
+      internalID: -384926065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_66
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 42
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03adbcfd4bde8c14387707e8795ee7c3
+      internalID: 15905308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_67
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 14
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a761c775f79f943a394c67862e0ab5
+      internalID: 2065183425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_68
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 36
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f8f56763f41d64f8939885708a70d9
+      internalID: -1079412878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_69
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 30
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99917d2c3ee15d7469d10be663002705
+      internalID: 1189453998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_70
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 36
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcbb2aaa032cd641a72f5396f642a71
+      internalID: -710101837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_71
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 24
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7af26142a4e8a48967a9f6be63820b
+      internalID: 2003161447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_72
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 19
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910ac7e615dc70e4f9d409698f3a777d
+      internalID: -1622397657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_73
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 7
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f51dad84082ea94dbce043a0bf86b6e
+      internalID: 1590176480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_74
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 9
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4024c80241220ef42bbc4530db495dae
+      internalID: -925708457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_75
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 6
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c02a895b462eff45bd38617689eac00
+      internalID: 1232494567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_76
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 11
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c944cd23a751e64da3819829a006775
+      internalID: -338007413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fillBar_77
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d960d4b06a6ca43956d3994aaa8e63
+      internalID: -1182826747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1e4e434bc63e4a94296f26d28636588b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fillBar_0: -737154960
+      fillBar_1: 1352794676
+      fillBar_10: -176901929
+      fillBar_11: 1885953685
+      fillBar_12: 1153154461
+      fillBar_13: 1987201882
+      fillBar_14: 1627192374
+      fillBar_15: 417703827
+      fillBar_16: -1446568190
+      fillBar_17: -1776663395
+      fillBar_18: 91966408
+      fillBar_19: -1935355992
+      fillBar_2: 524022455
+      fillBar_20: -1117682814
+      fillBar_21: -785949844
+      fillBar_22: -1200982117
+      fillBar_23: -1065031777
+      fillBar_24: 393806326
+      fillBar_25: 1579534507
+      fillBar_26: -351623552
+      fillBar_27: -901213245
+      fillBar_28: 1005039914
+      fillBar_29: -358243636
+      fillBar_3: 1459076076
+      fillBar_30: 1426126611
+      fillBar_31: -640212745
+      fillBar_32: -1763060131
+      fillBar_33: -221112266
+      fillBar_34: -502069913
+      fillBar_35: 966772790
+      fillBar_36: 1068621416
+      fillBar_37: 1474518103
+      fillBar_38: 1355855198
+      fillBar_39: 1864107580
+      fillBar_4: -1070091121
+      fillBar_40: 1786337778
+      fillBar_41: -1023395528
+      fillBar_42: -863296001
+      fillBar_43: -420866473
+      fillBar_44: -363163947
+      fillBar_45: 794431565
+      fillBar_46: 1848828777
+      fillBar_47: -1725884107
+      fillBar_48: -480691876
+      fillBar_49: 99503895
+      fillBar_5: 408826452
+      fillBar_50: 1862216321
+      fillBar_51: -820010765
+      fillBar_52: 1749428421
+      fillBar_53: 1924028969
+      fillBar_54: -832800943
+      fillBar_55: 1021439841
+      fillBar_56: 180128613
+      fillBar_57: -176942293
+      fillBar_58: -1011911656
+      fillBar_59: 879311003
+      fillBar_6: -2023830042
+      fillBar_60: 1236621736
+      fillBar_61: -1648295869
+      fillBar_62: 814300176
+      fillBar_63: -1847467895
+      fillBar_64: 1513470730
+      fillBar_65: -384926065
+      fillBar_66: 15905308
+      fillBar_67: 2065183425
+      fillBar_68: -1079412878
+      fillBar_69: 1189453998
+      fillBar_7: -1996970402
+      fillBar_70: -710101837
+      fillBar_71: 2003161447
+      fillBar_72: -1622397657
+      fillBar_73: 1590176480
+      fillBar_74: -925708457
+      fillBar_75: 1232494567
+      fillBar_76: -338007413
+      fillBar_77: -1182826747
+      fillBar_8: -340889422
+      fillBar_9: 2038336070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

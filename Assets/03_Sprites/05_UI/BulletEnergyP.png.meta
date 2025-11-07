@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: energy_bullet_transparent_0
+      name: BulletEnergyP_0
       rect:
         serializedVersion: 2
-        x: 308
-        y: 79
-        width: 404
-        height: 1402
+        x: 309
+        y: 80
+        width: 402
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 33fcf304690de8c10800000000000000
-      internalID: 2057811423496490803
+      spriteID: d5d276c8333d02e408d97aa17a38164b
+      internalID: -1488151363
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      energy_bullet_transparent_0: 2057811423496490803
+      BulletEnergyP_0: -1488151363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

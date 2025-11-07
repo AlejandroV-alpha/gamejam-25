@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8f83e291226414c4c9d666fc382b374a
+guid: 5331440e886eef846a713f937369effc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -620585082295491505
-    second: health_bar_transparent_0
+      213: 7867861507642461912
+    second: enemy_bullet_transparent_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthBar_0
+      name: BulletSimpleP 1_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 395
-        width: 1446
-        height: 240
+        x: 288
+        y: 97
+        width: 448
+        height: 1358
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3537fb70433ab374e99ac9ad20e21738
-      internalID: 1061765863
+      spriteID: 0db305835d584f443a532e2024486f9e
+      internalID: 1009015160
       vertices: []
       indices: 
       edges: []
@@ -152,7 +152,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthBar_0: 1061765863
+      BulletSimpleP 1_0: 1009015160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
