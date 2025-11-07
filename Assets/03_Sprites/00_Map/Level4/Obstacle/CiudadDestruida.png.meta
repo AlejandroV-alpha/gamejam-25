@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 47201377f0dd7504c8529c9ad19d1a08
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3547073110031248680
+    second: CiudadDestruida_0
+  - first:
+      213: -2044536536982249503
+    second: CiudadDestruida_1
+  - first:
+      213: 2908383439183062126
+    second: CiudadDestruida_2
+  - first:
+      213: 7154997005228904881
+    second: CiudadDestruida_3
+  - first:
+      213: -3734481509493992763
+    second: CiudadDestruida_4
+  - first:
+      213: -5075262351165828521
+    second: CiudadDestruida_5
+  - first:
+      213: 3472253648795967566
+    second: CiudadDestruida_6
+  - first:
+      213: 724677574060676231
+    second: CiudadDestruida_7
+  - first:
+      213: 7586183228085516970
+    second: CiudadDestruida_8
+  - first:
+      213: -7765498378908501332
+    second: CiudadDestruida_9
+  - first:
+      213: 7811555606935267209
+    second: CiudadDestruida_10
+  - first:
+      213: -227561020579018358
+    second: CiudadDestruida_11
+  - first:
+      213: 7409946411507155274
+    second: CiudadDestruida_12
+  - first:
+      213: -5923217526989098679
+    second: CiudadDestruida_13
+  - first:
+      213: -2102490609940838417
+    second: CiudadDestruida_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CiudadDestruida_0
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 581
+        width: 429
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82da0cb433cb93130800000000000000
+      internalID: 3547073110031248680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_1
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 754
+        width: 58
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef9dde1ad850a3e0800000000000000
+      internalID: -2044536536982249503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 751
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64a2232457ac5820800000000000000
+      internalID: 2908383439183062126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_3
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 631
+        width: 297
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b117a11ed7ab4360800000000000000
+      internalID: 7154997005228904881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 467
+        width: 198
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2985e6ad47c2cc0800000000000000
+      internalID: -3734481509493992763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_5
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 551
+        width: 53
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752d8d018cb0199b0800000000000000
+      internalID: -5075262351165828521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_6
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 321
+        width: 625
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40a98afb4cef2030800000000000000
+      internalID: 3472253648795967566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_7
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 551
+        width: 107
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78414920a629e0a00800000000000000
+      internalID: 724677574060676231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 195
+        width: 397
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa301fd379874960800000000000000
+      internalID: 7586183228085516970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_9
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 167
+        width: 100
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa79452e586b3490800000000000000
+      internalID: -7765498378908501332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_10
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 229
+        width: 104
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9876696ef68386c60800000000000000
+      internalID: 7811555606935267209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_11
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 199
+        width: 273
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8989ab157a87dcf0800000000000000
+      internalID: -227561020579018358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_12
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 189
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41809e600b65d660800000000000000
+      internalID: 7409946411507155274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_13
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 194
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9417270ba018ccda0800000000000000
+      internalID: -5923217526989098679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CiudadDestruida_14
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 188
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7c1e20ee372d2e0800000000000000
+      internalID: -2102490609940838417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CiudadDestruida_0: 3547073110031248680
+      CiudadDestruida_1: -2044536536982249503
+      CiudadDestruida_10: 7811555606935267209
+      CiudadDestruida_11: -227561020579018358
+      CiudadDestruida_12: 7409946411507155274
+      CiudadDestruida_13: -5923217526989098679
+      CiudadDestruida_14: -2102490609940838417
+      CiudadDestruida_2: 2908383439183062126
+      CiudadDestruida_3: 7154997005228904881
+      CiudadDestruida_4: -3734481509493992763
+      CiudadDestruida_5: -5075262351165828521
+      CiudadDestruida_6: 3472253648795967566
+      CiudadDestruida_7: 724677574060676231
+      CiudadDestruida_8: 7586183228085516970
+      CiudadDestruida_9: -7765498378908501332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

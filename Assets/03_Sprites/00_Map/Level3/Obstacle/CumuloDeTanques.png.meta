@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 5b61f5631675ff3498932cd3a96116d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4989575313547222971
+    second: CumuloDeTanques_0
+  - first:
+      213: -7452804713725580783
+    second: CumuloDeTanques_1
+  - first:
+      213: -7731202270214277740
+    second: CumuloDeTanques_2
+  - first:
+      213: -8051970369897378010
+    second: CumuloDeTanques_3
+  - first:
+      213: -604509487776088011
+    second: CumuloDeTanques_4
+  - first:
+      213: -4813974117916241482
+    second: CumuloDeTanques_5
+  - first:
+      213: -7920338128756803781
+    second: CumuloDeTanques_6
+  - first:
+      213: -7482113409895175364
+    second: CumuloDeTanques_7
+  - first:
+      213: -2407171803568877605
+    second: CumuloDeTanques_8
+  - first:
+      213: -770513835813243219
+    second: CumuloDeTanques_9
+  - first:
+      213: -8604804153952616331
+    second: CumuloDeTanques_10
+  - first:
+      213: -8384714211993956640
+    second: CumuloDeTanques_11
+  - first:
+      213: 1771947151808796926
+    second: CumuloDeTanques_12
+  - first:
+      213: 3694821607148750261
+    second: CumuloDeTanques_13
+  - first:
+      213: 5193349423769543097
+    second: CumuloDeTanques_14
+  - first:
+      213: -5786726611665790672
+    second: CumuloDeTanques_15
+  - first:
+      213: -1977425995516937391
+    second: CumuloDeTanques_16
+  - first:
+      213: 5143979723489805537
+    second: CumuloDeTanques_17
+  - first:
+      213: 4071655226666516232
+    second: CumuloDeTanques_18
+  - first:
+      213: 7365625173099550906
+    second: CumuloDeTanques_19
+  - first:
+      213: 1076618783454686715
+    second: CumuloDeTanques_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CumuloDeTanques_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 1019
+        height: 1019
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540a5ff20b771cab0800000000000000
+      internalID: -4989575313547222971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 727
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11aa70a7991529890800000000000000
+      internalID: -7452804713725580783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 734
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4953f253f7045b490800000000000000
+      internalID: -7731202270214277740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 696
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fcb481c97a14090800000000000000
+      internalID: -8051970369897378010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 687
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530c0cdd2d95c97f0800000000000000
+      internalID: -604509487776088011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_5
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 601
+        width: 124
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b19da79b04513db0800000000000000
+      internalID: -4813974117916241482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 671
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37f7768f6e451290800000000000000
+      internalID: -7920338128756803781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_7
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 664
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3be202ee713a2890800000000000000
+      internalID: -7482113409895175364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 329
+        width: 297
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfc0f69ff1089ed0800000000000000
+      internalID: -2407171803568877605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 591
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6f3d9afb59e45f0800000000000000
+      internalID: -770513835813243219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_10
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 297
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57049d15638959880800000000000000
+      internalID: -8604804153952616331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 297
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee4eea29d283ab80800000000000000
+      internalID: -8384714211993956640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 301
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef81450eb88379810800000000000000
+      internalID: 1771947151808796926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_13
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 194
+        width: 324
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b50a8afca4a64330800000000000000
+      internalID: 3694821607148750261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_14
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 59
+        width: 337
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1634e09cb721840800000000000000
+      internalID: 5193349423769543097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_15
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 312
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0395c5b5eca61bfa0800000000000000
+      internalID: -5786726611665790672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 287
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bf69fa885ce84e0800000000000000
+      internalID: -1977425995516937391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 287
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e40c66fd46136740800000000000000
+      internalID: 5143979723489805537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_18
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 269
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ff1592bdc618830800000000000000
+      internalID: 4071655226666516232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_19
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 248
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab81647f115f73660800000000000000
+      internalID: 7365625173099550906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CumuloDeTanques_20
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 163
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd6452541be0fe00800000000000000
+      internalID: 1076618783454686715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CumuloDeTanques_0: -4989575313547222971
+      CumuloDeTanques_1: -7452804713725580783
+      CumuloDeTanques_10: -8604804153952616331
+      CumuloDeTanques_11: -8384714211993956640
+      CumuloDeTanques_12: 1771947151808796926
+      CumuloDeTanques_13: 3694821607148750261
+      CumuloDeTanques_14: 5193349423769543097
+      CumuloDeTanques_15: -5786726611665790672
+      CumuloDeTanques_16: -1977425995516937391
+      CumuloDeTanques_17: 5143979723489805537
+      CumuloDeTanques_18: 4071655226666516232
+      CumuloDeTanques_19: 7365625173099550906
+      CumuloDeTanques_2: -7731202270214277740
+      CumuloDeTanques_20: 1076618783454686715
+      CumuloDeTanques_3: -8051970369897378010
+      CumuloDeTanques_4: -604509487776088011
+      CumuloDeTanques_5: -4813974117916241482
+      CumuloDeTanques_6: -7920338128756803781
+      CumuloDeTanques_7: -7482113409895175364
+      CumuloDeTanques_8: -2407171803568877605
+      CumuloDeTanques_9: -770513835813243219
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
