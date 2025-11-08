@@ -118,21 +118,21 @@ public class TutorialManager : MonoBehaviour
         switch (currentStep)
         {
             case 0:
-                stepText = "Muévete hacia atras (S o Flecha Abajo)";
+                stepText = "¡Bienvenido, comandante! Usa S o Flecha Abajo para retroceder y posicionarte.";
                 ActivatePoint(0);
                 keyS.enabled = true;
                 arrowDown.enabled = true;
                 break;
 
             case 1:
-                stepText = "Ahora avanza hacia adelante (W o Flecha Arriba)";
+                stepText = "¡Excelente! Ahora avanza con W o Flecha Arriba, mantén el control del terreno.";
                 ActivatePoint(1);
                 keyW.enabled = true;
                 arrowUp.enabled = true;
                 break;
 
             case 2:
-                stepText = "Muévete en zig-zag hasta el siguiente punto (A y D o Flechas Izquierda y Derecha)";
+                stepText = "¡Perfecto! Muévete en zig-zag usando A y D o las flechas Izquierda y Derecha para esquivar obstaculos.";
                 ActivatePoint(2);
                 keyA.enabled = true;
                 keyD.enabled = true;
@@ -141,7 +141,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 3:
-                stepText = "Dispara al enemigo (Espacio) — Recarga con R si te quedas sin balas";
+                stepText = "¡Hora de la acción! Dispara al enemigo con Espacio y recarga con R si te quedas sin balas. ¡Demuestra tu puntería!";
                 if (enemy != null)
                 {
                     enemy.SetActive(true);
@@ -152,7 +152,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 4:
-                stepText = "Dispara al nodo (Espacio), recarga con R y cambia de arma con E";
+                stepText = "Misión de soporte: cambia a la munición de energía con E y dispara al nodo con Espacio para restaurarlo. ¡Tu tanque es clave para la victoria!";
                 if (node != null)
                 {
                     node.SetActive(true);
@@ -164,8 +164,9 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             default:
-                stepText = "¡Excelente! Has completado el tutorial";
+                stepText = "¡Fantástico, comandante! Has completado el tutorial. ¡Ahora estás listo para enfrentarte a cualquier misión y llevar la victoria a tu escuadrón!";
                 break;
+
         }
 
         // Start typewriter effect
