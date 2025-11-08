@@ -27,6 +27,7 @@ public class Energy : MonoBehaviour
         if (takeEnergy != null && collision.gameObject.CompareTag("Player"))
         {
             takeEnergy.TakeEnergy(energy);
+            Debug.Log($"Energia transferida: {energy}");
             Destroy(gameObject);
         }
     }
