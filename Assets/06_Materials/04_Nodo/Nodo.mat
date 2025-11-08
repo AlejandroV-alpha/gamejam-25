@@ -72,7 +72,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Boarder_Size: 2.79
-    - _Boarder_Strength: 1
+    - _Boarder_Strength: 2.7
     - _Distortion_Speed: 0.2
     - _EnableExternalAlpha: 0
     - _Noise_Scale: 0.06
@@ -82,7 +82,7 @@ Material:
     - _SurfaceMovSpeed: 0.01
     - _ZWrite: 0
     m_Colors:
-    - _Boarder_Color: {r: 0, g: 3.3682187, b: 4.6282716, a: 0.6941177}
+    - _Boarder_Color: {r: 0, g: 3.24706, b: 4.6282716, a: 0.6941177}
     - _Color: {r: 1.3292849, g: 1.4788294, b: 2.1185477, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
