@@ -67,5 +67,9 @@ public class Node : MonoBehaviour, ITakeEnergy
     {
         return currentEnergy;
     }
+    public float GetMaxEnergy()
+    {
+        return maxEnergy;
+    }
     #endregion
 }
