@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 /// <summary>
 /// Nodo que acumula energia al recibir impactos.
@@ -26,6 +27,10 @@ public class Node : MonoBehaviour, ITakeEnergy
 
     [Tooltip("Maximum light intensity when energy is full.")]
     [SerializeField] float maxIntensity = 50f;
+
+    [Header("UI Elements")]
+    [Tooltip("Image used as a fill bar to show current energy.")]
+    [SerializeField] Image energyBar; // Nueva barra de energia
     #endregion
 
     #region Unity Methods
@@ -35,6 +40,8 @@ public class Node : MonoBehaviour, ITakeEnergy
         {
             nodeLight.intensity = minIntensity;
         }
+
+        UpdateEnergyBar();
     }
     #endregion
 
@@ -44,6 +51,7 @@ public class Node : MonoBehaviour, ITakeEnergy
         currentEnergy += energy;
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         UpdateLightIntensity();
+        UpdateEnergyBar();
         Debug.Log($"Nodo recibio {energy} de energia. Energia actual: {currentEnergy}/{maxEnergy}");
     }
     #endregion
@@ -60,6 +68,14 @@ public class Node : MonoBehaviour, ITakeEnergy
         float t = currentEnergy / maxEnergy;
         nodeLight.intensity = Mathf.Lerp(minIntensity, maxIntensity, t);
     }
+
+    void UpdateEnergyBar()
+    {
+        if (energyBar != null)
+        {
+            energyBar.fillAmount = currentEnergy / maxEnergy;
+        }
+    }
     #endregion
 
     #region Public Methods
@@ -67,6 +83,7 @@ public class Node : MonoBehaviour, ITakeEnergy
     {
         return currentEnergy;
     }
+
     public float GetMaxEnergy()
     {
         return maxEnergy;
