@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657369317673234673}
   - component: {fileID: 5668208279378518334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: BulletPlayer
   m_Icon: {fileID: 0}
