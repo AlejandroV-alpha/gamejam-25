@@ -8404,6 +8404,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f83fa2e792dc634dbf3c7e2b0667dfd, type: 3}
+--- !u!114 &1001028732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7582942542227162218, guid: 6f83fa2e792dc634dbf3c7e2b0667dfd, type: 3}
+  m_PrefabInstance: {fileID: 1001028731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa126d828c1e044c8be790fa99bf948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1008481586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3119912563372600131, guid: 16e3bbc57da3417489f881238fb767c9, type: 3}
@@ -17479,7 +17490,7 @@ PrefabInstance:
     - target: {fileID: 2563421472819682175, guid: a932a946d95850d4d997d6784050a3a0, type: 3}
       propertyPath: playerAmmoController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1001028732}
     - target: {fileID: 5490198510250302724, guid: a932a946d95850d4d997d6784050a3a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
