@@ -54,6 +54,6 @@ public class NivellMenu : MonoBehaviour
 
     bool IsCurrentLevelPlayer(int level)
     {
-        return PlayerPrefs.GetInt("level", 0) == level;
+        return PlayerPrefs.GetInt("level", 0) <= level;
     }
 }
