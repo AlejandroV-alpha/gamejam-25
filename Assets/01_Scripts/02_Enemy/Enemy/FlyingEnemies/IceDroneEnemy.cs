@@ -1,10 +1,11 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemigo aereo tipo dron de hielo que patrulla una zona y cambia su comportamiento segun su nivel de salud.
+/// Enemigo aéreo tipo dron de hielo que patrulla una zona y cambia su comportamiento según su nivel de salud.
 /// En la primera fase (salud alta), sigue al jugador con disparos simples.
 /// Al caer por debajo del umbral de salud configurado, entra en una segunda fase donde incrementa su velocidad
-/// y utiliza un disparo triple mas agresivo. Se destruye al morir.
+/// y utiliza un disparo triple más agresivo. Se destruye al morir.
+/// Incluye hélices giratorias y retroceso de torreta al disparar.
 /// </summary>
 [RequireComponent(typeof(IShooter))]
 [RequireComponent(typeof(RotatorTowardsTarget))]
@@ -17,12 +18,22 @@ public class IceDroneEnemy : FlyingEnemy
     [Header("Phase Settings")]
     [SerializeField, Range(0f, 1f)] float healthPhaseTrigger = 0.5f;
     [SerializeField] float followSpeedPhase2 = 4f;
+
+    [Header("Visual Parts")]
+    [SerializeField] Transform torretaHielo;
+    [SerializeField] Transform[] helices;
+    [SerializeField] float velocidadHelices = 360f;
+    [SerializeField] float retrocesoDistancia = 0.15f;
+    [SerializeField] float retrocesoVelocidad = 8f;
     #endregion
 
     #region Protected Fields
     protected IShooter activeShooter;
     protected float currentFollowSpeed;
     protected bool isPhaseLow = false;
+
+    Vector3 torretaPosInicial;
+    float retrocesoActual = 0f;
     #endregion
 
     #region Unity Methods
@@ -34,6 +45,9 @@ public class IceDroneEnemy : FlyingEnemy
         secondaryShooter = GetComponent<RangedAttackTriple>();
         activeShooter = primaryShooter;
         currentFollowSpeed = followSpeed;
+
+        if (torretaHielo != null)
+            torretaPosInicial = torretaHielo.localPosition;
     }
 
     protected override void Update()
@@ -41,13 +55,12 @@ public class IceDroneEnemy : FlyingEnemy
         UpdateDetection();
         base.Update();
         CheckPhaseThreshold();
+        RotarHelices();
+        RestaurarRetroceso();
     }
     #endregion
 
     #region Behaviour Overrides
-    /// <summary>
-    /// Comportamiento de patrulla cuando el dron esta inactivo.
-    /// </summary>
     protected override void IdleBehaviour()
     {
         MoveToTarget(patrolTarget, patrolSpeed);
@@ -58,9 +71,6 @@ public class IceDroneEnemy : FlyingEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento de seguimiento cuando el dron detecta un objetivo.
-    /// </summary>
     protected override void AlertBehaviour()
     {
         if (currentTarget != null)
@@ -84,9 +94,6 @@ public class IceDroneEnemy : FlyingEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento de ataque, dispara al objetivo dependiendo de la fase actual.
-    /// </summary>
     protected override void AttackBehaviour()
     {
         if (currentTarget != null)
@@ -95,6 +102,7 @@ public class IceDroneEnemy : FlyingEnemy
             if (distance <= attackRange && activeShooter != null && activeShooter.CanShoot())
             {
                 activeShooter.Shoot();
+                AplicarRetrocesoTorreta();
             }
             else
             {
@@ -107,9 +115,6 @@ public class IceDroneEnemy : FlyingEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento al morir, destruye el dron.
-    /// </summary>
     protected override void DeathBehaviour()
     {
         Destroy(gameObject);
@@ -117,9 +122,6 @@ public class IceDroneEnemy : FlyingEnemy
     #endregion
 
     #region Detection
-    /// <summary>
-    /// Detecta al jugador dentro del rango de alerta y actualiza el objetivo actual.
-    /// </summary>
     protected override void UpdateDetection()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, alertRange, LayerMask.GetMask("Player"));
@@ -137,9 +139,6 @@ public class IceDroneEnemy : FlyingEnemy
     #endregion
 
     #region Phase Logic
-    /// <summary>
-    /// Verifica si la salud ha bajado del 50% para cambiar de fase y ajustar velocidad y disparo.
-    /// </summary>
     void CheckPhaseThreshold()
     {
         bool lowPhaseNow = currentHealth <= maxHealth * healthPhaseTrigger;
@@ -152,10 +151,34 @@ public class IceDroneEnemy : FlyingEnemy
     }
     #endregion
 
+    #region Visual Animations
+    void RotarHelices()
+    {
+        if (helices == null || helices.Length == 0) return;
+        foreach (var h in helices)
+        {
+            if (h != null)
+                h.Rotate(Vector3.forward, velocidadHelices * Time.deltaTime);
+        }
+    }
+
+    void AplicarRetrocesoTorreta()
+    {
+        if (torretaHielo == null) return;
+        torretaHielo.localPosition = torretaPosInicial - new Vector3(retrocesoDistancia, 0, 0);
+        retrocesoActual = retrocesoDistancia;
+    }
+
+    void RestaurarRetroceso()
+    {
+        if (torretaHielo == null || retrocesoActual <= 0f) return;
+
+        retrocesoActual = Mathf.MoveTowards(retrocesoActual, 0f, retrocesoVelocidad * Time.deltaTime);
+        torretaHielo.localPosition = Vector3.Lerp(torretaHielo.localPosition, torretaPosInicial, Time.deltaTime * retrocesoVelocidad);
+    }
+    #endregion
+
     #region Debug Gizmos
-    /// <summary>
-    /// Dibuja los rangos visuales de deteccion y patrulla en la escena.
-    /// </summary>
     private void OnDrawGizmosSelected()
     {
         DrawFlyingRanges();
