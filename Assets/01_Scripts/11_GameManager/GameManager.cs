@@ -82,9 +82,16 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         Debug.Log("¡Ganaste la partida!");
-        PlayerPrefs.SetInt("level", currentLevel + 1);
-        Debug.Log($"level: {currentLevel + 1}");
-        SceneManager.LoadScene($"CinematicLevel{currentLevel + 1}Scene");
+        if (currentLevel >= 4)
+        {
+            SceneManager.LoadScene("NivellMenuScene");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("level", currentLevel + 1);
+            Debug.Log($"level: {currentLevel + 1}");
+            SceneManager.LoadScene($"CinematicLevel{currentLevel + 1}Scene");
+        }
     }
 
     /// <summary>

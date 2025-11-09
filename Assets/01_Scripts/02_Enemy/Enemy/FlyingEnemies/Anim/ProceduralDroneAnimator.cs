@@ -4,10 +4,6 @@ using System;
 
 public class ProceduralDroneAnimator : MonoBehaviour
 {
-    [Header("Auto-Setup")]
-    [Tooltip("Intenta encontrar hélices y core sprites automáticamente por nombre al cambiar algo en el inspector.")]
-    [SerializeField] bool autoFindChildren = true;
-
     [Header("Targets")]
     [SerializeField] Transform target;
     [SerializeField] List<SpriteRenderer> coreSprites = new();

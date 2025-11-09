@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class NivellMenu : MonoBehaviour
 {
     /// <summary>
-    /// Retornar al main menu
+    /// Retornar al menú principal
     /// </summary>
     public void ReturnMainMenu()
     {
@@ -20,9 +20,10 @@ public class NivellMenu : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("level", 0) == 0)
         {
+            // Solo muestra el tutorial si aún no ha empezado el juego
             StartLevel0();
         }
-        else
+        else if (IsCurrentLevelPlayer(1))
         {
             SceneManager.LoadScene("CinematicLevel1Scene");
         }
@@ -52,8 +53,12 @@ public class NivellMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Verifica si el jugador tiene desbloqueado el nivel indicado.
+    /// </summary>
     bool IsCurrentLevelPlayer(int level)
     {
-        return PlayerPrefs.GetInt("level", 0) <= level;
+        // Si el jugador tiene nivel 3, puede jugar 1, 2 y 3
+        return PlayerPrefs.GetInt("level", 0) >= level;
     }
 }
