@@ -4831,6 +4831,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543770122592572892, guid: 673e6a07065eb7d4492c5d8062ed108f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543770122592572892, guid: 673e6a07065eb7d4492c5d8062ed108f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.705
+      objectReference: {fileID: 0}
     - target: {fileID: 3702709230622988699, guid: 673e6a07065eb7d4492c5d8062ed108f, type: 3}
       propertyPath: m_Name
       value: HeavyTankEnemy

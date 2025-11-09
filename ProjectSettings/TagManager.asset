@@ -11,6 +11,7 @@ TagManager:
   - GroundEnemy
   - Obstacle
   - HealingDroneEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Obstacle
   - Nodo
   - Minimapa
-  - 
+  - Energy
   - 
   - 
   - 

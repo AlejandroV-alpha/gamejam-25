@@ -6,8 +6,38 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/00_Scenes/MainMenuScene.unity
+    guid: c6e53a47c8dbfe54ba060f0d7603c1e0
+  - enabled: 1
+    path: Assets/00_Scenes/NivellMenuScene.unity
+    guid: 4a01ec67b25e58f44845c2953bfe4676
+  - enabled: 1
+    path: Assets/00_Scenes/Level0Scene.unity
+    guid: 58ef69ba907cd5949bceb202fbdd5c38
+  - enabled: 1
+    path: Assets/00_Scenes/CinematicLevel1Scene.unity
+    guid: 74d76d0c77c12fd45ae6d9b5accd7993
+  - enabled: 1
+    path: Assets/00_Scenes/Level1Scene.unity
+    guid: 12e3e4256adf38f40a5d948843e67875
+  - enabled: 1
+    path: Assets/00_Scenes/CinematicLevel2Scene.unity
+    guid: 09ad8d71acf42594cbdf1fd90b505855
+  - enabled: 1
+    path: Assets/00_Scenes/Level2Scene.unity
+    guid: 4e7448c4e99c50147a9eff3f8ad1b8cc
+  - enabled: 1
+    path: Assets/00_Scenes/CinematicLevel3Scene.unity
+    guid: 7d339b4ee50764347b9884cc9577e9a4
+  - enabled: 1
+    path: Assets/00_Scenes/Level3Scene.unity
+    guid: 081c2b016851d614aa1cdd873b3cbe28
+  - enabled: 1
+    path: Assets/00_Scenes/CinematicLevel4Scene.unity
+    guid: d60b33c492235ed4d9cdf1d0e3c1626d
+  - enabled: 1
+    path: Assets/00_Scenes/Level4Scene.unity
+    guid: 1a2275ce667061945ad65c9ac8b11501
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

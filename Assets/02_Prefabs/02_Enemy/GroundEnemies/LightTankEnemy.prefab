@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4597918931894038596}
   - component: {fileID: 8959538680089191287}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerTorreta_0
-  m_TagString: Untagged
+  m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,11 +98,11 @@ GameObject:
   - component: {fileID: 6241929876837735284}
   - component: {fileID: 6179630640531303137}
   - component: {fileID: 4294969781077927038}
-  - component: {fileID: 6629706044855427078}
   - component: {fileID: 5029132665914261840}
   - component: {fileID: 8602115579599854193}
   - component: {fileID: 3728225296678518401}
   - component: {fileID: 8277854627068797011}
+  - component: {fileID: 5669567814672193672}
   m_Layer: 8
   m_Name: LightTankEnemy
   m_TagString: GroundEnemy
@@ -120,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.83, y: 1.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7314281380009392178}
@@ -143,6 +143,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   patrolRadius: 3
   patrolSpeed: 1.5
@@ -240,52 +241,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6629706044855427078
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765975027633837415}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &5029132665914261840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ab2488e9809284699299a31da9d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8871286895338364672, guid: f2197b0215bbbf04f9d48b16c2fba420, type: 3}
+  bulletPrefab: {fileID: 117938416762944312, guid: 59583078dd070b448a22cbf2816f3a85, type: 3}
   firePoint: {fileID: 7314281380009392178}
   cooldownBetweenShots: 1
 --- !u!195 &8602115579599854193
@@ -348,6 +303,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angularSpeed: 180
+--- !u!60 &5669567814672193672
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765975027633837415}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.1589756, y: 0.9252126}
+      - {x: 0.23729277, y: 1.8692534}
+      - {x: -0.17523336, y: 1.8803203}
+      - {x: -0.17276001, y: 0.8769705}
+      - {x: -1.134788, y: 0.88821745}
+      - {x: -1.1237059, y: -0.81185305}
+      - {x: 1.2094655, y: -0.8430383}
+      - {x: 1.1242952, y: 0.8567405}
+      - {x: 0.5523014, y: 0.8530357}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4408779417771442519
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 4408779417771442519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,9 +400,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2191052438413804955}
   - component: {fileID: 2278313133375418019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCuerpo_0
-  m_TagString: Untagged
+  m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,9 +712,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7392642529353919368}
   - component: {fileID: 6402247247809885507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerOruga_0 (1)
-  m_TagString: Untagged
+  m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

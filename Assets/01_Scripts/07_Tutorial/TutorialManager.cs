@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -259,7 +260,8 @@ public class TutorialManager : MonoBehaviour
         {
             yield return new WaitForSeconds(3f); // espera antes de redirigir
             Debug.Log("Tutorial completado. Redirigiendo a la siguiente escena...");
-            // Aqui eventualmente se pondria: SceneManager.LoadScene("NextScene");
+            PlayerPrefs.SetInt("level", 1);
+            SceneManager.LoadScene("CinematicLevel1Scene");
         }
     }
 

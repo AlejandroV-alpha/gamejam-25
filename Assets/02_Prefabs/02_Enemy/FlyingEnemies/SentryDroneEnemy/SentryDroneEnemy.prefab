@@ -216,8 +216,8 @@ Transform:
   m_GameObject: {fileID: 2728770702104187432}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.14, y: 0.11, z: 0}
+  m_LocalScale: {x: 1.895, y: 1.839, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2063057537148796955}
@@ -580,8 +580,8 @@ GameObject:
   - component: {fileID: 4616622438290886210}
   - component: {fileID: 5171374728318815121}
   - component: {fileID: 6733132861275631195}
-  - component: {fileID: 87890776496107271}
   - component: {fileID: 5375771835363565118}
+  - component: {fileID: 4209508018922616283}
   m_Layer: 7
   m_Name: SentryDroneEnemy
   m_TagString: FlyingEnemy
@@ -599,7 +599,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.53, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8569618292057117283}
@@ -622,6 +622,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   patrolRadius: 5
   patrolSpeed: 1
@@ -700,8 +701,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &87890776496107271
-BoxCollider2D:
+--- !u!114 &5375771835363565118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347968180584469382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 180
+--- !u!60 &4209508018922616283
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -744,21 +758,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &5375771835363565118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347968180584469382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 180
+  m_Points:
+    m_Paths:
+    - - {x: 0.43506706, y: 1.9876986}
+      - {x: 0.027591825, y: 2.0706923}
+      - {x: -0.20794967, y: 1.8252949}
+      - {x: -0.5833996, y: 1.2922959}
+      - {x: -1.9366573, y: 1.3559939}
+      - {x: -3.001987, y: 0.6853273}
+      - {x: -2.4834378, y: -0.8457719}
+      - {x: -0.5555997, y: -0.9169979}
+      - {x: 1.6536938, y: -0.9725976}
+      - {x: 3.4130936, y: -0.3559103}
+      - {x: 2.594009, y: 1.3248644}
+      - {x: 1.0559971, y: 1.0003974}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5989758712700061155
 GameObject:
   m_ObjectHideFlags: 0

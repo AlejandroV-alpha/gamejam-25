@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 1878900822692102032}
   - component: {fileID: 394604644820909635}
   - component: {fileID: 8234545728225093265}
-  - component: {fileID: 6013510792863023871}
   - component: {fileID: 4668758028399395222}
   - component: {fileID: 2430543388255021927}
+  - component: {fileID: 2335925867303547775}
   m_Layer: 6
   m_Name: PlasmaTurret
   m_TagString: FixedEnemy
@@ -395,6 +395,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   playerLayer:
     serializedVersion: 2
@@ -488,8 +489,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6013510792863023871
-BoxCollider2D:
+--- !u!114 &4668758028399395222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7777950208723418468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f795423f7d1e694dae6cc913ea436bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8417451276941861825, guid: 54cb603f1bb198c4b8dae2de23d568bd, type: 3}
+  firePoint: {fileID: 5042139124145867610}
+  spreadAngle: 45
+  cooldownBetweenShots: 1
+  maxBursts: 4
+  overheatCooldown: 3
+--- !u!114 &2430543388255021927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7777950208723418468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 180
+--- !u!60 &2335925867303547775
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -532,36 +564,17 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &4668758028399395222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7777950208723418468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f795423f7d1e694dae6cc913ea436bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8417451276941861825, guid: 54cb603f1bb198c4b8dae2de23d568bd, type: 3}
-  firePoint: {fileID: 5042139124145867610}
-  spreadAngle: 45
-  cooldownBetweenShots: 1
-  maxBursts: 4
-  overheatCooldown: 3
---- !u!114 &2430543388255021927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7777950208723418468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 180
+  m_Points:
+    m_Paths:
+    - - {x: -1.2494776, y: 1.7270163}
+      - {x: -1.6076801, y: 1.5656163}
+      - {x: -1.8407482, y: 1.2366843}
+      - {x: -1.2599126, y: -0.408196}
+      - {x: -0.76640415, y: -1.0468292}
+      - {x: -0.15068562, y: -1.0932213}
+      - {x: 0.21955273, y: -1.0538399}
+      - {x: 0.67526555, y: -0.78743595}
+      - {x: 0.9943212, y: -0.4251189}
+      - {x: 1.0435631, y: 0.41442332}
+      - {x: 0.3317448, y: 1.1660101}
+  m_UseDelaunayMesh: 0
