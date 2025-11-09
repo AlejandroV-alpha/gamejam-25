@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 /// <summary>
@@ -9,11 +10,11 @@ using System.Collections;
 public class SimpleTurretEnemy : FixedEnemy
 {
     [Header("Recoil")]
-    [SerializeField] private Transform recoilTarget;      
-    [SerializeField] private Axis recoilAxis = Axis.Up;    
-    [SerializeField] private bool recoilInvert = true;      
-    [SerializeField] private float recoilDistance = 0.08f;  
-    [SerializeField] private float recoilOutTime = 0.06f;  
+    [SerializeField] private Transform recoilTarget;
+    [SerializeField] private Axis recoilAxis = Axis.Up;
+    [SerializeField] private bool recoilInvert = true;
+    [SerializeField] private float recoilDistance = 0.08f;
+    [SerializeField] private float recoilOutTime = 0.06f;
     [SerializeField] private float recoilInTime = 0.10f;
     [SerializeField] private AnimationCurve recoilOutCurve = null;
     [SerializeField] private AnimationCurve recoilInCurve = null;
@@ -22,10 +23,15 @@ public class SimpleTurretEnemy : FixedEnemy
     private Coroutine recoilCo;
     private Vector3 recoilBaseLocalPos;
 
+    // --- OPCIONAL: si tu shooter expone un evento ---
+    // interface INotifiesShot { event Action OnShot; }
+    // ------------------------------------------------
+
     #region Unity Methods
     protected override void Awake()
     {
         base.Awake();
+
         if (!recoilTarget)
         {
             var t = transform.Find("Graphics/Turret");
@@ -34,20 +40,30 @@ public class SimpleTurretEnemy : FixedEnemy
 
         if (recoilOutCurve == null) recoilOutCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         if (recoilInCurve == null) recoilInCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
         if (recoilTarget) recoilBaseLocalPos = recoilTarget.localPosition;
+    }
+
+    private void OnEnable()
+    {
+        // --- OPCIONAL: suscripción al evento de disparo si existe ---
+        // var notifier = shooter as INotifiesShot;
+        // if (notifier != null) notifier.OnShot += PlayRecoil;
+    }
+
+    private void OnDisable()
+    {
+        // var notifier = shooter as INotifiesShot;
+        // if (notifier != null) notifier.OnShot -= PlayRecoil;
+
+        if (recoilTarget) recoilTarget.localPosition = recoilBaseLocalPos;
+        recoilCo = null;
     }
 
     protected override void Update()
     {
         base.Update();
     }
-
-    void OnDisable()
-    {
-        if (recoilTarget) recoilTarget.localPosition = recoilBaseLocalPos;
-        recoilCo = null;
-    }
-
 
     void OnDrawGizmosSelected()
     {
@@ -56,9 +72,6 @@ public class SimpleTurretEnemy : FixedEnemy
     #endregion
 
     #region Behaviour Overrides
-    /// <summary>
-    /// Comportamiento en estado Idle: detecta jugador y cambia a alerta si es necesario.
-    /// </summary>
     protected override void IdleBehaviour()
     {
         if (currentTarget != null)
@@ -67,9 +80,6 @@ public class SimpleTurretEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Alert: apunta al jugador y cambia a ataque si esta en rango.
-    /// </summary>
     protected override void AlertBehaviour()
     {
         if (currentTarget != null)
@@ -87,17 +97,19 @@ public class SimpleTurretEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Attack: dispara al jugador si esta en rango.
-    /// </summary>
     protected override void AttackBehaviour()
     {
         if (currentTarget != null)
         {
             UpdateRotation();
+
             if (playerDistance <= attackRange && shooter != null && shooter.CanShoot())
             {
+                // Disparar
                 shooter.Shoot();
+
+                // DISPARADOR DEL RETROCESO (antes no se llamaba nunca)
+                PlayRecoil();
             }
             else
             {
@@ -111,9 +123,6 @@ public class SimpleTurretEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Death: destruye el enemigo.
-    /// </summary>
     protected override void DeathBehaviour()
     {
         Destroy(gameObject);
@@ -130,15 +139,17 @@ public class SimpleTurretEnemy : FixedEnemy
 
     private IEnumerator CoRecoil()
     {
-        // Dirección del cañón según configuración (Up o Right)
+        // 1) Dirección del cañón en espacio de MUNDO
         Vector3 worldDir = (recoilAxis == Axis.Up) ? recoilTarget.up : recoilTarget.right;
         if (recoilInvert) worldDir = -worldDir;
 
-        // Convertir a espacio local del recoilTarget
-        Vector3 localDir = recoilTarget.InverseTransformDirection(worldDir);
+        // 2) Convertir a ESPACIO DEL PADRE (porque vamos a mover localPosition)
+        Transform parent = recoilTarget.parent;
+        Vector3 parentLocalDir = parent ? parent.InverseTransformDirection(worldDir) : worldDir;
+        parentLocalDir.Normalize();
 
         Vector3 start = recoilBaseLocalPos;
-        Vector3 back = start + localDir * recoilDistance;
+        Vector3 back = start + parentLocalDir * recoilDistance;
 
         // Ida
         float t = 0f;

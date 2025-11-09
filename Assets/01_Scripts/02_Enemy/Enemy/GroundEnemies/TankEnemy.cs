@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 /// <summary>
 /// Enemigo terrestre tipo tanque ligero que patrulla aleatoriamente dentro de un radio definido,
 /// persigue al jugador al detectarlo y dispara cuando esta en rango de ataque.
 /// Se destruye al morir y evita obstaculos definidos en la capa obstacleLayer al patrullar.
+/// + Retroceso visual al disparar (recoil).
 /// </summary>
 [RequireComponent(typeof(RangedAttack))]
 [RequireComponent(typeof(Collider2D))]
@@ -30,6 +32,13 @@ public class TankEnemy : BaseEnemy
     [Header("Attack")]
     [SerializeField] float predictiveAiming = 0.3f;
     [SerializeField] float aimTolerance = 10f;
+
+    [Header("Recoil (Retroceso)")]
+    [Tooltip("Transform que se empuja levemente al disparar (ej: Body/Turret).")]
+    [SerializeField] Transform recoilTransform;
+    [SerializeField] float recoilDistance = 0.12f;
+    [SerializeField] float recoilDuration = 0.08f;
+    [SerializeField] AnimationCurve recoilCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     #endregion
 
     #region Private Fields
@@ -43,6 +52,8 @@ public class TankEnemy : BaseEnemy
     Vector2 lastPosition;
     bool hasValidPatrolTarget;
     bool isStuck;
+
+    Coroutine recoilRoutine;
     #endregion
 
     #region Unity Methods
@@ -176,12 +187,10 @@ public class TankEnemy : BaseEnemy
 
         if (ishooter != null)
         {
-            if (ishooter.CanShoot())
+            if (ishooter.CanShoot() && IsAimedAtTarget())
             {
-                if (IsAimedAtTarget())
-                {
-                    ishooter.Shoot();
-                }
+                ishooter.Shoot();
+                TryPlayRecoil(); // <-- retroceso visual
             }
         }
     }
@@ -311,6 +320,7 @@ public class TankEnemy : BaseEnemy
         Rigidbody2D targetRb = Target.GetComponent<Rigidbody2D>();
         Vector2 predictedPosition = (Vector2)Target.position;
 
+        // Nota: si tu proyecto usa velocity en vez de linearVelocity, cámbialo aquí.
         if (targetRb != null && targetRb.linearVelocity.magnitude > 0.1f)
         {
             float timeToReach = Vector2.Distance(transform.position, Target.position) / 10f;
@@ -361,6 +371,46 @@ public class TankEnemy : BaseEnemy
         }
 
         return false;
+    }
+    #endregion
+
+    #region Recoil
+    void TryPlayRecoil()
+    {
+        if (recoilTransform == null || recoilDistance <= 0f || recoilDuration <= 0f) return;
+
+        if (recoilRoutine != null) StopCoroutine(recoilRoutine);
+        recoilRoutine = StartCoroutine(RecoilKick());
+    }
+
+    IEnumerator RecoilKick()
+    {
+        // Dirección “hacia atrás” en 2D es -transform.up si tu tanque “mira” hacia arriba.
+        Vector3 localBack = -Vector3.up;
+        Vector3 startLocalPos = recoilTransform.localPosition;
+
+        // Ida
+        float t = 0f;
+        while (t < recoilDuration)
+        {
+            t += Time.deltaTime;
+            float k = recoilCurve.Evaluate(Mathf.Clamp01(t / recoilDuration));
+            recoilTransform.localPosition = startLocalPos + localBack * (recoilDistance * k);
+            yield return null;
+        }
+
+        // Vuelta
+        t = 0f;
+        while (t < recoilDuration)
+        {
+            t += Time.deltaTime;
+            float k = recoilCurve.Evaluate(Mathf.Clamp01(t / recoilDuration));
+            recoilTransform.localPosition = Vector3.Lerp(startLocalPos + localBack * recoilDistance, startLocalPos, k);
+            yield return null;
+        }
+
+        recoilTransform.localPosition = startLocalPos;
+        recoilRoutine = null;
     }
     #endregion
 

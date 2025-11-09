@@ -404,13 +404,13 @@ Transform:
   m_GameObject: {fileID: 1477856264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.29, y: 5.19, z: 0}
+  m_LocalPosition: {x: 4.31, y: 3.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7337770333327589350
+--- !u!1001 &7690264430101087144
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -418,60 +418,92 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 1279712903766405050, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299480838197090725, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030628400465457440, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 302812694916996389, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5333213352317127074, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9206615259645537403, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+    - target: {fileID: 5560197409836164298, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378431541964236179, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
       propertyPath: m_Name
       value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929246299238405410, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784110281799901748, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_TagString
+      value: HealingDroneEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841216006581541176, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841216006581541176, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1fc0569ac660dab44abbdf59ad130ac0, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f57057023f359ef48aefb34ccd18d645, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 505335236}
-  - {fileID: 7337770333327589350}
   - {fileID: 1304817458}
   - {fileID: 1477856267}
+  - {fileID: 7690264430101087144}
