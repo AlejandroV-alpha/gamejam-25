@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 3583276607827124762}
   - component: {fileID: 7927852964913317849}
   - component: {fileID: 9092237137700905004}
-  - component: {fileID: 4838136917710394646}
+  - component: {fileID: 3265006709714526852}
   m_Layer: 9
   m_Name: HealingDroneEnemy
   m_TagString: HealingDroneEnemy
@@ -521,6 +521,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   patrolRadius: 5
   patrolSpeed: 1
@@ -617,8 +618,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4838136917710394646
-BoxCollider2D:
+--- !u!60 &3265006709714526852
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -661,8 +662,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.4209259, y: 0.7245362}
+      - {x: 0.5142722, y: 0.72215027}
+      - {x: 0.12741208, y: 1.4486084}
+      - {x: 0.10642026, y: 1.51718}
+      - {x: -0.5, y: 0.66355324}
+      - {x: -0.87072057, y: 0.7289745}
+      - {x: -2.0615954, y: 0.7556027}
+      - {x: -1.9065573, y: -0.6090355}
+      - {x: 0.28192914, y: -0.7834922}
+      - {x: 0.75619364, y: -0.78504467}
+      - {x: 1.9450955, y: -0.69005775}
+      - {x: 2.1246283, y: 0.5}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7929246299238405410
 GameObject:
   m_ObjectHideFlags: 0

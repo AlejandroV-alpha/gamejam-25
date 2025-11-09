@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 3035495872939876795}
   - component: {fileID: 4745306134930985069}
   - component: {fileID: 1187731020554183583}
-  - component: {fileID: 1450354464371987234}
   - component: {fileID: 4225860664396107250}
   - component: {fileID: 7682232891293780526}
+  - component: {fileID: 5784716868760497729}
   m_Layer: 6
   m_Name: IceSentinelEnemy
   m_TagString: FixedEnemy
@@ -379,6 +379,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   playerLayer:
     serializedVersion: 2
@@ -444,8 +445,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1450354464371987234
-BoxCollider2D:
+--- !u!114 &4225860664396107250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181607914587510042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af544de9ee590314c9d245a4cb57a0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8393600757515604817, guid: a708c0bd59d7d264485eb8d45813398a, type: 3}
+  firePoint: {fileID: 2481230880660526607}
+  timeBetweenShotsInBurst: 0.2
+  cooldownBetweenBursts: 2
+  bulletsPerBurst: 4
+--- !u!114 &7682232891293780526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181607914587510042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 180
+--- !u!60 &5784716868760497729
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -488,35 +519,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &4225860664396107250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181607914587510042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af544de9ee590314c9d245a4cb57a0b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8393600757515604817, guid: a708c0bd59d7d264485eb8d45813398a, type: 3}
-  firePoint: {fileID: 2481230880660526607}
-  timeBetweenShotsInBurst: 0.2
-  cooldownBetweenBursts: 2
-  bulletsPerBurst: 4
---- !u!114 &7682232891293780526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181607914587510042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af681eabe6b118946bcc24d260006573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 180
+  m_Points:
+    m_Paths:
+    - - {x: 0.2415486, y: 0.6742953}
+      - {x: 0.10714921, y: 0.9644196}
+      - {x: -0.011639759, y: 0.9214676}
+      - {x: -0.050667733, y: 0.681905}
+      - {x: -0.5, y: 0.5}
+      - {x: -0.7102501, y: 0.057510354}
+      - {x: -0.5, y: -0.5}
+      - {x: -0.37299663, y: -0.7963142}
+      - {x: 0.013289243, y: -1.1573608}
+      - {x: 0.46052185, y: -0.7319753}
+      - {x: 0.5508616, y: -0.63078725}
+      - {x: 0.7239266, y: -0.45542905}
+      - {x: 0.85617363, y: 0.082359016}
+      - {x: 0.48498213, y: 0.60512507}
+  m_UseDelaunayMesh: 0

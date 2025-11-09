@@ -13,6 +13,10 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy, ITakeDamage
     [SerializeField] protected float maxHealth = 100f;
     [SerializeField] protected float alertRange = 6f;
     [SerializeField] protected float attackRange = 4f;
+
+    [Header("Energy")]
+    [SerializeField] protected GameObject energyPrefab;
+
     #endregion
 
     #region Protected Fields
@@ -155,6 +159,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy, ITakeDamage
     /// </summary>
     public virtual void OnDeath()
     {
+        Instantiate(energyPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     #endregion
