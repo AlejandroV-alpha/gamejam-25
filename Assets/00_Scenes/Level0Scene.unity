@@ -13010,7 +13010,7 @@ MonoBehaviour:
   maxHealth: 100
   alertRange: 6
   attackRange: 4
-  energyPrefab: {fileID: 0}
+  energyPrefab: {fileID: 3081726147533174595, guid: 45ef217b8f92a44479b8b255f298f5ef, type: 3}
   currentHealth: 0
   playerLayer:
     serializedVersion: 2
