@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class NivellMenu : MonoBehaviour
 {
+
     /// <summary>
     /// Retornar al main menu
     /// </summary>
@@ -18,13 +19,13 @@ public class NivellMenu : MonoBehaviour
 
     public void StartLevel1()
     {
-        if (IsCurrentLevelPlayer(1))
+        if (PlayerPrefs.GetInt("level", 0) == 0)
         {
-            SceneManager.LoadScene("CinematicLevel1Scene");
+            StartLevel0();
         }
         else
         {
-            StartLevel0();
+            SceneManager.LoadScene("CinematicLevel1Scene");
         }
     }
 
