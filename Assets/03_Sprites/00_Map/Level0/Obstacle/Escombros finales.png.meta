@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 9f3b7cbc59d245b4b9b9fd81968848bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 196638310613221880
+    second: Escombros finales_0
+  - first:
+      213: -1966909206282665017
+    second: Escombros finales_1
+  - first:
+      213: -4032307185447440313
+    second: Escombros finales_2
+  - first:
+      213: 1532872594154765349
+    second: Escombros finales_3
+  - first:
+      213: -6697566049862024629
+    second: Escombros finales_4
+  - first:
+      213: 8950654537877089299
+    second: Escombros finales_5
+  - first:
+      213: -1864604666097039435
+    second: Escombros finales_6
+  - first:
+      213: -2530959419298354765
+    second: Escombros finales_7
+  - first:
+      213: 5436819621155542564
+    second: Escombros finales_8
+  - first:
+      213: 1036619827790189590
+    second: Escombros finales_9
+  - first:
+      213: 6882752975383187331
+    second: Escombros finales_10
+  - first:
+      213: 8606425559782073003
+    second: Escombros finales_11
+  - first:
+      213: 4974948019168215018
+    second: Escombros finales_12
+  - first:
+      213: 8385797378186741106
+    second: Escombros finales_13
+  - first:
+      213: -447595171250088584
+    second: Escombros finales_14
+  - first:
+      213: 7023218853581177521
+    second: Escombros finales_15
+  - first:
+      213: 801966926982553982
+    second: Escombros finales_16
+  - first:
+      213: 6061161561125996092
+    second: Escombros finales_17
+  - first:
+      213: 5933082717018120208
+    second: Escombros finales_18
+  - first:
+      213: -4182886160056880854
+    second: Escombros finales_19
+  - first:
+      213: -94473995051581306
+    second: Escombros finales_20
+  - first:
+      213: -6636199817483463041
+    second: Escombros finales_21
+  - first:
+      213: 3021361780400816580
+    second: Escombros finales_22
+  - first:
+      213: 2459302600146692706
+    second: Escombros finales_23
+  - first:
+      213: -8486187133753332569
+    second: Escombros finales_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Escombros finales_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 45
+        width: 1003
+        height: 969
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1855d60899ab200800000000000000
+      internalID: 196638310613221880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 969
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3831e7f7224b4e0800000000000000
+      internalID: -1966909206282665017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 967
+        width: 31
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740762a9afd5a08c0800000000000000
+      internalID: -4032307185447440313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_3
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 975
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cb68cb08bd54510800000000000000
+      internalID: 1532872594154765349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_4
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 857
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b420242b9277d03a0800000000000000
+      internalID: -6697566049862024629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_5
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 799
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ce66d21ec173c70800000000000000
+      internalID: 8950654537877089299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 755
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b700ce6fe79f16e0800000000000000
+      internalID: -1864604666097039435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_7
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 716
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9eac751d930ecd0800000000000000
+      internalID: -2530959419298354765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 647
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42699d2d3a6737b40800000000000000
+      internalID: 5436819621155542564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 559
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6149f8abd30d26e00800000000000000
+      internalID: 1036619827790189590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 411
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f4a7e5d53748f50800000000000000
+      internalID: 6882752975383187331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_11
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 361
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba227a4a27a207770800000000000000
+      internalID: 8606425559782073003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_12
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 60
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeffd827dd09a0540800000000000000
+      internalID: 4974948019168215018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 47
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 275093d1946506470800000000000000
+      internalID: 8385797378186741106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_14
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 47
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875557e2092d9c9f0800000000000000
+      internalID: -447595171250088584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_15
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 47
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b24883365c777160800000000000000
+      internalID: 7023218853581177521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_16
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 39
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71286ccba8212b00800000000000000
+      internalID: 801966926982553982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_17
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 55
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36ca2193529d1450800000000000000
+      internalID: 6061161561125996092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_18
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 57
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010efdadb4b865250800000000000000
+      internalID: 5933082717018120208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_19
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 47
+        width: 71
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2179e5033763f5c0800000000000000
+      internalID: -4182886160056880854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_20
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 55
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680407ce66c50bef0800000000000000
+      internalID: -94473995051581306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_21
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 40
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76d2641d6b77e3a0800000000000000
+      internalID: -6636199817483463041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_22
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 68
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c18bba08880ee920800000000000000
+      internalID: 3021361780400816580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_23
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 47
+        width: 83
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a20f45fa2312220800000000000000
+      internalID: 2459302600146692706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escombros finales_24
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 47
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac642b73c10b3a80800000000000000
+      internalID: -8486187133753332569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Escombros finales_0: 196638310613221880
+      Escombros finales_1: -1966909206282665017
+      Escombros finales_10: 6882752975383187331
+      Escombros finales_11: 8606425559782073003
+      Escombros finales_12: 4974948019168215018
+      Escombros finales_13: 8385797378186741106
+      Escombros finales_14: -447595171250088584
+      Escombros finales_15: 7023218853581177521
+      Escombros finales_16: 801966926982553982
+      Escombros finales_17: 6061161561125996092
+      Escombros finales_18: 5933082717018120208
+      Escombros finales_19: -4182886160056880854
+      Escombros finales_2: -4032307185447440313
+      Escombros finales_20: -94473995051581306
+      Escombros finales_21: -6636199817483463041
+      Escombros finales_22: 3021361780400816580
+      Escombros finales_23: 2459302600146692706
+      Escombros finales_24: -8486187133753332569
+      Escombros finales_3: 1532872594154765349
+      Escombros finales_4: -6697566049862024629
+      Escombros finales_5: 8950654537877089299
+      Escombros finales_6: -1864604666097039435
+      Escombros finales_7: -2530959419298354765
+      Escombros finales_8: 5436819621155542564
+      Escombros finales_9: 1036619827790189590
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1469 @@
+fileFormatVersion: 2
+guid: 60fe13bd909bcdd48b4392aa3196b721
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2890287675042114318
+    second: BalaPlasma_0
+  - first:
+      213: -8034365214473677437
+    second: BalaPlasma_1
+  - first:
+      213: -4103087200656249585
+    second: BalaPlasma_2
+  - first:
+      213: -3123020414557154927
+    second: BalaPlasma_3
+  - first:
+      213: 2697263576884333707
+    second: BalaPlasma_4
+  - first:
+      213: 7296292033260018277
+    second: BalaPlasma_5
+  - first:
+      213: -2638956371118756484
+    second: BalaPlasma_6
+  - first:
+      213: 1693217640380029819
+    second: BalaPlasma_7
+  - first:
+      213: 2584614927185387882
+    second: BalaPlasma_8
+  - first:
+      213: 5864583059071345210
+    second: BalaPlasma_9
+  - first:
+      213: -6144950121514614301
+    second: BalaPlasma_10
+  - first:
+      213: -4310978472506289649
+    second: BalaPlasma_11
+  - first:
+      213: -8865485718748191563
+    second: BalaPlasma_12
+  - first:
+      213: -2809995716234309234
+    second: BalaPlasma_13
+  - first:
+      213: -2037298799787752384
+    second: BalaPlasma_14
+  - first:
+      213: 864129767396238536
+    second: BalaPlasma_15
+  - first:
+      213: -3174261480609405948
+    second: BalaPlasma_16
+  - first:
+      213: -5214057119885956
+    second: BalaPlasma_17
+  - first:
+      213: 5038543962166697186
+    second: BalaPlasma_18
+  - first:
+      213: 2698319079115107080
+    second: BalaPlasma_19
+  - first:
+      213: 7836465272471778015
+    second: BalaPlasma_20
+  - first:
+      213: -2347162309824758361
+    second: BalaPlasma_21
+  - first:
+      213: -6550084593912892812
+    second: BalaPlasma_22
+  - first:
+      213: -6437277677376877141
+    second: BalaPlasma_23
+  - first:
+      213: 3812243150342271419
+    second: BalaPlasma_24
+  - first:
+      213: -4358577373308785730
+    second: BalaPlasma_25
+  - first:
+      213: -2796623126139398039
+    second: BalaPlasma_26
+  - first:
+      213: 8920167882457860297
+    second: BalaPlasma_27
+  - first:
+      213: 8535016336383304690
+    second: BalaPlasma_28
+  - first:
+      213: -8639361576762616759
+    second: BalaPlasma_29
+  - first:
+      213: -1204777395036947032
+    second: BalaPlasma_30
+  - first:
+      213: -2788307010370513446
+    second: BalaPlasma_31
+  - first:
+      213: -8050432768206296854
+    second: BalaPlasma_32
+  - first:
+      213: -2439816881421706204
+    second: BalaPlasma_33
+  - first:
+      213: -2182218063597103314
+    second: BalaPlasma_34
+  - first:
+      213: -7542419115497871094
+    second: BalaPlasma_35
+  - first:
+      213: 4818561819186845889
+    second: BalaPlasma_36
+  - first:
+      213: 1959230013276423272
+    second: BalaPlasma_37
+  - first:
+      213: 4409912782723915579
+    second: BalaPlasma_38
+  - first:
+      213: 8448100013266898822
+    second: BalaPlasma_39
+  - first:
+      213: -3307449751416755662
+    second: BalaPlasma_40
+  - first:
+      213: -7018473093249664195
+    second: BalaPlasma_41
+  - first:
+      213: 2714734311703542155
+    second: BalaPlasma_42
+  - first:
+      213: -9015805075283898680
+    second: BalaPlasma_43
+  - first:
+      213: -2168398119295395104
+    second: BalaPlasma_44
+  - first:
+      213: -8928877283938474196
+    second: BalaPlasma_45
+  - first:
+      213: -8863791234573262349
+    second: BalaPlasma_46
+  - first:
+      213: 2252502306837322086
+    second: BalaPlasma_47
+  - first:
+      213: 8500062531109659249
+    second: BalaPlasma_48
+  - first:
+      213: -659213786807513067
+    second: BalaPlasma_49
+  - first:
+      213: 1062248012964214473
+    second: BalaPlasma_50
+  - first:
+      213: 7241208394948062889
+    second: BalaPlasma_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BalaPlasma_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 745
+        height: 1532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b2399b35d5c1820800000000000000
+      internalID: 2890287675042114318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3859a83c763308090800000000000000
+      internalID: -8034365214473677437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0dae6a1ee7ee07c0800000000000000
+      internalID: -4103087200656249585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 415
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191170cba7dc8a4d0800000000000000
+      internalID: -3123020414557154927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c4ac5beea9e6520800000000000000
+      internalID: 2697263576884333707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1211
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ad9f362f2a14560800000000000000
+      internalID: 7296292033260018277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_6
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d66b9892b806bd0800000000000000
+      internalID: -2638956371118756484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bd64e09748f7710800000000000000
+      internalID: 1693217640380029819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_8
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61ae0815956ed320800000000000000
+      internalID: 2584614927185387882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 79
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32a8b7683f236150800000000000000
+      internalID: 5864583059071345210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1114
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1c0acfb60c8baa0800000000000000
+      internalID: -6144950121514614301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1088
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0218e77be35c24c0800000000000000
+      internalID: -4310978472506289649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 936
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b427bcc5b777f480800000000000000
+      internalID: -8865485718748191563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_13
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e811c79b8c3e009d0800000000000000
+      internalID: -2809995716234309234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_14
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1004
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0444251298f0ab3e0800000000000000
+      internalID: -2037298799787752384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_15
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 855
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c46e71f1710efb00800000000000000
+      internalID: 864129767396238536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_16
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40422185002c2f3d0800000000000000
+      internalID: -3174261480609405948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 786
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75d789b7d97deff0800000000000000
+      internalID: -5214057119885956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_18
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec922ac9018ce540800000000000000
+      internalID: 5038543962166697186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_19
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ba059f7ea527520800000000000000
+      internalID: 2698319079115107080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd27d5c55a7b0cc60800000000000000
+      internalID: 7836465272471778015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_21
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 957
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adb5b4a0543d6fd0800000000000000
+      internalID: -2347162309824758361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_22
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 887
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 472301304cc6915a0800000000000000
+      internalID: -6550084593912892812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_23
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1140
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad466ffe023aa6a0800000000000000
+      internalID: -6437277677376877141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_24
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 727
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1319572fec7e430800000000000000
+      internalID: 3812243150342271419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_25
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 80
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebbefd1c8f83383c0800000000000000
+      internalID: -4358577373308785730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_26
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1016
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96891db75166039d0800000000000000
+      internalID: -2796623126139398039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_27
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1009
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8cfb29d6dcacb70800000000000000
+      internalID: 8920167882457860297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_28
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1055
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f368423328727670800000000000000
+      internalID: 8535016336383304690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_29
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 956
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944d7e25b62da1880800000000000000
+      internalID: -8639361576762616759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_30
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adf667a755c74fe0800000000000000
+      internalID: -1204777395036947032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_31
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad552221c81fd49d0800000000000000
+      internalID: -2788307010370513446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_32
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 903
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae826e2ec0e174090800000000000000
+      internalID: -8050432768206296854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_33
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 814
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c9bd91977042ed0800000000000000
+      internalID: -2439816881421706204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_34
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 745
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e279ad8ab3437b1e0800000000000000
+      internalID: -2182218063597103314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_35
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 79
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0922a1a6c1f35790800000000000000
+      internalID: -7542419115497871094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_36
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 904
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c854e8d178fed240800000000000000
+      internalID: 4818561819186845889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_37
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 0
+        width: 309
+        height: 1532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86400ae0155903b10800000000000000
+      internalID: 1959230013276423272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_38
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 80
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f96b8af48233d30800000000000000
+      internalID: 4409912782723915579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_39
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 415
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f0fbdb33ead3570800000000000000
+      internalID: 8448100013266898822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_40
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 80
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23aa95689f39912d0800000000000000
+      internalID: -3307449751416755662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_41
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1207
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b773b38ef599e90800000000000000
+      internalID: -7018473093249664195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_42
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1114
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8977a4297caca520800000000000000
+      internalID: 2714734311703542155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_43
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 415
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce0a834d0d61e280800000000000000
+      internalID: -9015805075283898680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_44
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 79
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ead5cf266d48e1e0800000000000000
+      internalID: -2168398119295395104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_45
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27eacfda61461480800000000000000
+      internalID: -8928877283938474196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_46
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 79
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f12a04a5dc7df480800000000000000
+      internalID: -8863791234573262349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_47
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 1351
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66959cee9ee724f10800000000000000
+      internalID: 2252502306837322086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_48
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 79
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172266736d946f570800000000000000
+      internalID: 8500062531109659249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_49
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 415
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5105c46bd800ad6f0800000000000000
+      internalID: -659213786807513067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_50
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 415
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6b81490fcddbe00800000000000000
+      internalID: 1062248012964214473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaPlasma_51
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1114
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aea47d6ba0fd7460800000000000000
+      internalID: 7241208394948062889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BalaPlasma_0: 2890287675042114318
+      BalaPlasma_1: -8034365214473677437
+      BalaPlasma_10: -6144950121514614301
+      BalaPlasma_11: -4310978472506289649
+      BalaPlasma_12: -8865485718748191563
+      BalaPlasma_13: -2809995716234309234
+      BalaPlasma_14: -2037298799787752384
+      BalaPlasma_15: 864129767396238536
+      BalaPlasma_16: -3174261480609405948
+      BalaPlasma_17: -5214057119885956
+      BalaPlasma_18: 5038543962166697186
+      BalaPlasma_19: 2698319079115107080
+      BalaPlasma_2: -4103087200656249585
+      BalaPlasma_20: 7836465272471778015
+      BalaPlasma_21: -2347162309824758361
+      BalaPlasma_22: -6550084593912892812
+      BalaPlasma_23: -6437277677376877141
+      BalaPlasma_24: 3812243150342271419
+      BalaPlasma_25: -4358577373308785730
+      BalaPlasma_26: -2796623126139398039
+      BalaPlasma_27: 8920167882457860297
+      BalaPlasma_28: 8535016336383304690
+      BalaPlasma_29: -8639361576762616759
+      BalaPlasma_3: -3123020414557154927
+      BalaPlasma_30: -1204777395036947032
+      BalaPlasma_31: -2788307010370513446
+      BalaPlasma_32: -8050432768206296854
+      BalaPlasma_33: -2439816881421706204
+      BalaPlasma_34: -2182218063597103314
+      BalaPlasma_35: -7542419115497871094
+      BalaPlasma_36: 4818561819186845889
+      BalaPlasma_37: 1959230013276423272
+      BalaPlasma_38: 4409912782723915579
+      BalaPlasma_39: 8448100013266898822
+      BalaPlasma_4: 2697263576884333707
+      BalaPlasma_40: -3307449751416755662
+      BalaPlasma_41: -7018473093249664195
+      BalaPlasma_42: 2714734311703542155
+      BalaPlasma_43: -9015805075283898680
+      BalaPlasma_44: -2168398119295395104
+      BalaPlasma_45: -8928877283938474196
+      BalaPlasma_46: -8863791234573262349
+      BalaPlasma_47: 2252502306837322086
+      BalaPlasma_48: 8500062531109659249
+      BalaPlasma_49: -659213786807513067
+      BalaPlasma_5: 7296292033260018277
+      BalaPlasma_50: 1062248012964214473
+      BalaPlasma_51: 7241208394948062889
+      BalaPlasma_6: -2638956371118756484
+      BalaPlasma_7: 1693217640380029819
+      BalaPlasma_8: 2584614927185387882
+      BalaPlasma_9: 5864583059071345210
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
