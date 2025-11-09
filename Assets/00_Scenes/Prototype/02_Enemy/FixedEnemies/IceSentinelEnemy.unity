@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745306134930985069, guid: b398ee888a1ebed419012f2a2d11db82, type: 3}
+      propertyPath: shootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: c25422d0b2ad15144855ff7eec25801e, type: 3}
     - target: {fileID: 8181607914587510042, guid: b398ee888a1ebed419012f2a2d11db82, type: 3}
       propertyPath: m_Name
       value: IceSentinelEnemy

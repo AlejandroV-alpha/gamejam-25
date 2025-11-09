@@ -493,6 +493,10 @@ PrefabInstance:
       value: SimpleTurretEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7204204976274071866, guid: dfb16de0d18a39343b4af19c71a136a2, type: 3}
+      propertyPath: shootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2464662501826429c12c4f8e9ea16d, type: 3}
+    - target: {fileID: 7204204976274071866, guid: dfb16de0d18a39343b4af19c71a136a2, type: 3}
       propertyPath: playerLayer.m_Bits
       value: 8
       objectReference: {fileID: 0}

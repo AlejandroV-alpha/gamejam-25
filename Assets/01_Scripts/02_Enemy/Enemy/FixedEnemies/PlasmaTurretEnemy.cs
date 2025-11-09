@@ -5,6 +5,7 @@ using System.Collections; // para la corrutina de recoil
 /// Torreta de plasma fija que dispara 3 balas en abanico (2D).
 /// Se sobrecalienta tras un numero de rafagas y se enfria despues de un tiempo.
 /// Hereda de FixedEnemy para deteccion y rotacion.
+/// + SFX de disparo con AudioSource.
 /// </summary>
 public class PlasmaTurretEnemy : FixedEnemy
 {
@@ -25,6 +26,18 @@ public class PlasmaTurretEnemy : FixedEnemy
     private Vector3 _recoilInitLocalPos;
     private bool _recoiling;
 
+    // -------- Audio --------
+    [Header("SFX")]
+    [Tooltip("Fuente de audio (si está vacío se creará una)")]
+    [SerializeField] private AudioSource audioSource;
+
+    [Tooltip("Clip de disparo (arrastra aquí BalaHieloDron o tu SFX de plasma)")]
+    [SerializeField] private AudioClip shootSfx;
+
+    [Range(0f, 1f)][SerializeField] private float shootVolume = 0.9f;
+    [SerializeField] private Vector2 pitchRandom = new Vector2(0.97f, 1.03f);
+    [Range(0f, 1f)][SerializeField] private float spatialBlend = 1f; // 1 = 3D
+
     #region Unity Methods
     protected override void Awake()
     {
@@ -36,6 +49,15 @@ public class PlasmaTurretEnemy : FixedEnemy
         // Forzar Z=0 al inicio (2D)
         var p = transform.position;
         transform.position = new Vector3(p.x, p.y, 0f);
+
+        // --- AudioSource seguro ---
+        if (!audioSource) audioSource = GetComponent<AudioSource>();
+        if (!audioSource) audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = spatialBlend;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.minDistance = 2f;
+        audioSource.maxDistance = 15f;
     }
 
     protected override void Update()
@@ -71,7 +93,7 @@ public class PlasmaTurretEnemy : FixedEnemy
     {
         if (currentTarget != null)
         {
-            UpdateRotation();          // si tu clase base ya hace algo útil
+            UpdateRotation();          // si la base ya hace algo útil
             AimSelfToTarget2D();       // apunta con offset visual
 
             if (playerDistance <= attackRange)
@@ -95,8 +117,9 @@ public class PlasmaTurretEnemy : FixedEnemy
 
             if (playerDistance <= attackRange && shooter != null && shooter.CanShoot())
             {
-                shooter.Shoot();   // Asegura que la bala use transform.up o transform.right (ver nota)
-                StartRecoil2D();
+                shooter.Shoot();      // dispara
+                PlayShootSfx();       // ? SÓLO suena cuando dispara
+                StartRecoil2D();      // retroceso visual
             }
             else
             {
@@ -117,7 +140,6 @@ public class PlasmaTurretEnemy : FixedEnemy
     #endregion
 
     // ===================== Helpers 2D =====================
-    // Alinea la PUNTA del sprite hacia el target usando un offset visual.
     private void AimSelfToTarget2D()
     {
         if (currentTarget == null) return;
@@ -174,5 +196,15 @@ public class PlasmaTurretEnemy : FixedEnemy
 
         recoilPart.localPosition = _recoilInitLocalPos;
         _recoiling = false;
+    }
+
+    // -------- Audio helpers --------
+    private void PlayShootSfx()
+    {
+        if (!shootSfx || !audioSource) return;
+
+        audioSource.pitch = Random.Range(pitchRandom.x, pitchRandom.y);
+        audioSource.PlayOneShot(shootSfx, shootVolume);
+
     }
 }

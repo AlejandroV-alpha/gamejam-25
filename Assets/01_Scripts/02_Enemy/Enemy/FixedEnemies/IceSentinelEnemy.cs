@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Enemigo fijo que rota hacia el jugador y dispara ráfagas de balas.
 /// Hereda de FixedEnemy para detección y rotación. Usa IShooter para disparos.
-/// Añadido: efecto de retroceso al disparar (visual, por posición local).
+/// Añadido: efecto de retroceso al disparar (visual, por posición local) + SFX de disparo.
 /// </summary>
 public class IceSentinelEnemy : FixedEnemy
 {
@@ -23,6 +23,25 @@ public class IceSentinelEnemy : FixedEnemy
     private bool isRecoiling = false;
     #endregion
 
+    #region Audio Settings
+    [Header("SFX")]
+    [Tooltip("Fuente de audio para reproducir el disparo (si está vacío, se creará una).")]
+    [SerializeField] private AudioSource audioSource;
+
+    [Tooltip("Clip de disparo (arrastra aquí BalaHieloDron).")]
+    [SerializeField] private AudioClip shootSfx;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float shootVolume = 0.9f;
+
+    [Tooltip("Aleatorización de pitch para evitar efecto repetitivo.")]
+    [SerializeField] private Vector2 pitchRandom = new Vector2(0.97f, 1.03f);
+
+    [Tooltip("0 = 2D, 1 = 3D. Para mundo 2D con posición espacial, deja ~0.7-1.")]
+    [Range(0f, 1f)]
+    [SerializeField] private float spatialBlend = 1f;
+    #endregion
+
     #region Unity Methods
     protected override void Awake()
     {
@@ -30,6 +49,18 @@ public class IceSentinelEnemy : FixedEnemy
 
         if (recoilPart != null)
             originalLocalPos = recoilPart.localPosition;
+
+        // Asegura AudioSource
+        if (!audioSource)
+            audioSource = GetComponent<AudioSource>();
+        if (!audioSource)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = spatialBlend;   // 3D si es 1
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.minDistance = 2f;
+        audioSource.maxDistance = 15f;
     }
 
     protected override void Update()
@@ -44,9 +75,6 @@ public class IceSentinelEnemy : FixedEnemy
     #endregion
 
     #region Behaviour Overrides
-    /// <summary>
-    /// Comportamiento en estado Idle: sin jugador detectado, mantiene rotación inicial.
-    /// </summary>
     protected override void IdleBehaviour()
     {
         if (currentTarget != null)
@@ -55,9 +83,6 @@ public class IceSentinelEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Alert: rota hacia el jugador y cambia a ataque si está en rango.
-    /// </summary>
     protected override void AlertBehaviour()
     {
         if (currentTarget != null)
@@ -75,9 +100,6 @@ public class IceSentinelEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Attack: dispara ráfagas si el jugador está en rango.
-    /// </summary>
     protected override void AttackBehaviour()
     {
         if (currentTarget != null)
@@ -87,7 +109,8 @@ public class IceSentinelEnemy : FixedEnemy
             if (playerDistance <= attackRange && shooter != null && shooter.CanShoot())
             {
                 shooter.Shoot();
-                ApplyRecoil(); // ? activa el retroceso cada disparo
+                PlayShootSfx();   // Sonido sólo cuando dispara
+                ApplyRecoil();    // Retroceso visual
             }
             else
             {
@@ -101,9 +124,6 @@ public class IceSentinelEnemy : FixedEnemy
         }
     }
 
-    /// <summary>
-    /// Comportamiento en estado Death: destruye el enemigo.
-    /// </summary>
     protected override void DeathBehaviour()
     {
         Destroy(gameObject);
@@ -111,29 +131,19 @@ public class IceSentinelEnemy : FixedEnemy
     #endregion
 
     #region Recoil Logic
-    /// <summary>
-    /// Lanza la corrutina de retroceso si no está ya en curso.
-    /// </summary>
     private void ApplyRecoil()
     {
         if (recoilPart == null || isRecoiling) return;
         StartCoroutine(RecoilCoroutine());
     }
 
-    /// <summary>
-    /// Mueve la pieza hacia atrás y la regresa suavemente a su posición original.
-    /// Nota: usa el eje local Y como dirección de “salida del cañón”.
-    /// Si tu cañón usa otro eje, cambia Vector3.up por el que corresponda (Vector3.right, etc.).
-    /// </summary>
     private IEnumerator RecoilCoroutine()
     {
         isRecoiling = true;
 
-        // Posiciones en espacio local
         Vector3 start = originalLocalPos;
-        Vector3 target = originalLocalPos - Vector3.up * recoilDistance; // cambia el eje si tu cañón apunta por X, etc.
+        Vector3 target = originalLocalPos - Vector3.up * recoilDistance; // cambia eje si tu cañón apunta por X, etc.
 
-        // Ir (hacia atrás)
         float t = 0f;
         while (t < 1f)
         {
@@ -142,7 +152,6 @@ public class IceSentinelEnemy : FixedEnemy
             yield return null;
         }
 
-        // Volver (hacia adelante)
         t = 0f;
         while (t < 1f)
         {
@@ -153,6 +162,17 @@ public class IceSentinelEnemy : FixedEnemy
 
         recoilPart.localPosition = start;
         isRecoiling = false;
+    }
+    #endregion
+
+    #region Audio Helpers
+    private void PlayShootSfx()
+    {
+        if (!shootSfx || !audioSource) return;
+
+        float p = Random.Range(pitchRandom.x, pitchRandom.y);
+        audioSource.pitch = p;
+        audioSource.PlayOneShot(shootSfx, shootVolume);
     }
     #endregion
 }

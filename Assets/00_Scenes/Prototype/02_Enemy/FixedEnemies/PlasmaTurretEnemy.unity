@@ -611,6 +611,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394604644820909635, guid: a4e3d2622228cb046b116b51b5f45074, type: 3}
+      propertyPath: shootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 37565bb9ea767d24abcc9c7f48548de1, type: 3}
     - target: {fileID: 1878900822692102032, guid: a4e3d2622228cb046b116b51b5f45074, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
