@@ -1,0 +1,180 @@
+using UnityEngine;
+using System;
+using System.Collections;
+
+/// <summary>
+/// Enemigo fijo que rota hacia el jugador y dispara cuando este entra en su rango de ataque.
+/// Se pone en alerta cuando el jugador entra en un rango mayor.
+/// Usa IShooter para manejar disparos y respeta obstaculos.
+/// </summary>
+public class SimpleTurretEnemy : FixedEnemy
+{
+    [Header("Recoil")]
+    [SerializeField] private Transform recoilTarget;
+    [SerializeField] private Axis recoilAxis = Axis.Up;
+    [SerializeField] private bool recoilInvert = true;
+    [SerializeField] private float recoilDistance = 0.08f;
+    [SerializeField] private float recoilOutTime = 0.06f;
+    [SerializeField] private float recoilInTime = 0.10f;
+    [SerializeField] private AnimationCurve recoilOutCurve = null;
+    [SerializeField] private AnimationCurve recoilInCurve = null;
+
+    private enum Axis { Up, Right }
+    private Coroutine recoilCo;
+    private Vector3 recoilBaseLocalPos;
+
+    // --- OPCIONAL: si tu shooter expone un evento ---
+    // interface INotifiesShot { event Action OnShot; }
+    // ------------------------------------------------
+
+    #region Unity Methods
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (!recoilTarget)
+        {
+            var t = transform.Find("Graphics/Turret");
+            if (t) recoilTarget = t;
+        }
+
+        if (recoilOutCurve == null) recoilOutCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        if (recoilInCurve == null) recoilInCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+        if (recoilTarget) recoilBaseLocalPos = recoilTarget.localPosition;
+    }
+
+    private void OnEnable()
+    {
+        // --- OPCIONAL: suscripción al evento de disparo si existe ---
+        // var notifier = shooter as INotifiesShot;
+        // if (notifier != null) notifier.OnShot += PlayRecoil;
+    }
+
+    private void OnDisable()
+    {
+        // var notifier = shooter as INotifiesShot;
+        // if (notifier != null) notifier.OnShot -= PlayRecoil;
+
+        if (recoilTarget) recoilTarget.localPosition = recoilBaseLocalPos;
+        recoilCo = null;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        DrawRanges();
+    }
+    #endregion
+
+    #region Behaviour Overrides
+    protected override void IdleBehaviour()
+    {
+        if (currentTarget != null)
+        {
+            stateMachine.ChangeState(EnemyState.Alert);
+        }
+    }
+
+    protected override void AlertBehaviour()
+    {
+        if (currentTarget != null)
+        {
+            UpdateRotation();
+            if (playerDistance <= attackRange)
+            {
+                stateMachine.ChangeState(EnemyState.Attack);
+            }
+        }
+        else
+        {
+            ClearRotation();
+            stateMachine.ChangeState(EnemyState.Idle);
+        }
+    }
+
+    protected override void AttackBehaviour()
+    {
+        if (currentTarget != null)
+        {
+            UpdateRotation();
+
+            if (playerDistance <= attackRange && shooter != null && shooter.CanShoot())
+            {
+                // Disparar
+                shooter.Shoot();
+
+                // DISPARADOR DEL RETROCESO (antes no se llamaba nunca)
+                PlayRecoil();
+            }
+            else
+            {
+                stateMachine.ChangeState(EnemyState.Alert);
+            }
+        }
+        else
+        {
+            ClearRotation();
+            stateMachine.ChangeState(EnemyState.Idle);
+        }
+    }
+
+    protected override void DeathBehaviour()
+    {
+        Destroy(gameObject);
+    }
+    #endregion
+
+    #region Recoil Impl
+    private void PlayRecoil()
+    {
+        if (!recoilTarget || !gameObject.activeInHierarchy) return;
+        if (recoilCo != null) StopCoroutine(recoilCo);
+        recoilCo = StartCoroutine(CoRecoil());
+    }
+
+    private IEnumerator CoRecoil()
+    {
+        // 1) Dirección del cañón en espacio de MUNDO
+        Vector3 worldDir = (recoilAxis == Axis.Up) ? recoilTarget.up : recoilTarget.right;
+        if (recoilInvert) worldDir = -worldDir;
+
+        // 2) Convertir a ESPACIO DEL PADRE (porque vamos a mover localPosition)
+        Transform parent = recoilTarget.parent;
+        Vector3 parentLocalDir = parent ? parent.InverseTransformDirection(worldDir) : worldDir;
+        parentLocalDir.Normalize();
+
+        Vector3 start = recoilBaseLocalPos;
+        Vector3 back = start + parentLocalDir * recoilDistance;
+
+        // Ida
+        float t = 0f;
+        float outT = Mathf.Max(0.01f, recoilOutTime);
+        while (t < outT)
+        {
+            float k = recoilOutCurve.Evaluate(t / outT);
+            recoilTarget.localPosition = Vector3.LerpUnclamped(start, back, k);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        recoilTarget.localPosition = back;
+
+        // Vuelta
+        t = 0f;
+        float inT = Mathf.Max(0.01f, recoilInTime);
+        while (t < inT)
+        {
+            float k = recoilInCurve.Evaluate(t / inT);
+            recoilTarget.localPosition = Vector3.LerpUnclamped(back, start, k);
+            t += Time.deltaTime;
+            yield return null;
+        }
+        recoilTarget.localPosition = start;
+        recoilCo = null;
+    }
+    #endregion
+}

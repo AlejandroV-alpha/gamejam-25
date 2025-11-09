@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: fe67e6e1e85a388429e805af67f2ed8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5574762991628000675
+    second: Campamento_0
+  - first:
+      213: -5034691987695589234
+    second: Campamento_1
+  - first:
+      213: -7105044953727587053
+    second: Campamento_2
+  - first:
+      213: 4309774487523116310
+    second: Campamento_3
+  - first:
+      213: 9092665127616929508
+    second: Campamento_4
+  - first:
+      213: -8577760947991555080
+    second: Campamento_5
+  - first:
+      213: -7038931943636673466
+    second: Campamento_6
+  - first:
+      213: -6823441782442774478
+    second: Campamento_7
+  - first:
+      213: 5667249950646823437
+    second: Campamento_8
+  - first:
+      213: 7947365998966321514
+    second: Campamento_9
+  - first:
+      213: -7192102221579337148
+    second: Campamento_10
+  - first:
+      213: -3071743405952654955
+    second: Campamento_11
+  - first:
+      213: -1271320706875829
+    second: Campamento_12
+  - first:
+      213: -2012889262873379415
+    second: Campamento_13
+  - first:
+      213: 1842966224053995649
+    second: Campamento_14
+  - first:
+      213: 1879330834094973102
+    second: Campamento_15
+  - first:
+      213: -6139850035117949453
+    second: Campamento_16
+  - first:
+      213: 7678088751975032147
+    second: Campamento_17
+  - first:
+      213: 1415577060412916205
+    second: Campamento_18
+  - first:
+      213: 8788379219338854369
+    second: Campamento_19
+  - first:
+      213: 950844068697550551
+    second: Campamento_20
+  - first:
+      213: -5969626241521532607
+    second: Campamento_21
+  - first:
+      213: 2612087788321827779
+    second: Campamento_22
+  - first:
+      213: -7816050162291626190
+    second: Campamento_23
+  - first:
+      213: -1960872624757988781
+    second: Campamento_24
+  - first:
+      213: 2201315075328533712
+    second: Campamento_25
+  - first:
+      213: 7038066541012157167
+    second: Campamento_26
+  - first:
+      213: -6171419178109762768
+    second: Campamento_27
+  - first:
+      213: 2380307755678371971
+    second: Campamento_28
+  - first:
+      213: 2123231944971546432
+    second: Campamento_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Campamento_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 463
+        width: 427
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52e401789672a2b0800000000000000
+      internalID: -5574762991628000675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_1
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 667
+        width: 202
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8826e7ef4e212ab0800000000000000
+      internalID: -5034691987695589234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_2
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 649
+        width: 186
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31da2eb324fc56d90800000000000000
+      internalID: -7105044953727587053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 591
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6154bdeef056fcb30800000000000000
+      internalID: 4309774487523116310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 615
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee503132c2af2e70800000000000000
+      internalID: 9092665127616929508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_5
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 616
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3debe5ddba5f880800000000000000
+      internalID: -8577760947991555080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 415
+        width: 222
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cd26de0b0b05e90800000000000000
+      internalID: -7038931943636673466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_7
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 591
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230b0fbd9d34e41a0800000000000000
+      internalID: -6823441782442774478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_8
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 573
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a67a1cdcd16ae40800000000000000
+      internalID: 5667249950646823437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 575
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61b764e447ba4e60800000000000000
+      internalID: 7947365998966321514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_10
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 478
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44247768225803c90800000000000000
+      internalID: -7192102221579337148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_11
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 514
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5912b07a5a9fe55d0800000000000000
+      internalID: -3071743405952654955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 88
+        width: 317
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4efed49dbb7bfff0800000000000000
+      internalID: -1271320706875829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 449
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adfb3251e7c014e0800000000000000
+      internalID: -2012889262873379415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_14
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 455
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18808cd2408839910800000000000000
+      internalID: 1842966224053995649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_15
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 397
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea06badbf69b41a10800000000000000
+      internalID: 1879330834094973102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_16
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 265
+        width: 182
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdff926ceedacaa0800000000000000
+      internalID: -6139850035117949453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_17
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 203
+        width: 200
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355e4672a0d0e8a60800000000000000
+      internalID: 7678088751975032147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_18
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 368
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de18a1e16d325a310800000000000000
+      internalID: 1415577060412916205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_19
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 343
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1effd10565896f970800000000000000
+      internalID: 8788379219338854369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_20
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 259
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de218784a3123d00800000000000000
+      internalID: 950844068697550551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_21
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 254
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1414240df80a72da0800000000000000
+      internalID: -5969626241521532607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_22
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 223
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbee090100004420800000000000000
+      internalID: 2612087788321827779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_23
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 177
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f29f1e9cfc78390800000000000000
+      internalID: -7816050162291626190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_24
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 234
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3522387acb499c4e0800000000000000
+      internalID: -1960872624757988781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 166
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d46bafd564ac8e10800000000000000
+      internalID: 2201315075328533712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_26
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 167
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe28792da3c3ca160800000000000000
+      internalID: 7038066541012157167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_27
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 176
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0330cb084f6ba5aa0800000000000000
+      internalID: -6171419178109762768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_28
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 171
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3801159da4d880120800000000000000
+      internalID: 2380307755678371971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campamento_29
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 57
+        width: 82
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f6acf543c377d10800000000000000
+      internalID: 2123231944971546432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Campamento_0: -5574762991628000675
+      Campamento_1: -5034691987695589234
+      Campamento_10: -7192102221579337148
+      Campamento_11: -3071743405952654955
+      Campamento_12: -1271320706875829
+      Campamento_13: -2012889262873379415
+      Campamento_14: 1842966224053995649
+      Campamento_15: 1879330834094973102
+      Campamento_16: -6139850035117949453
+      Campamento_17: 7678088751975032147
+      Campamento_18: 1415577060412916205
+      Campamento_19: 8788379219338854369
+      Campamento_2: -7105044953727587053
+      Campamento_20: 950844068697550551
+      Campamento_21: -5969626241521532607
+      Campamento_22: 2612087788321827779
+      Campamento_23: -7816050162291626190
+      Campamento_24: -1960872624757988781
+      Campamento_25: 2201315075328533712
+      Campamento_26: 7038066541012157167
+      Campamento_27: -6171419178109762768
+      Campamento_28: 2380307755678371971
+      Campamento_29: 2123231944971546432
+      Campamento_3: 4309774487523116310
+      Campamento_4: 9092665127616929508
+      Campamento_5: -8577760947991555080
+      Campamento_6: -7038931943636673466
+      Campamento_7: -6823441782442774478
+      Campamento_8: 5667249950646823437
+      Campamento_9: 7947365998966321514
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
